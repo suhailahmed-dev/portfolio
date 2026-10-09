@@ -1,23 +1,23 @@
 @echo off
 setlocal enabledelayedexpansion
-title Push Portfolio to GitHub
+title Push Suhail Ahmed Portfolio to GitHub
 
 echo ========================================================
-echo   🚀 Suhail Ahmed - GitHub Portfolio Auto-Deployer
+echo   🚀 Suhail Ahmed Buledi - Portfolio Auto-Deployer
 echo ========================================================
 echo.
-echo [*] Username: suhailahmed-dev
+echo [*] Account:  suhailahmed-dev
 echo [*] Email:    sohailbuledi84@gmail.com
 echo [*] Repo:     https://github.com/suhailahmed-dev/portfolio.git
 echo.
 
-echo [+] Ensuring latest changes are committed...
+echo [+] Ensuring all latest 3D, WFH and motion files are staged...
 git add .
-git commit -m "Update portfolio for Suhail Ahmed" 2>nul || echo Commit already up to date.
+git commit -m "Deploy latest 3D WFH portfolio" 2>nul || echo Commit up to date.
 
 echo.
 echo [*] Pushing to GitHub...
-echo (Agar browser window pop up ho, to 'Sign in with your browser' pe click karna)
+echo (Agar browser window khulay, to 'Sign in with your browser' par click karna)
 echo.
 
 git push -u origin main
@@ -46,7 +46,7 @@ if %errorlevel% equ 0 (
     echo   [!] Push Nahi Hua! Wajah:
     echo ========================================================
     echo 1. Kya aapne GitHub par 'portfolio' naam ka repository bana liya hai?
-    echo    Agar nahi banaya, to yahan se 1-click mein bana lo:
+    echo    Agar nahi banaya, to foran yahan se 1-click mein bana lo:
     echo    👉 https://github.com/new?name=portfolio
     echo.
     echo 2. Repository banane ke baad yeh script dobara chalao!
