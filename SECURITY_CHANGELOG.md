@@ -77,5 +77,5 @@ The following sensitive files and internal endpoints were purged from public tra
 
 | Level | Repositories | Visibility | Purpose |
 | :--- | :--- | :--- | :--- |
-| **Level A (Private Core)** | `ZainForexAutoBot-MT5-Gold`<br>`Sophi-Trading-Bot`<br>`QuantumTrade-AI-Bot` | **PRIVATE** | Proprietary quantitative algorithms, live trading logic, and risk engines. |
+| **Level A (Private Core)** | `ZainForexAutoBot-MT5-Gold`<br>`Sophi-Trading-Bot` | **PRIVATE** | Proprietary quantitative algorithms, live trading logic, and risk engines. |
 | **Level B (Public Showcase)** | `APEX-Marketing-AI-CommandCenter`<br>`Faceless-Video-Autopilot`<br>`portfolio`<br>`suhailahmed-dev` | **PUBLIC** | Production architectures, agent workflows, safe documentation, and public engineering portfolio. |
