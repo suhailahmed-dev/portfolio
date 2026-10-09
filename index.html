@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suhail Ahmed | Autonomous AI & Algorithmic Trading Systems</title>
-  <meta name="description" content="Autonomous AI Systems Architect and Algorithmic Trading Engineer. Creator of SOPHI Crypto Engine and ZainForex Gold MT5 Scalper.">
+  <title>Suhail Ahmed | AI Systems Engineer & Autonomous Automation Architect</title>
+  <meta name="description" content="Autonomous AI Systems Engineer and Algorithmic Trading Architect. Engineering trading systems, multi-agent workflows, and zero-touch business automations.">
 
-  <!-- Inter & Space Grotesk & JetBrains Mono Fonts -->
+  <!-- Technical Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -22,19 +22,24 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Inter"', 'sans-serif'],
-            display: ['"Space Grotesk"', 'sans-serif'],
+            sans: ['"Inter"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'monospace'],
+            display: ['"Space Grotesk"', 'sans-serif'],
           },
           colors: {
-            obsidian: '#020408',
-            surface: '#070c18',
-            card: '#0c1326',
-            accent: {
-              emerald: '#10b981',
-              cyan: '#06b6d4',
+            void: '#07080b',
+            surface: {
+              DEFAULT: '#0d0f15',
+              elevated: '#12151e',
+              border: 'rgba(255, 255, 255, 0.08)',
+              hover: 'rgba(255, 255, 255, 0.14)',
+            },
+            tech: {
+              green: '#10b981',
               amber: '#f59e0b',
               blue: '#3b82f6',
+              zinc: '#71717a',
+              muted: '#94a3b8',
             }
           }
         }
@@ -43,539 +48,869 @@
   </script>
 
   <style>
+    :root {
+      color-scheme: dark;
+    }
     body {
-      background-color: #020408;
-      color: #f1f5f9;
+      background-color: #07080b;
+      color: #e2e8f0;
       font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
+      letter-spacing: -0.011em;
     }
 
-    /* Aura Background Ambient Lights */
-    .aura-glow-1 {
-      position: absolute;
-      top: -80px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 900px;
-      height: 480px;
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.14) 0%, rgba(6, 182, 212, 0.08) 35%, rgba(2, 4, 8, 0) 70%);
-      filter: blur(80px);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .aura-glow-2 {
-      position: absolute;
-      top: 45%;
-      right: -10%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, rgba(16, 185, 129, 0.04) 45%, rgba(2, 4, 8, 0) 70%);
-      filter: blur(100px);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* Luxury Hairline Borders & Glass */
-    .glass-card {
-      background: rgba(12, 19, 38, 0.55);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .glass-card:hover {
-      border-color: rgba(255, 255, 255, 0.18);
-      transform: translateY(-4px);
-      box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.9), 0 0 30px -10px rgba(16, 185, 129, 0.12);
-    }
-
-    .glass-nav {
-      background: rgba(4, 7, 16, 0.78);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    /* Subtle Gradients */
-    .text-gradient {
-      background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .emerald-gradient {
-      background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .amber-gradient {
-      background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .cyan-gradient {
-      background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    /* Subtle grid overlay */
-    .bg-grid-pattern {
-      background-size: 40px 40px;
+    /* Engineering Grid */
+    .eng-grid {
+      background-size: 32px 32px;
       background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+        linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
     }
 
-    /* Pulsing status dot */
-    @keyframes pulseDot {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.35); opacity: 0.5; }
+    /* Technical Card */
+    .sys-card {
+      background: #0d0f15;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: border-color 0.25s ease, background-color 0.25s ease;
     }
-    .pulse-dot {
-      animation: pulseDot 2.2s infinite ease-in-out;
+    .sys-card:hover {
+      border-color: rgba(255, 255, 255, 0.18);
+      background: #10131c;
+    }
+
+    /* Monospace Tech Pill */
+    .tech-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 3px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #94a3b8;
+    }
+
+    /* Status Pulse */
+    @keyframes statusBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
+    }
+    .status-pulse {
+      animation: statusBlink 2.5s infinite ease-in-out;
+    }
+
+    /* Data Pipeline Line */
+    .pipe-step {
+      transition: all 0.2s ease;
+    }
+    .pipe-step:hover {
+      border-color: #10b981;
+      background: rgba(16, 185, 129, 0.05);
     }
   </style>
 </head>
-<body class="bg-obsidian min-h-screen text-slate-200 antialiased selection:bg-emerald-500 selection:text-black relative">
-  <!-- Ambient glow elements -->
-  <div class="aura-glow-1"></div>
-  <div class="aura-glow-2"></div>
+<body class="bg-void min-h-screen text-slate-300 selection:bg-emerald-500 selection:text-black antialiased relative">
 
-  <!-- Background subtle grid -->
-  <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0"></div>
+  <!-- Subtle Engineering Grid Background -->
+  <div class="fixed inset-0 eng-grid pointer-events-none z-0"></div>
 
-  <!-- Top Floating Glass Navigation -->
-  <header class="fixed top-4 inset-x-0 z-50 flex justify-center px-4">
-    <nav class="glass-nav rounded-full px-5 py-3 flex items-center justify-between gap-6 max-w-4xl w-full shadow-2xl">
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="relative w-9 h-9 rounded-full overflow-hidden border border-emerald-500/40 p-0.5 bg-surface">
-          <img src="assets/suhail_profile.jpg" alt="Suhail Ahmed" class="w-full h-full object-cover rounded-full">
-        </div>
-        <div>
-          <span class="font-display font-bold text-white text-sm tracking-tight block leading-none">Suhail Ahmed</span>
-          <span class="text-[11px] text-emerald-400 font-mono flex items-center gap-1.5 mt-0.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block pulse-dot"></span> Remote Active
-          </span>
-        </div>
-      </a>
-
-      <div class="hidden md:flex items-center gap-6 text-xs font-medium text-slate-400">
-        <a href="#systems" class="hover:text-white transition-colors">Trading Bots</a>
-        <a href="#ai-apps" class="hover:text-white transition-colors">AI Systems</a>
-        <a href="#telemetry" class="hover:text-white transition-colors">Live Activity</a>
-        <a href="#about" class="hover:text-white transition-colors">About</a>
-        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+  <!-- Top System Control Bar -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-[#07080b]/90 backdrop-blur-md border-b border-white/[0.08]">
+    <div class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <a href="#" class="flex items-center gap-2.5 group">
+          <div class="w-7 h-7 rounded bg-surface border border-white/10 flex items-center justify-center font-mono text-xs font-bold text-white group-hover:border-emerald-500/50 transition-colors">
+            SA
+          </div>
+          <div>
+            <span class="font-mono text-xs font-semibold text-white tracking-tight uppercase">Suhail Ahmed</span>
+            <span class="hidden sm:inline text-slate-500 font-mono text-[11px] ml-2">/ SYSTEMS ARCHITECT</span>
+          </div>
+        </a>
       </div>
 
+      <!-- Navigation -->
+      <nav class="hidden md:flex items-center gap-8 font-mono text-xs text-slate-400">
+        <a href="#systems" class="hover:text-white transition-colors">01 // SYSTEMS</a>
+        <a href="#architecture" class="hover:text-white transition-colors">02 // PIPELINE</a>
+        <a href="#case-studies" class="hover:text-white transition-colors">03 // CASE STUDIES</a>
+        <a href="#stack" class="hover:text-white transition-colors">04 // STACK</a>
+        <a href="#about" class="hover:text-white transition-colors">05 // ABOUT</a>
+        <a href="#contact" class="hover:text-white transition-colors">06 // CONTACT</a>
+      </nav>
+
+      <!-- System Status & GitHub -->
       <div class="flex items-center gap-3">
-        <a href="https://github.com/suhailahmed-dev" target="_blank" rel="noopener" class="text-slate-400 hover:text-white transition-colors p-1.5" title="GitHub Profile">
+        <div class="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded bg-surface border border-white/[0.08] font-mono text-[11px] text-slate-300">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 status-pulse"></span>
+          <span>SYSTEM STATUS: ONLINE</span>
+        </div>
+        <a href="https://github.com/suhailahmed-dev" target="_blank" rel="noopener" class="p-1.5 text-slate-400 hover:text-white transition-colors" title="GitHub Profile">
           <i data-lucide="github" class="w-4 h-4"></i>
         </a>
-        <a href="https://wa.me/923093174020?text=Hello%20Suhail,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener" class="bg-white text-black hover:bg-slate-200 text-xs font-semibold px-4 py-2 rounded-full transition-all flex items-center gap-1.5 shadow-md hover:scale-105 active:scale-95">
-          <span>Let's Talk</span>
-          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-        </a>
       </div>
-    </nav>
+    </div>
   </header>
 
   <!-- Hero Section -->
-  <main class="relative z-10 pt-32 pb-20 max-w-5xl mx-auto px-6">
-    <!-- Top Status Badge -->
-    <div class="flex justify-center mb-6">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/60 text-[11px] font-mono text-slate-300 shadow-inner">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
-        <span>AUTONOMOUS AI & ALGORITHMIC TRADING SYSTEMS</span>
-      </div>
-    </div>
-
-    <!-- Main Headline with Aura -->
-    <div class="text-center max-w-3xl mx-auto mb-10">
-      <h1 class="font-display font-extrabold text-4xl sm:text-6xl text-white tracking-tight leading-[1.12] mb-6">
-        I engineer software that <span class="emerald-gradient">trades</span> and <span class="text-gradient">runs on autopilot.</span>
-      </h1>
-      <p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-normal">
-        Real production systems with verified results. From automated trading bots navigating live financial markets to autonomous AI engines publishing media across 4 platforms with zero human clicks.
-      </p>
-    </div>
-
-    <!-- Quick CTA & Contact Pill -->
-    <div class="flex flex-wrap items-center justify-center gap-4 mb-16">
-      <a href="#systems" class="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-sm px-6 py-3.5 rounded-full flex items-center gap-2 transition-all shadow-lg shadow-emerald-500/20 hover:scale-105 active:scale-95">
-        <span>Explore Live Bots</span>
-        <i data-lucide="chevron-down" class="w-4 h-4"></i>
-      </a>
-      <a href="https://wa.me/923093174020?text=Hello%20Suhail,%20let's%20connect%20regarding%20a%20remote%20role" target="_blank" rel="noopener" class="glass-card hover:bg-slate-800/60 text-white font-medium text-sm px-6 py-3.5 rounded-full flex items-center gap-2 transition-all hover:scale-105 active:scale-95">
-        <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
-        <span>WhatsApp: +92 309 3174020</span>
-      </a>
-    </div>
-
-    <!-- Stat Highlights (Pure High-Impact Numbers) -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-24">
-      <div class="glass-card rounded-2xl p-5 text-center">
-        <div class="font-display font-bold text-2xl sm:text-3xl text-amber-400 font-mono mb-1">75.0%</div>
-        <div class="text-xs text-slate-300 font-semibold">Verified Win Rate</div>
-        <div class="text-[11px] text-slate-500 mt-1 font-mono">ZainForex Gold MT5</div>
-      </div>
-      <div class="glass-card rounded-2xl p-5 text-center">
-        <div class="font-display font-bold text-2xl sm:text-3xl text-cyan-400 font-mono mb-1">14,323</div>
-        <div class="text-xs text-slate-300 font-semibold">Real Executed Trades</div>
-        <div class="text-[11px] text-slate-500 mt-1 font-mono">SOPHI Crypto Engine</div>
-      </div>
-      <div class="glass-card rounded-2xl p-5 text-center">
-        <div class="font-display font-bold text-2xl sm:text-3xl text-emerald-400 font-mono mb-1">-1.37%</div>
-        <div class="text-xs text-slate-300 font-semibold">48H Max Drawdown</div>
-        <div class="text-[11px] text-slate-500 mt-1 font-mono">Passed Stress Audit</div>
-      </div>
-      <div class="glass-card rounded-2xl p-5 text-center">
-        <div class="font-display font-bold text-2xl sm:text-3xl text-white font-mono mb-1">4 Platforms</div>
-        <div class="text-xs text-slate-300 font-semibold">Zero-Touch Publishing</div>
-        <div class="text-[11px] text-slate-500 mt-1 font-mono">Faceless Video Autopilot</div>
-      </div>
-    </div>
-
-    <!-- Section: Flagship Trading Bots (Live Testing) -->
-    <section id="systems" class="mb-28 scroll-mt-28">
-      <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-800/80">
-        <div>
-          <span class="text-amber-400 font-mono text-xs uppercase tracking-wider block mb-1">⚡ Flagship Trading Systems</span>
-          <h2 class="font-display font-bold text-2xl sm:text-3xl text-white">Trading Bots in Live Testing</h2>
-        </div>
-        <div class="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-mono font-medium">
-          <span class="w-2 h-2 rounded-full bg-amber-400 pulse-dot"></span>
-          <span>CURRENTLY IN LIVE TESTING</span>
-        </div>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- Card 1: ZainForex AutoBot (Gold MT5) -->
-        <div class="glass-card rounded-3xl p-7 flex flex-col justify-between border-amber-500/25 hover:border-amber-500/50">
-          <div>
-            <!-- Status Badge -->
-            <div class="flex items-center justify-between mb-5">
-              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-mono font-medium">
-                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 pulse-dot"></span>
-                🟡 LIVE IN TESTING
-              </span>
-              <span class="text-xs font-mono text-slate-400">Exness • MetaTrader 5</span>
-            </div>
-
-            <!-- Title & Simple Plain-English Explanation -->
-            <h3 class="font-display font-bold text-xl sm:text-2xl text-white mb-2 flex items-center gap-2">
-              <span>ZainForex AutoBot</span>
-              <span class="text-xs px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 font-mono font-normal">Gold MT5</span>
-            </h3>
-            <p class="text-slate-300 text-sm leading-relaxed mb-6 font-normal">
-              An automated trading bot built specifically for Gold (XAU/USD). It reads live price momentum on MetaTrader 5 and opens high-probability trades while automatically protecting your money with a strict 1% safe risk limit.
-            </p>
-
-            <!-- Plain-English Highlights (Easy to understand) -->
-            <div class="space-y-3 mb-6 bg-slate-900/70 rounded-2xl p-4 border border-slate-800/90">
-              <div class="flex items-start gap-3">
-                <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</div>
-                <div>
-                  <div class="text-xs font-semibold text-white">75.0% Verified Win Rate</div>
-                  <div class="text-[11px] text-slate-400">18 profitable trades out of 24 in real live forward-testing.</div>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</div>
-                <div>
-                  <div class="text-xs font-semibold text-white">1% Safe Risk Management</div>
-                  <div class="text-[11px] text-slate-400">Calculates trade size dynamically so no single loss can hurt capital.</div>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</div>
-                <div>
-                  <div class="text-xs font-semibold text-white">Economic News Protection</div>
-                  <div class="text-[11px] text-slate-400">Automatically stops trading before high-impact US financial news releases.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Bottom Action Buttons -->
-          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
-            <div class="text-[11px] font-mono text-slate-400">MQL5 • Python • MetaTrader 5</div>
-            <a href="https://github.com/suhailahmed-dev/ZainForexAutoBot-MT5-Gold" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-300 hover:text-white transition-colors bg-amber-500/10 hover:bg-amber-500/20 px-3.5 py-1.5 rounded-full border border-amber-500/20">
-              <span>View Source Code</span>
-              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 2: SOPHI Institutional Engine -->
-        <div class="glass-card rounded-3xl p-7 flex flex-col justify-between border-cyan-500/25 hover:border-cyan-500/50">
-          <div>
-            <!-- Status Badge -->
-            <div class="flex items-center justify-between mb-5">
-              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-medium">
-                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 pulse-dot"></span>
-                🟡 LIVE IN TESTING
-              </span>
-              <span class="text-xs font-mono text-slate-400">Binance Testnet • 8 Pairs</span>
-            </div>
-
-            <!-- Title & Simple Plain-English Explanation -->
-            <h3 class="font-display font-bold text-xl sm:text-2xl text-white mb-2 flex items-center gap-2">
-              <span>SOPHI Trading Engine</span>
-              <span class="text-xs px-2.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 font-mono font-normal">Crypto Engine</span>
-            </h3>
-            <p class="text-slate-300 text-sm leading-relaxed mb-6 font-normal">
-              An institutional crypto bot that analyzes 8 major cryptocurrencies simultaneously. It confirms market trends across multiple timeframes and features automated emergency brakes to preserve trading capital.
-            </p>
-
-            <!-- Plain-English Highlights (Easy to understand) -->
-            <div class="space-y-3 mb-6 bg-slate-900/70 rounded-2xl p-4 border border-slate-800/90">
-              <div class="flex items-start gap-3">
-                <div class="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</div>
-                <div>
-                  <div class="text-xs font-semibold text-white">14,323 Real Executed Trades</div>
-                  <div class="text-[11px] text-slate-400">Real telemetry across BTC, ETH, SOL, BNB, AVAX, XRP, ADA, and DOGE.</div>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <div class="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</div>
-                <div>
-                  <div class="text-xs font-semibold text-white">Passed 48-Hour Continuous Stress Test</div>
-                  <div class="text-[11px] text-slate-400">Maintained -1.37% max drawdown, preserving 98.63% capital under violent swings.</div>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <div class="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</div>
-                <div>
-                  <div class="text-xs font-semibold text-white">Automatic Emergency Brakes</div>
-                  <div class="text-[11px] text-slate-400">Halts trading instantly if daily loss hits 4% or if power/internet disconnects.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Bottom Action Buttons -->
-          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
-            <div class="text-[11px] font-mono text-slate-400">Python 3.11 • FastAPI • React Terminal</div>
-            <a href="https://github.com/suhailahmed-dev/Sophi-Trading-Bot" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-300 hover:text-white transition-colors bg-cyan-500/10 hover:bg-cyan-500/20 px-3.5 py-1.5 rounded-full border border-cyan-500/20">
-              <span>View Source Code</span>
-              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section: AI Flagships & Automation Products -->
-    <section id="ai-apps" class="mb-28 scroll-mt-28">
-      <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-800/80">
-        <div>
-          <span class="text-emerald-400 font-mono text-xs uppercase tracking-wider block mb-1">🤖 Autonomous AI Systems</span>
-          <h2 class="font-display font-bold text-2xl sm:text-3xl text-white">Autonomous Media & Marketing Engines</h2>
-        </div>
-        <span class="hidden sm:inline-block px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono font-medium">
-          🟢 100% PRODUCTION READY
+  <main class="relative z-10 pt-28 pb-20 max-w-6xl mx-auto px-6">
+    
+    <!-- Engineering Identity Header -->
+    <div class="pt-8 pb-12 border-b border-white/[0.08]">
+      <div class="flex flex-wrap items-center gap-3 mb-6">
+        <span class="font-mono text-[11px] text-emerald-400 uppercase tracking-wider bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded">
+          AI SYSTEMS ENGINEER
+        </span>
+        <span class="text-slate-600 font-mono text-xs">•</span>
+        <span class="font-mono text-[11px] text-slate-400 uppercase">
+          AUTOMATION BUILDER
+        </span>
+        <span class="text-slate-600 font-mono text-xs">•</span>
+        <span class="font-mono text-[11px] text-slate-400 uppercase">
+          AUTONOMOUS ARCHITECT
         </span>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- Card 3: APEX Marketing AI -->
-        <div class="glass-card rounded-3xl p-7 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-5">
-              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-mono font-medium">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                PRODUCTION DEPLOYED
-              </span>
-              <span class="text-xs font-mono text-slate-400">15 AI Tools</span>
-            </div>
+      <!-- Hero Statement -->
+      <h1 class="font-display font-extrabold text-4xl sm:text-6xl text-white tracking-tight leading-[1.08] mb-6 max-w-4xl uppercase">
+        I build systems<br>
+        that work<br>
+        without me.
+      </h1>
 
-            <h3 class="font-display font-bold text-xl sm:text-2xl text-white mb-2 flex items-center gap-2">
-              <span>APEX Marketing AI</span>
-              <span class="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono font-normal">Command Center</span>
-            </h3>
-            <p class="text-slate-300 text-sm leading-relaxed mb-6 font-normal">
-              A complete 15-in-1 AI marketing agency in one application. Generates viral social media posts, high-converting ad copy, and complete 30-day marketing plans for 4 major platforms in seconds.
-            </p>
+      <p class="text-slate-400 text-base sm:text-lg max-w-2xl font-normal leading-relaxed mb-8">
+        AI agents, algorithmic trading automation, and end-to-end business workflows engineered to turn repetitive operations into reliable, intelligent execution with zero constant human supervision.
+      </p>
 
-            <div class="space-y-3 mb-6 bg-slate-900/70 rounded-2xl p-4 border border-slate-800/90">
-              <div class="flex items-start gap-3">
-                <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</div>
-                <div>
-                  <div class="text-xs font-semibold text-white">4 Major Social Networks</div>
-                  <div class="text-[11px] text-slate-400">Automates copywriting specifically for Instagram, Facebook, LinkedIn, and Twitter/X.</div>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</div>
-                <div>
-                  <div class="text-xs font-semibold text-white">15 Specialized Marketing Agents</div>
-                  <div class="text-[11px] text-slate-400">Includes SEO article writers, Facebook Ad creators, viral video hook generators, and email writers.</div>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</div>
-                <div>
-                  <div class="text-xs font-semibold text-white">Instant Dark-Mode Dashboard</div>
-                  <div class="text-[11px] text-slate-400">Clean user interface with SQLite database to save and review all created campaigns.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
-            <div class="text-[11px] font-mono text-slate-400">Python • Gemini 2.0 • SQLite</div>
-            <a href="https://github.com/suhailahmed-dev/APEX-Marketing-AI-CommandCenter" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400 hover:text-white transition-colors bg-emerald-500/10 hover:bg-emerald-500/20 px-3.5 py-1.5 rounded-full border border-emerald-500/20">
-              <span>View Source Code</span>
-              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 4: Faceless Video Autopilot -->
-        <div class="glass-card rounded-3xl p-7 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-5">
-              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-mono font-medium">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                PRODUCTION DEPLOYED
-              </span>
-              <span class="text-xs font-mono text-slate-400">Zero-Touch Studio</span>
-            </div>
-
-            <h3 class="font-display font-bold text-xl sm:text-2xl text-white mb-2 flex items-center gap-2">
-              <span>Faceless Video Autopilot</span>
-              <span class="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono font-normal">Autonomous Video</span>
-            </h3>
-            <p class="text-slate-300 text-sm leading-relaxed mb-6 font-normal">
-              An autonomous video creation studio that writes scripts, generates realistic human voices, creates animated subtitles, and uploads directly to TikTok and YouTube Shorts without clicking a button.
-            </p>
-
-            <div class="space-y-3 mb-6 bg-slate-900/70 rounded-2xl p-4 border border-slate-800/90">
-              <div class="flex items-start gap-3">
-                <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</div>
-                <div>
-                  <div class="text-xs font-semibold text-white">Fully Autonomous Publishing</div>
-                  <div class="text-[11px] text-slate-400">Direct headless browser uploading to YouTube Shorts, TikTok, Instagram Reels, and Facebook.</div>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</div>
-                <div>
-                  <div class="text-xs font-semibold text-white">Natural AI Human Voice</div>
-                  <div class="text-[11px] text-slate-400">Crystal-clear 24kHz multi-lingual voice synthesis in Urdu, Roman Urdu, and English.</div>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</div>
-                <div>
-                  <div class="text-xs font-semibold text-white">60FPS Video Processing</div>
-                  <div class="text-[11px] text-slate-400">Uses FFmpeg engine to burn synchronized animated subtitles directly onto video clips.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
-            <div class="text-[11px] font-mono text-slate-400">Python • FFmpeg • Playwright</div>
-            <a href="https://github.com/suhailahmed-dev/Faceless-Video-Autopilot" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400 hover:text-white transition-colors bg-emerald-500/10 hover:bg-emerald-500/20 px-3.5 py-1.5 rounded-full border border-emerald-500/20">
-              <span>View Source Code</span>
-              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-            </a>
-          </div>
-        </div>
+      <!-- Direct Engineering CTAs -->
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="#systems" class="bg-white text-black hover:bg-slate-200 font-mono text-xs font-semibold px-5 py-2.5 rounded transition-all flex items-center gap-2">
+          <span>INSPECT PRODUCTION SYSTEMS</span>
+          <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
+        </a>
+        <a href="https://wa.me/923093174020?text=Hello%20Suhail,%20I%20reviewed%20your%20autonomous%20systems%20and%20would%20like%20to%20discuss%20an%20engineering%20role" target="_blank" rel="noopener" class="sys-card hover:bg-surface-elevated text-slate-300 hover:text-white font-mono text-xs px-5 py-2.5 rounded transition-all flex items-center gap-2">
+          <i data-lucide="terminal" class="w-3.5 h-3.5 text-emerald-400"></i>
+          <span>DIRECT OUTREACH / WHATSAPP</span>
+        </a>
       </div>
-    </section>
+    </div>
 
-    <!-- Section: Interactive Live Telemetry (Pure Aura Feature) -->
-    <section id="telemetry" class="mb-28 scroll-mt-28">
-      <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-800/80">
+    <!-- Live System Telemetry Strip (Real Metadata) -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/[0.08] border border-white/[0.08] my-12">
+      <div class="bg-surface p-5">
+        <div class="font-mono text-[11px] text-slate-500 uppercase mb-1">01 // VERIFIED WIN RATE</div>
+        <div class="font-mono text-2xl font-bold text-white">75.0%</div>
+        <div class="font-mono text-[11px] text-amber-400 mt-1">Exness MT5 (18W / 6L Forward-Tested)</div>
+      </div>
+      <div class="bg-surface p-5">
+        <div class="font-mono text-[11px] text-slate-500 uppercase mb-1">02 // AUDIT TELEMETRY</div>
+        <div class="font-mono text-2xl font-bold text-white">14,323</div>
+        <div class="font-mono text-[11px] text-slate-400 mt-1">Real Executed Trades Logged (SQLite)</div>
+      </div>
+      <div class="bg-surface p-5">
+        <div class="font-mono text-[11px] text-slate-500 uppercase mb-1">03 // 48H STRESS DRAWDOWN</div>
+        <div class="font-mono text-2xl font-bold text-white">-1.37%</div>
+        <div class="font-mono text-[11px] text-emerald-400 mt-1">98.63% Capital Preserved Under Soak</div>
+      </div>
+      <div class="bg-surface p-5">
+        <div class="font-mono text-[11px] text-slate-500 uppercase mb-1">04 // MULTI-PLATFORM AUTONOMY</div>
+        <div class="font-mono text-2xl font-bold text-white">4 NODES</div>
+        <div class="font-mono text-[11px] text-slate-400 mt-1">TikTok • Shorts • Reels • Facebook</div>
+      </div>
+    </div>
+
+    <!-- Section: The Autonomous System Pipeline -->
+    <section id="architecture" class="mb-24 scroll-mt-24">
+      <div class="mb-6 flex items-center justify-between">
         <div>
-          <span class="text-cyan-400 font-mono text-xs uppercase tracking-wider block mb-1">📡 Live System Telemetry</span>
-          <h2 class="font-display font-bold text-2xl sm:text-3xl text-white">Interactive Operational Monitor</h2>
+          <span class="font-mono text-[11px] text-slate-500 uppercase block mb-1">PIPELINE // 01</span>
+          <h2 class="font-display font-bold text-xl text-white uppercase tracking-tight">The Autonomous Execution Pipeline</h2>
         </div>
-        <div class="text-xs font-mono text-slate-400 flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
-          <span>ALL ENGINES ONLINE</span>
-        </div>
+        <span class="font-mono text-xs text-slate-500 hidden sm:inline">UNIVERSAL SYSTEM TOPOLOGY</span>
       </div>
 
-      <div class="glass-card rounded-3xl p-6 sm:p-8 border-slate-700/60">
-        <!-- System Selector Tabs -->
-        <div class="flex flex-wrap gap-2.5 mb-6 border-b border-slate-800/90 pb-4">
-          <button onclick="switchTab('zain')" id="tab-zain" class="px-4 py-2 rounded-xl text-xs font-mono font-medium transition-all bg-amber-500/20 text-amber-300 border border-amber-500/40">
-            🥇 ZainForex MT5 Gold
-          </button>
-          <button onclick="switchTab('sophi')" id="tab-sophi" class="px-4 py-2 rounded-xl text-xs font-mono font-medium transition-all text-slate-400 hover:text-white hover:bg-slate-800/60 border border-transparent">
-            ⚡ SOPHI Binance Engine
-          </button>
-          <button onclick="switchTab('apex')" id="tab-apex" class="px-4 py-2 rounded-xl text-xs font-mono font-medium transition-all text-slate-400 hover:text-white hover:bg-slate-800/60 border border-transparent">
-            🤖 APEX Marketing AI
-          </button>
-          <button onclick="switchTab('video')" id="tab-video" class="px-4 py-2 rounded-xl text-xs font-mono font-medium transition-all text-slate-400 hover:text-white hover:bg-slate-800/60 border border-transparent">
-            🎬 Faceless Video Studio
-          </button>
+      <!-- Pipeline Visualization -->
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-3">
+        <div class="pipe-step sys-card p-4 rounded border border-white/[0.08]">
+          <div class="font-mono text-[10px] text-slate-500 mb-1">STAGE 01</div>
+          <div class="font-mono text-xs font-bold text-white mb-2">INPUT INGESTION</div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Market WebSockets, raw Google Maps POIs, social video topics, or webhook payloads.
+          </p>
         </div>
 
-        <!-- Terminal Output Screen -->
-        <div class="bg-black/80 rounded-2xl p-5 border border-slate-800 font-mono text-xs leading-relaxed text-slate-300 min-h-[220px] overflow-x-auto shadow-inner">
-          <div id="telemetry-content">
-            <!-- Default Content: ZainForex -->
-            <div class="flex items-center justify-between text-slate-500 mb-3 pb-2 border-b border-slate-800">
-              <span>SYSTEM: ZainForexAutoBot-MT5 [XAU/USD]</span>
-              <span class="text-amber-400">STATUS: LIVE TESTING</span>
-            </div>
-            <p class="text-slate-400">[MT5:Exness-Real108821] Connected to broker feed. Spread: 1.2 pips.</p>
-            <p class="text-slate-400">[REGIME-CHECK] M15 Structure: Bullish Order Block detected at $2,641.80.</p>
-            <p class="text-emerald-400 font-semibold">[SIGNAL-EXEC] M5 Momentum Confluence triggered &rarr; BUY XAU/USD 0.05 Lots.</p>
-            <p class="text-slate-400">[RISK-GATE] Dynamic 1% capital stop applied at $2,638.10. TP Target: $2,648.50.</p>
-            <p class="text-amber-300 font-semibold mt-2">[PERFORMANCE] 24 Real Trades Logged | 18 Wins / 6 Losses &rarr; Verified 75.0% Win Rate.</p>
-          </div>
+        <div class="pipe-step sys-card p-4 rounded border border-white/[0.08]">
+          <div class="font-mono text-[10px] text-slate-500 mb-1">STAGE 02</div>
+          <div class="font-mono text-xs font-bold text-white mb-2">INTELLIGENCE</div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Multi-timeframe indicator confluence, Gemini LLM agents, or heuristic data filters.
+          </p>
+        </div>
+
+        <div class="pipe-step sys-card p-4 rounded border border-white/[0.08]">
+          <div class="font-mono text-[10px] text-slate-500 mb-1">STAGE 03</div>
+          <div class="font-mono text-xs font-bold text-white mb-2">DECISION & RISK</div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Hard circuit breakers, 1% capital stop gates, quality scoring, and news blackouts.
+          </p>
+        </div>
+
+        <div class="pipe-step sys-card p-4 rounded border border-white/[0.08]">
+          <div class="font-mono text-[10px] text-slate-500 mb-1">STAGE 04</div>
+          <div class="font-mono text-xs font-bold text-white mb-2">EXECUTION</div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Idempotent order placement, headless browser publishing, and automated dispatch.
+          </p>
+        </div>
+
+        <div class="pipe-step sys-card p-4 rounded border border-white/[0.08]">
+          <div class="font-mono text-[10px] text-slate-500 mb-1">STAGE 05</div>
+          <div class="font-mono text-xs font-bold text-white mb-2">MONITORING</div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            SQLite state reconciliation, live heartbeat reporting, and audit trail logging.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Section: About & Engineering Principles (Clear, High Aura) -->
-    <section id="about" class="mb-28 scroll-mt-28">
-      <div class="glass-card rounded-3xl p-8 sm:p-12 relative overflow-hidden">
-        <div class="grid md:grid-cols-3 gap-8 items-center">
-          <!-- Real Profile Image with Luxury Glow Frame -->
-          <div class="flex flex-col items-center text-center">
-            <div class="relative w-36 h-36 rounded-2xl overflow-hidden p-1 bg-gradient-to-br from-emerald-500/40 via-cyan-500/20 to-transparent shadow-2xl mb-4">
-              <img src="assets/suhail_profile.jpg" alt="Suhail Ahmed" class="w-full h-full object-cover rounded-xl">
-            </div>
-            <h4 class="font-display font-bold text-white text-lg">Suhail Ahmed Buledi</h4>
-            <div class="text-xs text-slate-400 font-mono mt-0.5">Hyderabad, Pakistan</div>
-            <div class="text-[11px] text-emerald-400 font-mono mt-1 font-medium">BS in Information Technology</div>
-          </div>
+    <!-- Section: Production Systems -->
+    <section id="systems" class="mb-24 scroll-mt-24">
+      <div class="mb-8 pb-4 border-b border-white/[0.08] flex items-end justify-between">
+        <div>
+          <span class="font-mono text-[11px] text-emerald-400 uppercase tracking-wider block mb-1">01 // PRODUCTION ARCHITECTURES</span>
+          <h2 class="font-display font-bold text-2xl text-white uppercase tracking-tight">Verified Engineering Systems</h2>
+        </div>
+        <div class="font-mono text-xs text-slate-500">
+          5 ARCHITECTURES DOCUMENTED
+        </div>
+      </div>
 
-          <!-- Plain-Language Bio & Values -->
-          <div class="md:col-span-2 space-y-4">
-            <span class="text-emerald-400 font-mono text-xs uppercase tracking-wider block">About The Engineer</span>
-            <h3 class="font-display font-bold text-2xl text-white">Built to solve real problems with zero supervision.</h3>
-            <p class="text-slate-300 text-sm leading-relaxed">
-              I am an autonomous systems engineer and BS-IT graduate. I don't build generic clone tutorials or write decorative code. I focus exclusively on systems that execute in the real world: algorithmic trading engines that manage live capital safely, and AI software that carries out multi-step business tasks autonomously.
+      <!-- SYSTEM 01: ZainForex AutoBot (Gold MT5) -->
+      <article class="sys-card p-8 rounded-lg mb-8 border border-white/[0.08]">
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-white/[0.06]">
+          <div class="flex items-center gap-3">
+            <span class="tech-pill text-amber-400 border-amber-500/30 bg-amber-500/10">SYS // 01</span>
+            <span class="font-mono text-xs text-slate-500">CATEGORY: TRADING AUTOMATION</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-amber-400 status-pulse"></span>
+            <span class="font-mono text-xs text-amber-300">STATUS: VALIDATION / ACTIVE LIVE TESTING</span>
+          </div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-2 space-y-4">
+            <h3 class="font-display font-bold text-2xl text-white">
+              ZainForex AutoBot — XAU/USD Gold Scalping & Risk Engine
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              An institutional quantitative execution engine built for MetaTrader 5 and Exness. It executes high-probability Gold trades based on multi-timeframe price momentum while enforcing non-negotiable capital protection gates.
             </p>
-            <div class="grid sm:grid-cols-2 gap-3 pt-2 text-xs font-medium text-slate-300">
+
+            <div class="grid sm:grid-cols-2 gap-4 pt-2">
+              <div class="bg-surface-elevated p-4 rounded border border-white/[0.04]">
+                <div class="font-mono text-[10px] text-slate-500 uppercase mb-1">THE PROBLEM</div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  Gold (XAU/USD) is notoriously volatile. Manual retail traders suffer catastrophic slippage, emotional drawdown, and account blowouts during high-impact US economic news spikes.
+                </p>
+              </div>
+
+              <div class="bg-surface-elevated p-4 rounded border border-white/[0.04]">
+                <div class="font-mono text-[10px] text-slate-500 uppercase mb-1">THE SOLUTION</div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  Algorithmic M5 momentum scalp triggers validated against M15 Point of Interest structures, paired with strict 1.0% dynamic capital stops and automated economic calendar blackouts.
+                </p>
+              </div>
+            </div>
+
+            <!-- Architecture Flowchart -->
+            <div class="bg-black/60 p-4 rounded border border-white/[0.06] font-mono text-xs">
+              <div class="text-slate-500 text-[10px] uppercase mb-2">SYSTEM ARCHITECTURE</div>
+              <div class="text-slate-300 text-[11px] leading-loose">
+                <span class="text-slate-400">EXNESS MT5 FEED</span>
+                <span class="text-slate-600"> &rarr; </span>
+                <span class="text-slate-300">M15 POI FILTER</span>
+                <span class="text-slate-600"> &rarr; </span>
+                <span class="text-slate-300">M5 MOMENTUM TRIGGER</span>
+                <span class="text-slate-600"> &rarr; </span>
+                <span class="text-emerald-400 font-semibold">1% DYNAMIC RISK GATE</span>
+                <span class="text-slate-600"> &rarr; </span>
+                <span class="text-slate-300">IDEMPOTENT MT5 ORDER</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Specs & Telemetry Column -->
+          <div class="space-y-4 flex flex-col justify-between bg-surface-elevated p-6 rounded border border-white/[0.04]">
+            <div>
+              <div class="font-mono text-[10px] text-slate-500 uppercase mb-3">VERIFIED TELEMETRY</div>
+              <div class="space-y-3 font-mono">
+                <div>
+                  <div class="text-2xl font-bold text-amber-400">75.0%</div>
+                  <div class="text-[11px] text-slate-400">Win Rate (18 Wins / 6 Losses)</div>
+                </div>
+                <div>
+                  <div class="text-sm font-semibold text-white">Exness #108821</div>
+                  <div class="text-[11px] text-slate-400">Forward-Tested Real Account Feed</div>
+                </div>
+                <div>
+                  <div class="text-sm font-semibold text-emerald-400">1.0% Hard Cap</div>
+                  <div class="text-[11px] text-slate-400">Max Loss Per Executed Trade</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-white/[0.06]">
+              <div class="font-mono text-[10px] text-slate-500 uppercase mb-2">TECHNOLOGIES</div>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="tech-pill">MQL5</span>
+                <span class="tech-pill">MetaTrader 5</span>
+                <span class="tech-pill">Python 3</span>
+                <span class="tech-pill">Exness API</span>
+              </div>
+              <a href="https://github.com/suhailahmed-dev/ZainForexAutoBot-MT5-Gold" target="_blank" rel="noopener" class="text-xs font-mono font-semibold text-amber-300 hover:text-white transition-colors flex items-center gap-1.5">
+                <span>INSPECT REPOSITORY</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SYSTEM 02: SOPHI Institutional Engine -->
+      <article class="sys-card p-8 rounded-lg mb-8 border border-white/[0.08]">
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-white/[0.06]">
+          <div class="flex items-center gap-3">
+            <span class="tech-pill text-cyan-400 border-cyan-500/30 bg-cyan-500/10">SYS // 02</span>
+            <span class="font-mono text-xs text-slate-500">CATEGORY: CRYPTO ASSET ARBITRAGE & QUANT</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 status-pulse"></span>
+            <span class="font-mono text-xs text-cyan-300">STATUS: VALIDATION / BINANCE TESTNET</span>
+          </div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-2 space-y-4">
+            <h3 class="font-display font-bold text-2xl text-white">
+              SOPHI — Multi-Asset Institutional Crypto Trading Engine
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              A high-frequency algorithmic execution platform streaming live market data across 8 major crypto pairs. Features multi-timeframe trend confirmation, non-linear position sizing, and automated emergency brakes to preserve trading capital.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-4 pt-2">
+              <div class="bg-surface-elevated p-4 rounded border border-white/[0.04]">
+                <div class="font-mono text-[10px] text-slate-500 uppercase mb-1">THE PROBLEM</div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  Crypto markets suffer from extreme flash crashes, exchange disconnections, and cascading stop-outs that drain automated bots without strict state recovery.
+                </p>
+              </div>
+
+              <div class="bg-surface-elevated p-4 rounded border border-white/[0.04]">
+                <div class="font-mono text-[10px] text-slate-500 uppercase mb-1">THE SOLUTION</div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  A hardened pipeline separating signals from execution. Incorporates funded challenge drawdown gates (4% max daily loss), persistent power loss monitoring, and idempotent SQLite state persistence.
+                </p>
+              </div>
+            </div>
+
+            <!-- Architecture Flowchart -->
+            <div class="bg-black/60 p-4 rounded border border-white/[0.06] font-mono text-xs">
+              <div class="text-slate-500 text-[10px] uppercase mb-2">SYSTEM ARCHITECTURE</div>
+              <div class="text-slate-300 text-[11px] leading-loose">
+                <span class="text-slate-400">BINANCE WEBSOCKETS</span>
+                <span class="text-slate-600"> &rarr; </span>
+                <span class="text-slate-300">CONFLUENCE ENGINE (EMA/RSI/ATR)</span>
+                <span class="text-slate-600"> &rarr; </span>
+                <span class="text-cyan-400 font-semibold">RISK GATE (DAILY 4% LIMIT)</span>
+                <span class="text-slate-600"> &rarr; </span>
+                <span class="text-slate-300">IDEMPOTENT EXECUTOR</span>
+                <span class="text-slate-600"> &rarr; </span>
+                <span class="text-slate-400">SQLITE STATE SYNC</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Specs & Telemetry Column -->
+          <div class="space-y-4 flex flex-col justify-between bg-surface-elevated p-6 rounded border border-white/[0.04]">
+            <div>
+              <div class="font-mono text-[10px] text-slate-500 uppercase mb-3">VERIFIED TELEMETRY</div>
+              <div class="space-y-3 font-mono">
+                <div>
+                  <div class="text-2xl font-bold text-cyan-400">14,323</div>
+                  <div class="text-[11px] text-slate-400">Real Trades Recorded in SQLite DB</div>
+                </div>
+                <div>
+                  <div class="text-sm font-semibold text-emerald-400">-1.37% Max Drawdown</div>
+                  <div class="text-[11px] text-slate-400">48-Hour Continuous Stress Test Passed</div>
+                </div>
+                <div>
+                  <div class="text-sm font-semibold text-white">8 Active Asset Pairs</div>
+                  <div class="text-[11px] text-slate-400">BTC, ETH, SOL, BNB, AVAX, XRP, ADA, DOGE</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-white/[0.06]">
+              <div class="font-mono text-[10px] text-slate-500 uppercase mb-2">TECHNOLOGIES</div>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="tech-pill">Python 3.11</span>
+                <span class="tech-pill">FastAPI</span>
+                <span class="tech-pill">AsyncIO</span>
+                <span class="tech-pill">Binance WS</span>
+                <span class="tech-pill">SQLite</span>
+                <span class="tech-pill">React 18</span>
+              </div>
+              <a href="https://github.com/suhailahmed-dev/Sophi-Trading-Bot" target="_blank" rel="noopener" class="text-xs font-mono font-semibold text-cyan-300 hover:text-white transition-colors flex items-center gap-1.5">
+                <span>INSPECT REPOSITORY</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SYSTEM 03: APEX Marketing AI Command Center -->
+      <article class="sys-card p-8 rounded-lg mb-8 border border-white/[0.08]">
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-white/[0.06]">
+          <div class="flex items-center gap-3">
+            <span class="tech-pill text-emerald-400 border-emerald-500/30 bg-emerald-500/10">SYS // 03</span>
+            <span class="font-mono text-xs text-slate-500">CATEGORY: MULTI-AGENT WORKFLOWS</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span class="font-mono text-xs text-emerald-400">STATUS: PRODUCTION DEPLOYED</span>
+          </div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-2 space-y-4">
+            <h3 class="font-display font-bold text-2xl text-white">
+              APEX — Autonomous 15-Agent Multi-Channel Marketing Hub
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              An autonomous multi-agent agency hub orchestrating 15 specialized AI roles. Ingests business parameters and generates targeted, platform-adapted copy, SEO strategies, and 30-day content roadmaps across 4 major social networks.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-4 pt-2">
+              <div class="bg-surface-elevated p-4 rounded border border-white/[0.04]">
+                <div class="font-mono text-[10px] text-slate-500 uppercase mb-1">THE PROBLEM</div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  Managing continuous content across multiple channels requires coordinating copywriters, SEO analysts, and ad strategists, leading to high human cost and slow turnaround.
+                </p>
+              </div>
+
+              <div class="bg-surface-elevated p-4 rounded border border-white/[0.04]">
+                <div class="font-mono text-[10px] text-slate-500 uppercase mb-1">THE SOLUTION</div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  A centralized agent orchestrator that breaks marketing generation into deterministic roles (VSL Writer, Ad Studio, Reels Hook Architect) with persistent SQLite storage.
+                </p>
+              </div>
+            </div>
+
+            <!-- Workflow Diagram -->
+            <div class="bg-black/60 p-4 rounded border border-white/[0.06] font-mono text-xs">
+              <div class="text-slate-500 text-[10px] uppercase mb-2">WORKFLOW ARCHITECTURE</div>
+              <div class="text-slate-300 text-[11px] leading-loose">
+                <span class="text-slate-400">CAMPAIGN INPUT</span>
+                <span class="text-slate-600"> &rarr; </span>
+                <span class="text-emerald-400 font-semibold">15 SPECIALIZED AGENTS</span>
+                <span class="text-slate-600"> &rarr; </span>
+                <span class="text-slate-300">PLATFORM ADAPTATION</span>
+                <span class="text-slate-600"> &rarr; </span>
+                <span class="text-slate-300">SQLITE ARCHIVE</span>
+                <span class="text-slate-600"> &rarr; </span>
+                <span class="text-slate-400">DISPATCH TO IG / FB / LI / X</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Specs & Telemetry Column -->
+          <div class="space-y-4 flex flex-col justify-between bg-surface-elevated p-6 rounded border border-white/[0.04]">
+            <div>
+              <div class="font-mono text-[10px] text-slate-500 uppercase mb-3">SYSTEM CAPABILITIES</div>
+              <div class="space-y-3 font-mono">
+                <div>
+                  <div class="text-2xl font-bold text-white">15 Roles</div>
+                  <div class="text-[11px] text-slate-400">Autonomous Specialized Agents</div>
+                </div>
+                <div>
+                  <div class="text-sm font-semibold text-emerald-400">4 Platforms</div>
+                  <div class="text-[11px] text-slate-400">Instagram, Facebook, LinkedIn, X</div>
+                </div>
+                <div>
+                  <div class="text-sm font-semibold text-white">Zero Cliché Guard</div>
+                  <div class="text-[11px] text-slate-400">Enforces High-Conversion Hook Formulas</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-white/[0.06]">
+              <div class="font-mono text-[10px] text-slate-500 uppercase mb-2">TECHNOLOGIES</div>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="tech-pill">Python 3</span>
+                <span class="tech-pill">Gemini 2.0</span>
+                <span class="tech-pill">SQLite</span>
+                <span class="tech-pill">AsyncIO</span>
+                <span class="tech-pill">Cloudflare</span>
+              </div>
+              <a href="https://github.com/suhailahmed-dev/APEX-Marketing-AI-CommandCenter" target="_blank" rel="noopener" class="text-xs font-mono font-semibold text-emerald-400 hover:text-white transition-colors flex items-center gap-1.5">
+                <span>INSPECT REPOSITORY</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SYSTEM 04: Faceless Video Autopilot -->
+      <article class="sys-card p-8 rounded-lg mb-8 border border-white/[0.08]">
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-white/[0.06]">
+          <div class="flex items-center gap-3">
+            <span class="tech-pill text-purple-400 border-purple-500/30 bg-purple-500/10">SYS // 04</span>
+            <span class="font-mono text-xs text-slate-500">CATEGORY: CONTENT AUTOMATION PIPELINE</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span class="font-mono text-xs text-emerald-400">STATUS: PRODUCTION DEPLOYED</span>
+          </div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-2 space-y-4">
+            <h3 class="font-display font-bold text-2xl text-white">
+              Faceless Video Autopilot — 4-Platform Autonomous Media Studio
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              A zero-touch autonomous video pipeline that ingests topical ideas, writes viral retention scripts, synthesizes 24kHz neural speech, renders 60FPS video with word-by-word kinetic subtitles, and publishes headlessly to TikTok and Shorts.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-4 pt-2">
+              <div class="bg-surface-elevated p-4 rounded border border-white/[0.04]">
+                <div class="font-mono text-[10px] text-slate-500 uppercase mb-1">THE PROBLEM</div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  Creating and editing vertical video manually takes hours per clip (recording voice, syncing subtitles, rendering, and manual web uploading).
+                </p>
+              </div>
+
+              <div class="bg-surface-elevated p-4 rounded border border-white/[0.04]">
+                <div class="font-mono text-[10px] text-slate-500 uppercase mb-1">THE SOLUTION</div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  End-to-end programmatic media composition using FFmpeg hardware-accelerated filters, edge neural voice synthesis, and headless browser automation.
+                </p>
+              </div>
+            </div>
+
+            <!-- Workflow Diagram -->
+            <div class="bg-black/60 p-4 rounded border border-white/[0.06] font-mono text-xs">
+              <div class="text-slate-500 text-[10px] uppercase mb-2">PIPELINE WORKFLOW</div>
+              <div class="text-slate-300 text-[11px] leading-loose">
+                <span class="text-slate-400">TOPIC HOOK</span>
+                <span class="text-slate-600"> &rarr; </span>
+                <span class="text-slate-300">RETENTION SCRIPTING</span>
+                <span class="text-slate-600"> &rarr; </span>
+                <span class="text-purple-400 font-semibold">24kHz NEURAL TTS</span>
+                <span class="text-slate-600"> &rarr; </span>
+                <span class="text-slate-300">FFMPEG 60FPS SUBTITLE COMPOSITOR</span>
+                <span class="text-slate-600"> &rarr; </span>
+                <span class="text-emerald-400">HEADLESS UPLOAD TO 4 PLATFORMS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Specs & Telemetry Column -->
+          <div class="space-y-4 flex flex-col justify-between bg-surface-elevated p-6 rounded border border-white/[0.04]">
+            <div>
+              <div class="font-mono text-[10px] text-slate-500 uppercase mb-3">SYSTEM CAPABILITIES</div>
+              <div class="space-y-3 font-mono">
+                <div>
+                  <div class="text-2xl font-bold text-white">Zero Touch</div>
+                  <div class="text-[11px] text-slate-400">Idea to Published Video with 0 Clicks</div>
+                </div>
+                <div>
+                  <div class="text-sm font-semibold text-purple-400">Multi-Lingual Voice</div>
+                  <div class="text-[11px] text-slate-400">Natural Urdu, Roman Urdu & English</div>
+                </div>
+                <div>
+                  <div class="text-sm font-semibold text-white">Kinetic Subtitles</div>
+                  <div class="text-[11px] text-slate-400">Frame-Perfect Word Highlighting</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-white/[0.06]">
+              <div class="font-mono text-[10px] text-slate-500 uppercase mb-2">TECHNOLOGIES</div>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="tech-pill">Python 3</span>
+                <span class="tech-pill">FFmpeg</span>
+                <span class="tech-pill">Edge-TTS</span>
+                <span class="tech-pill">Playwright</span>
+                <span class="tech-pill">Meta API</span>
+              </div>
+              <a href="https://github.com/suhailahmed-dev/Faceless-Video-Autopilot" target="_blank" rel="noopener" class="text-xs font-mono font-semibold text-purple-400 hover:text-white transition-colors flex items-center gap-1.5">
+                <span>INSPECT REPOSITORY</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SYSTEM 05: SiteSeller Lead Generation & Outreach -->
+      <article class="sys-card p-8 rounded-lg mb-8 border border-white/[0.08]">
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-white/[0.06]">
+          <div class="flex items-center gap-3">
+            <span class="tech-pill text-blue-400 border-blue-500/30 bg-blue-500/10">SYS // 05</span>
+            <span class="font-mono text-xs text-slate-500">CATEGORY: DATA EXTRACTION & CLIENT ACQUISITION</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span class="font-mono text-xs text-emerald-400">STATUS: PRODUCTION OPERATIONAL</span>
+          </div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-2 space-y-4">
+            <h3 class="font-display font-bold text-2xl text-white">
+              SiteSeller — Autonomous Lead Discovery & Outreach Engine
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              An autonomous client acquisition engine that discovers high-intent local businesses lacking an active web presence, dynamically builds tailored landing page demos for each prospect, and crafts personalized direct WhatsApp & email outreach.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-4 pt-2">
+              <div class="bg-surface-elevated p-4 rounded border border-white/[0.04]">
+                <div class="font-mono text-[10px] text-slate-500 uppercase mb-1">THE PROBLEM</div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  Cold outreach for digital agencies typically relies on generic, low-converting messages. Agency founders waste dozens of hours pitching without tangible proof of value.
+                </p>
+              </div>
+
+              <div class="bg-surface-elevated p-4 rounded border border-white/[0.04]">
+                <div class="font-mono text-[10px] text-slate-500 uppercase mb-1">THE SOLUTION</div>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  Automated value-first outreach: The system extracts verified business data, generates a completed interactive website for that specific brand, and pitches with a working live preview link.
+                </p>
+              </div>
+            </div>
+
+            <!-- Workflow Diagram -->
+            <div class="bg-black/60 p-4 rounded border border-white/[0.06] font-mono text-xs">
+              <div class="text-slate-500 text-[10px] uppercase mb-2">WORKFLOW ARCHITECTURE</div>
+              <div class="text-slate-300 text-[11px] leading-loose">
+                <span class="text-slate-400">NICHE & LOCATION</span>
+                <span class="text-slate-600"> &rarr; </span>
+                <span class="text-slate-300">MAPS DISCOVERY</span>
+                <span class="text-slate-600"> &rarr; </span>
+                <span class="text-slate-300">QUALIFICATION (NO-SITE FILTER)</span>
+                <span class="text-slate-600"> &rarr; </span>
+                <span class="text-blue-400 font-semibold">AUTO-DEMO BUILDER</span>
+                <span class="text-slate-600"> &rarr; </span>
+                <span class="text-emerald-400">WHATSAPP OUTREACH DISPATCH</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Specs & Telemetry Column -->
+          <div class="space-y-4 flex flex-col justify-between bg-surface-elevated p-6 rounded border border-white/[0.04]">
+            <div>
+              <div class="font-mono text-[10px] text-slate-500 uppercase mb-3">SYSTEM CAPABILITIES</div>
+              <div class="space-y-3 font-mono">
+                <div>
+                  <div class="text-2xl font-bold text-white">Zero Cold Friction</div>
+                  <div class="text-[11px] text-slate-400">Value-First Live Demo Previews</div>
+                </div>
+                <div>
+                  <div class="text-sm font-semibold text-blue-400">Multi-Region Search</div>
+                  <div class="text-[11px] text-slate-400">UAE, US, UK, Australia, Pakistan</div>
+                </div>
+                <div>
+                  <div class="text-sm font-semibold text-white">Deal Tracking Funnel</div>
+                  <div class="text-[11px] text-slate-400">Real-Time Stage & Revenue Tracking</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-white/[0.06]">
+              <div class="font-mono text-[10px] text-slate-500 uppercase mb-2">TECHNOLOGIES</div>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="tech-pill">Node.js</span>
+                <span class="tech-pill">Express</span>
+                <span class="tech-pill">Google Places</span>
+                <span class="tech-pill">Tailwind CSS</span>
+                <span class="tech-pill">Cloudflare</span>
+              </div>
+              <div class="text-xs font-mono text-slate-500">
+                PROPRIETARY ACQUISITION CORE
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Section: Engineering Lessons & Case Studies -->
+    <section id="case-studies" class="mb-24 scroll-mt-24">
+      <div class="mb-8 pb-4 border-b border-white/[0.08] flex items-end justify-between">
+        <div>
+          <span class="font-mono text-[11px] text-slate-500 uppercase tracking-wider block mb-1">02 // FIELD INSIGHTS</span>
+          <h2 class="font-display font-bold text-2xl text-white uppercase tracking-tight">Engineering Case Studies</h2>
+        </div>
+        <div class="font-mono text-xs text-slate-500">
+          LESSONS FROM PRODUCTION
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Case Study 01 -->
+        <div class="sys-card p-6 rounded border border-white/[0.08]">
+          <div class="flex items-center justify-between mb-3">
+            <span class="tech-pill text-amber-400 border-amber-500/20 bg-amber-500/5">CASE // 01</span>
+            <span class="font-mono text-[11px] text-slate-500">TRADING RUNTIME</span>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">
+            Eliminating Catastrophic Drawdown in Live Algorithmic Execution
+          </h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            During early forward testing, volatile market spikes exposed that simple technical signals alone are vulnerable without hard infrastructure-level risk controls.
+          </p>
+          <div class="space-y-2 border-t border-white/[0.06] pt-3 text-xs">
+            <div>
+              <span class="font-mono text-slate-500">ENGINEERING DECISION: </span>
+              <span class="text-slate-300">Decoupled signal calculation from order dispatch. Implemented an asynchronous pre-flight validator enforcing a 1.0% hard equity stop and economic news blackout before an order can touch the broker API.</span>
+            </div>
+            <div>
+              <span class="font-mono text-slate-500">OUTCOME: </span>
+              <span class="text-emerald-400 font-semibold">Zero account breaches during high-impact US CPI releases; achieved 75% verified win rate across 24 forward trades.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case Study 02 -->
+        <div class="sys-card p-6 rounded border border-white/[0.08]">
+          <div class="flex items-center justify-between mb-3">
+            <span class="tech-pill text-cyan-400 border-cyan-500/20 bg-cyan-500/5">CASE // 02</span>
+            <span class="font-mono text-[11px] text-slate-500">RESILIENCE & RECOVERY</span>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">
+            Surviving Power Loss & WebSocket Drops with Zero State Corruption
+          </h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Running 48-hour continuous testnet trading bots locally means that unexpected hardware power cuts or network hiccups can cause orphaned orders or duplicate executions.
+          </p>
+          <div class="space-y-2 border-t border-white/[0.06] pt-3 text-xs">
+            <div>
+              <span class="font-mono text-slate-500">ENGINEERING DECISION: </span>
+              <span class="text-slate-300">Engineered a persistent SQLite idempotency barrier with a background PowerGuard monitor that validates pre-flight state integrity before reconnecting to exchange WebSockets.</span>
+            </div>
+            <div>
+              <span class="font-mono text-slate-500">OUTCOME: </span>
+              <span class="text-cyan-300 font-semibold">Completed 48-hour soak audit with zero crashes, preserving 98.63% capital with -1.37% maximum drawdown.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Technical Stack (Grouped by Function) -->
+    <section id="stack" class="mb-24 scroll-mt-24">
+      <div class="mb-8 pb-4 border-b border-white/[0.08] flex items-end justify-between">
+        <div>
+          <span class="font-mono text-[11px] text-slate-500 uppercase tracking-wider block mb-1">03 // COMPETENCIES</span>
+          <h2 class="font-display font-bold text-2xl text-white uppercase tracking-tight">Functional Technical Stack</h2>
+        </div>
+        <div class="font-mono text-xs text-slate-500">
+          PROVEN IN PRODUCTION
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.08] border border-white/[0.08]">
+        <div class="bg-surface p-6">
+          <div class="font-mono text-xs font-bold text-emerald-400 uppercase mb-3">AI & AGENT WORKFLOWS</div>
+          <ul class="space-y-2 text-xs font-mono text-slate-300">
+            <li>• Google Gemini 2.0 API</li>
+            <li>• Multi-Agent Systems</li>
+            <li>• Structured Output Pipelines</li>
+            <li>• Heuristic Guardrails</li>
+            <li>• Neural TTS Synthesis</li>
+          </ul>
+        </div>
+
+        <div class="bg-surface p-6">
+          <div class="font-mono text-xs font-bold text-amber-400 uppercase mb-3">TRADING & FINTECH</div>
+          <ul class="space-y-2 text-xs font-mono text-slate-300">
+            <li>• MetaTrader 5 (MQL5)</li>
+            <li>• Binance WebSockets & REST</li>
+            <li>• Risk Management Hard Gates</li>
+            <li>• Confluence Strategy Engines</li>
+            <li>• Idempotent Order Dispatch</li>
+          </ul>
+        </div>
+
+        <div class="bg-surface p-6">
+          <div class="font-mono text-xs font-bold text-cyan-400 uppercase mb-3">AUTOMATION & BACKEND</div>
+          <ul class="space-y-2 text-xs font-mono text-slate-300">
+            <li>• Python 3.11 (AsyncIO, FastAPI)</li>
+            <li>• Playwright Headless Browser</li>
+            <li>• FFmpeg 60FPS Video Processing</li>
+            <li>• Node.js & Express</li>
+            <li>• SQLite & Alembic Migrations</li>
+          </ul>
+        </div>
+
+        <div class="bg-surface p-6">
+          <div class="font-mono text-xs font-bold text-purple-400 uppercase mb-3">CLIENT & INTERFACES</div>
+          <ul class="space-y-2 text-xs font-mono text-slate-300">
+            <li>• Modern JavaScript / TypeScript</li>
+            <li>• Tailwind CSS Design Systems</li>
+            <li>• React 18 Dashboards</li>
+            <li>• Cloudflare Tunnel Networking</li>
+            <li>• Git & GitHub Version Control</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: About The Engineer -->
+    <section id="about" class="mb-24 scroll-mt-24">
+      <div class="sys-card p-8 sm:p-12 rounded-lg border border-white/[0.08]">
+        <div class="grid md:grid-cols-3 gap-8 items-center">
+          <div class="flex flex-col items-center text-center">
+            <div class="w-32 h-32 rounded-lg overflow-hidden border border-white/10 p-1 bg-surface-elevated mb-4">
+              <img src="assets/suhail_profile.jpg" alt="Suhail Ahmed" class="w-full h-full object-cover rounded">
+            </div>
+            <h3 class="font-display font-bold text-white text-lg">Suhail Ahmed</h3>
+            <div class="font-mono text-xs text-slate-500">Hyderabad, Pakistan</div>
+            <div class="font-mono text-[11px] text-emerald-400 mt-1">BS in Information Technology</div>
+          </div>
+
+          <div class="md:col-span-2 space-y-4">
+            <div class="font-mono text-xs text-slate-500 uppercase">04 // ABOUT THE ENGINEER</div>
+            <h4 class="font-display font-bold text-2xl text-white uppercase tracking-tight">
+              I build autonomous software.
+            </h4>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              I am an AI Systems Engineer and BS-IT graduate focused on developing autonomous architectures that operate continuously without human intervention.
+            </p>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              My engineering philosophy is simple: write robust, self-healing code that respects capital and operational constraints. Whether it's managing risk in live financial markets or executing multi-step business pipelines headlessly, I engineer for reliability, deterministic execution, and verifiable outcomes.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-3 pt-3 font-mono text-xs text-slate-300">
               <div class="flex items-center gap-2">
-                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i>
-                <span>Available for Full-Time Remote Roles</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                <span>Async-First & Self-Sufficient</span>
               </div>
               <div class="flex items-center gap-2">
-                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i>
-                <span>Full EST, GMT & Asia Timezone Overlap</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                <span>Full Timezone Flexibility (EST / GMT)</span>
               </div>
               <div class="flex items-center gap-2">
-                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i>
-                <span>Clean Code & Clear Git Commits</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                <span>Clean Commits & Documentation</span>
               </div>
               <div class="flex items-center gap-2">
-                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i>
-                <span>Fast & Direct Communication</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                <span>Zero Hallucination Tolerance</span>
               </div>
             </div>
           </div>
@@ -583,122 +918,63 @@
       </div>
     </section>
 
-    <!-- Section: Contact & Direct Hire (Simple, No Friction) -->
-    <section id="contact" class="scroll-mt-28 text-center max-w-2xl mx-auto mb-16">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono mb-4">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
-        <span>READY FOR WORK</span>
+    <!-- Section: Contact & Direct Engineering Engagement -->
+    <section id="contact" class="scroll-mt-24 mb-16 text-center max-w-2xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-surface border border-white/[0.08] font-mono text-xs text-slate-400 mb-6">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 status-pulse"></span>
+        <span>AVAILABLE FOR REMOTE ENGINEERING ROLES</span>
       </div>
-      <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white mb-4 tracking-tight">
-        Let's build something exceptional together.
+
+      <h2 class="font-display font-bold text-3xl sm:text-4xl text-white mb-4 uppercase tracking-tight">
+        Initiate System Collaboration
       </h2>
+
       <p class="text-slate-400 text-sm leading-relaxed mb-8">
-        Looking for a dedicated engineer who can take full ownership of autonomous AI pipelines or algorithmic trading systems? Reach out directly.
+        Looking for an engineer to architect autonomous AI workflows, live algorithmic trading safeguards, or high-throughput automation pipelines? Reach out directly.
       </p>
 
       <div class="flex flex-wrap items-center justify-center gap-4">
         <!-- Direct WhatsApp -->
-        <a href="https://wa.me/923093174020?text=Hello%20Suhail,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener" class="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-sm px-6 py-3.5 rounded-full flex items-center gap-2 transition-all shadow-xl shadow-emerald-500/20 hover:scale-105 active:scale-95">
-          <i data-lucide="message-circle" class="w-4 h-4"></i>
-          <span>Chat on WhatsApp</span>
+        <a href="https://wa.me/923093174020?text=Hello%20Suhail,%20I%20reviewed%20your%20autonomous%20systems%20and%20would%20like%20to%20discuss%20an%20engineering%20role" target="_blank" rel="noopener" class="bg-white text-black hover:bg-slate-200 font-mono text-xs font-semibold px-6 py-3 rounded transition-all flex items-center gap-2">
+          <i data-lucide="message-square" class="w-4 h-4"></i>
+          <span>WHATSAPP: +92 309 3174020</span>
         </a>
 
         <!-- Direct Email -->
-        <a href="mailto:sohailbuledi84@gmail.com" class="glass-card hover:bg-slate-800/80 text-white font-medium text-sm px-6 py-3.5 rounded-full flex items-center gap-2 transition-all hover:scale-105 active:scale-95">
-          <i data-lucide="mail" class="w-4 h-4 text-slate-300"></i>
+        <a href="mailto:sohailbuledi84@gmail.com" class="sys-card hover:bg-surface-elevated text-slate-300 hover:text-white font-mono text-xs px-6 py-3 rounded transition-all flex items-center gap-2">
+          <i data-lucide="mail" class="w-4 h-4 text-slate-400"></i>
           <span>sohailbuledi84@gmail.com</span>
         </a>
 
         <!-- GitHub -->
-        <a href="https://github.com/suhailahmed-dev" target="_blank" rel="noopener" class="glass-card hover:bg-slate-800/80 text-white font-medium text-sm px-5 py-3.5 rounded-full flex items-center gap-2 transition-all hover:scale-105 active:scale-95">
+        <a href="https://github.com/suhailahmed-dev" target="_blank" rel="noopener" class="sys-card hover:bg-surface-elevated text-slate-300 hover:text-white font-mono text-xs px-5 py-3 rounded transition-all flex items-center gap-2">
           <i data-lucide="github" class="w-4 h-4"></i>
-          <span>GitHub</span>
+          <span>GITHUB</span>
         </a>
       </div>
     </section>
+
   </main>
 
-  <!-- Clean Minimalist Footer -->
-  <footer class="border-t border-slate-800/80 py-8 relative z-10 text-center text-xs text-slate-500">
-    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div>© 2026 Suhail Ahmed Buledi • Engineered for Performance</div>
-      <div class="flex items-center gap-4 font-mono text-[11px]">
-        <span>Available for Remote Opportunities</span>
+  <!-- Technical Engineering Footer -->
+  <footer class="border-t border-white/[0.08] py-8 relative z-10 bg-[#07080b]">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-slate-500">
+      <div>
+        <span>SUHAIL AHMED BULEDI</span>
+        <span class="mx-2">•</span>
+        <span>AUTONOMOUS SYSTEMS ARCHITECT</span>
+      </div>
+      <div class="flex items-center gap-4 text-[11px]">
+        <span>ALL SYSTEMS OPERATIONAL</span>
         <span>•</span>
-        <a href="#" class="text-slate-400 hover:text-white transition-colors">Back to top ↑</a>
+        <a href="#" class="text-slate-400 hover:text-white transition-colors">TOP &uarr;</a>
       </div>
     </div>
   </footer>
 
   <script>
-    // Initialize Lucide icons
+    // Initialize Lucide Icons
     lucide.createIcons();
-
-    // Telemetry Tab Switcher
-    const telemetryData = {
-      zain: `
-        <div class="flex items-center justify-between text-slate-500 mb-3 pb-2 border-b border-slate-800">
-          <span>SYSTEM: ZainForexAutoBot-MT5 [XAU/USD]</span>
-          <span class="text-amber-400 font-semibold">STATUS: LIVE TESTING</span>
-        </div>
-        <p class="text-slate-400">[MT5:Exness-Real108821] Connected to broker feed. Spread: 1.2 pips.</p>
-        <p class="text-slate-400">[REGIME-CHECK] M15 Structure: Bullish Order Block detected at $2,641.80.</p>
-        <p class="text-emerald-400 font-semibold">[SIGNAL-EXEC] M5 Momentum Confluence triggered &rarr; BUY XAU/USD 0.05 Lots.</p>
-        <p class="text-slate-400">[RISK-GATE] Dynamic 1% capital stop applied at $2,638.10. TP Target: $2,648.50.</p>
-        <p class="text-amber-300 font-semibold mt-2">[PERFORMANCE] 24 Real Trades Logged | 18 Wins / 6 Losses &rarr; Verified 75.0% Win Rate.</p>
-      `,
-      sophi: `
-        <div class="flex items-center justify-between text-slate-500 mb-3 pb-2 border-b border-slate-800">
-          <span>SYSTEM: SOPHI Institutional Engine [Binance Testnet]</span>
-          <span class="text-cyan-400 font-semibold">STATUS: LIVE TESTING</span>
-        </div>
-        <p class="text-slate-400">[WEBSOCKET] Streaming 8 Pairs: BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, AVAXUSDT...</p>
-        <p class="text-slate-400">[AUDIT-LOG] 48-Hour continuous soak completed: 0 system crashes logged.</p>
-        <p class="text-cyan-300 font-semibold">[DRAWDOWN-GUARD] Maximum Drawdown strictly capped at -1.37% (98.63% capital preserved).</p>
-        <p class="text-slate-400">[RISK-GATEWAY] Funded Challenge constraints active: 4% Max Daily Loss circuit breaker.</p>
-        <p class="text-emerald-400 font-semibold mt-2">[TELEMETRY] 14,323 Real Executed Trades persistent in SQLite database.</p>
-      `,
-      apex: `
-        <div class="flex items-center justify-between text-slate-500 mb-3 pb-2 border-b border-slate-800">
-          <span>SYSTEM: APEX Marketing AI [Command Center]</span>
-          <span class="text-emerald-400 font-semibold">STATUS: READY & DEPLOYED</span>
-        </div>
-        <p class="text-slate-400">[AGENT-DISPATCH] 15 AI Specialized Agents standing by (SEO, Ad Copy, Hooks, VSL).</p>
-        <p class="text-slate-400">[CAMPAIGN-GEN] Generating cross-platform roadmap for SaaS B2B Client...</p>
-        <p class="text-emerald-400 font-semibold">[OUTPUT] Created 30 Instagram Reels hooks, 10 LinkedIn Carousels, 15 X/Twitter threads.</p>
-        <p class="text-slate-400">[DATABASE] SQLite project persistence updated. Response latency: 1.4s.</p>
-      `,
-      video: `
-        <div class="flex items-center justify-between text-slate-500 mb-3 pb-2 border-b border-slate-800">
-          <span>SYSTEM: Faceless Video Autopilot [Zero-Touch Studio]</span>
-          <span class="text-emerald-400 font-semibold">STATUS: READY & DEPLOYED</span>
-        </div>
-        <p class="text-slate-400">[PIPELINE] Autonomous script synthesis completed with viral retention curve.</p>
-        <p class="text-slate-400">[VOICE-ENGINE] Neural TTS 24kHz synthesized in Roman Urdu & English.</p>
-        <p class="text-slate-400">[FFMPEG-ENGINE] 60FPS video rendered with kinetic burn-in word-by-word subtitles.</p>
-        <p class="text-emerald-400 font-semibold mt-2">[HEADLESS-UPLOADER] Published autonomously to TikTok & YouTube Shorts with zero clicks.</p>
-      `
-    };
-
-    function switchTab(tab) {
-      document.getElementById('telemetry-content').innerHTML = telemetryData[tab];
-      
-      const tabs = ['zain', 'sophi', 'apex', 'video'];
-      tabs.forEach(t => {
-        const el = document.getElementById('tab-' + t);
-        if (t === tab) {
-          if (t === 'zain') {
-            el.className = 'px-4 py-2 rounded-xl text-xs font-mono font-medium transition-all bg-amber-500/20 text-amber-300 border border-amber-500/40';
-          } else if (t === 'sophi') {
-            el.className = 'px-4 py-2 rounded-xl text-xs font-mono font-medium transition-all bg-cyan-500/20 text-cyan-300 border border-cyan-500/40';
-          } else {
-            el.className = 'px-4 py-2 rounded-xl text-xs font-mono font-medium transition-all bg-emerald-500/20 text-emerald-300 border border-emerald-500/40';
-          }
-        } else {
-          el.className = 'px-4 py-2 rounded-xl text-xs font-mono font-medium transition-all text-slate-400 hover:text-white hover:bg-slate-800/60 border border-transparent';
-        }
-      });
-    }
   </script>
 </body>
 </html>
