@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sohail Ahmed Buledi | The Interactive Train Portfolio & Systems Architect</title>
-  <meta name="description" content="The interactive train-themed portfolio of Sohail Ahmed Buledi — Web Developer, Algorithmic Systems Engineer & IT Instructor. Featuring live SVG physics, Forex AutoBot & Sophi trading systems.">
+  <title>Sohail Ahmed Buledi | Systems Architect, Algo Engineer & IT Instructor</title>
+  <meta name="description" content="Interactive train-themed portfolio of Sohail Ahmed Buledi. Featuring verified live metrics for ZainForexAutoBot (75% Win Rate), Sophi Quant Bot (14,323 trades), APEX Marketing AI Agent, and full-stack systems.">
   <meta name="author" content="Sohail Ahmed Buledi">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Sohail Ahmed Buledi — The Interactive Train-Themed Portfolio">
-  <meta property="og:description" content="I build the systems, so your business enjoys the ride. Full-Stack Web Development, Algorithmic Forex Trading Bots & AI Agents.">
+  <meta property="og:title" content="Sohail Ahmed Buledi — The Interactive Train Portfolio & Systems Architect">
+  <meta property="og:description" content="I build the systems, so your business enjoys the ride. Full-Stack Web Development, High-Frequency MT5 Bots, Quantitative Engines & AI Agents.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://suhailahmed-dev.github.io/portfolio/">
 
@@ -65,7 +65,7 @@
   </script>
 
   <style>
-    /* Base Daylight Theme (Matching the viral reel) */
+    /* Base Daylight Theme */
     body {
       background-color: #faf8f5;
       color: #1c1917;
@@ -75,7 +75,7 @@
       transition: background-color 0.4s ease, color 0.4s ease;
     }
 
-    /* Subtle graph paper grid overlay */
+    /* Architectural Paper Grid */
     .paper-grid {
       background-size: 36px 36px;
       background-image: 
@@ -94,17 +94,17 @@
         linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
     }
     body.twilight header {
-      background-color: rgba(11, 15, 25, 0.92);
+      background-color: rgba(11, 15, 25, 0.94);
       border-color: #1f2937;
     }
     body.twilight .station-card {
-      background-color: #111827;
-      border-color: #1f2937;
-      color: #f3f4f6;
+      background-color: #111827 !important;
+      border-color: #1f2937 !important;
+      color: #f3f4f6 !important;
     }
     body.twilight .station-card:hover {
-      border-color: #10b981;
-      box-shadow: 0 14px 28px rgba(16, 185, 129, 0.15);
+      border-color: #10b981 !important;
+      box-shadow: 0 16px 32px rgba(16, 185, 129, 0.18) !important;
     }
     body.twilight .bg-white {
       background-color: #111827 !important;
@@ -126,10 +126,10 @@
       border-color: #1f2937 !important;
     }
 
-    /* Floating shapes animations */
+    /* Floating shapes */
     @keyframes floatSlow {
       0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-8px) rotate(3deg); }
+      50% { transform: translateY(-9px) rotate(3deg); }
     }
     @keyframes spinSlow {
       0% { transform: rotate(0deg); }
@@ -142,37 +142,61 @@
       animation: spinSlow 24s linear infinite;
     }
 
-    /* Station Card standard */
+    /* Ticker Marquee Animation */
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .ticker-track {
+      display: flex;
+      width: 200%;
+      animation: ticker 32s linear infinite;
+    }
+    .ticker-track:hover {
+      animation-play-state: paused;
+    }
+
+    /* Animated Curve Drawing */
+    @keyframes dash {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+    .animate-draw {
+      stroke-dasharray: 400;
+      stroke-dashoffset: 400;
+      animation: dash 2.4s ease-out forwards;
+    }
+
+    /* Glowing Pulse */
+    @keyframes glowPulse {
+      0%, 100% { filter: drop-shadow(0 0 4px rgba(16, 185, 129, 0.4)); }
+      50% { filter: drop-shadow(0 0 12px rgba(16, 185, 129, 0.8)); }
+    }
+    .glow-pulse {
+      animation: glowPulse 2.5s infinite ease-in-out;
+    }
+
+    /* Station Card */
     .station-card {
       background: #ffffff;
       border: 1px solid #e8e2d8;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.025);
-      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .station-card:hover {
       border-color: #1e784f;
-      transform: translateY(-3px);
-      box-shadow: 0 14px 28px rgba(30, 120, 79, 0.09);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(30, 120, 79, 0.12);
     }
 
-    /* 3D Train letter block effect */
-    .train-block {
-      filter: drop-shadow(0 3px 2px rgba(0,0,0,0.22));
-    }
-
-    /* Pulse dot */
+    /* Pulse Dot */
     @keyframes pulseGreen {
       0%, 100% { transform: scale(1); opacity: 1; }
       50% { transform: scale(1.35); opacity: 0.45; }
     }
     .pulse-dot {
       animation: pulseGreen 1.8s infinite ease-in-out;
-    }
-
-    /* Smoke particle styling */
-    .steam-puff {
-      pointer-events: none;
-      transition: opacity 0.1s ease;
     }
   </style>
 </head>
@@ -185,7 +209,7 @@
   <header class="fixed top-0 inset-x-0 z-50 bg-[#faf8f5]/92 backdrop-blur-md border-b border-paper-border transition-colors">
     <div class="max-w-6xl mx-auto px-5 h-15 flex items-center justify-between">
       
-      <!-- Brand Logo: Red badge 'S' with editorial serif 'Sohail.' -->
+      <!-- Brand Logo: Red square with 'S' and editorial serif 'Sohail.' -->
       <a href="#" class="flex items-center gap-2.5 group">
         <div class="w-7 h-7 rounded-md bg-[#e11d48] text-white flex items-center justify-center font-bold text-xs shadow-sm group-hover:scale-105 transition-transform">
           S
@@ -195,8 +219,10 @@
 
       <!-- Station Navigation Links -->
       <nav class="hidden md:flex items-center gap-6 text-xs font-mono text-ink-muted">
-        <a href="#work" class="hover:text-ink hover:font-semibold transition-all">01 Work</a>
-        <a href="#quant" class="hover:text-ink hover:font-semibold transition-all">02 Algo Systems</a>
+        <a href="#quant" class="hover:text-amber-600 font-semibold transition-all flex items-center gap-1">
+          <span class="text-amber-500">★</span> 01 Algo &amp; Quant
+        </a>
+        <a href="#work" class="hover:text-ink hover:font-semibold transition-all">02 Web &amp; AI Systems</a>
         <a href="#about" class="hover:text-ink hover:font-semibold transition-all">03 About</a>
         <a href="#skills" class="hover:text-ink hover:font-semibold transition-all">04 Rail Yard</a>
         <a href="#contact" class="hover:text-ink hover:font-semibold transition-all">05 Boarding Pass</a>
@@ -216,11 +242,11 @@
         <!-- Status Indicator -->
         <div class="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded-full bg-white border border-paper-border text-[11px] font-mono text-ink-muted shadow-2xs">
           <span class="w-2 h-2 rounded-full bg-emerald-500 pulse-dot"></span>
-          <span>OPEN TO ROLES</span>
+          <span>OPEN FOR CONTRACTS</span>
         </div>
 
-        <!-- Distinctive Black Pill Button with Yellow Arrow (From Reel) -->
-        <a href="https://wa.me/923093174020?text=Hello%20Sohail,%20I%20saw%20your%20train%20portfolio%20and%20would%20like%20to%20discuss%20a%20project" 
+        <!-- Distinctive Black Pill Button with Yellow Arrow -->
+        <a href="https://wa.me/923093174020?text=Hello%20Sohail,%20I%20saw%20your%20algo%20trading%20and%20web%20portfolio%20and%20would%20like%20to%20discuss%20a%20project" 
            target="_blank" 
            rel="noopener" 
            class="bg-ink hover:bg-black text-white text-xs font-semibold px-3.5 py-1.5 rounded-full flex items-center gap-2 transition-all shadow-sm group">
@@ -234,55 +260,117 @@
     </div>
   </header>
 
-  <!-- MAIN HERO STAGE (Elevated Train Placement — Front & Center Above the Fold!) -->
-  <main class="relative z-10 pt-16 sm:pt-20">
+  <!-- LIVE TELEMETRY TICKER MARQUEE -->
+  <div class="fixed top-15 inset-x-0 z-40 bg-zinc-900 text-amber-300 text-[11px] font-mono py-1 overflow-hidden border-b border-zinc-800 shadow-sm pointer-events-auto">
+    <div class="ticker-track flex items-center whitespace-nowrap">
+      <span class="mx-4">⚡ ZAINFOREXAUTOBOT: <span class="text-emerald-400 font-bold">75.0% VERIFIED WIN RATE</span></span>
+      <span class="mx-4 text-zinc-500">&bull;</span>
+      <span class="mx-4">📈 SOPHI QUANT BOT: <span class="text-blue-400 font-bold">14,323 EXECUTED TRADES</span> ($6.1M+ TURNOVER)</span>
+      <span class="mx-4 text-zinc-500">&bull;</span>
+      <span class="mx-4">🛡️ RISK BUDGET: <span class="text-amber-400 font-bold">STRICT 1% EQUITY ENGINE</span></span>
+      <span class="mx-4 text-zinc-500">&bull;</span>
+      <span class="mx-4">🤖 APEX MARKETING AI: <span class="text-purple-400 font-bold">15 ORCHESTRATED PROMPT AGENTS</span></span>
+      <span class="mx-4 text-zinc-500">&bull;</span>
+      <span class="mx-4">👨‍🏫 IT INSTRUCTOR: <span class="text-white font-bold">1,000+ STUDENTS TRAINED</span></span>
+      <span class="mx-4 text-zinc-500">&bull;</span>
+      <span class="mx-4">⚡ ZAINFOREXAUTOBOT: <span class="text-emerald-400 font-bold">75.0% VERIFIED WIN RATE</span></span>
+      <span class="mx-4 text-zinc-500">&bull;</span>
+      <span class="mx-4">📈 SOPHI QUANT BOT: <span class="text-blue-400 font-bold">14,323 EXECUTED TRADES</span> ($6.1M+ TURNOVER)</span>
+      <span class="mx-4 text-zinc-500">&bull;</span>
+      <span class="mx-4">🛡️ RISK BUDGET: <span class="text-amber-400 font-bold">STRICT 1% EQUITY ENGINE</span></span>
+      <span class="mx-4 text-zinc-500">&bull;</span>
+      <span class="mx-4">🤖 APEX MARKETING AI: <span class="text-purple-400 font-bold">15 ORCHESTRATED PROMPT AGENTS</span></span>
+      <span class="mx-4 text-zinc-500">&bull;</span>
+      <span class="mx-4">👨‍🏫 IT INSTRUCTOR: <span class="text-white font-bold">1,000+ STUDENTS TRAINED</span></span>
+    </div>
+  </div>
 
-    <!-- Hero Header: Compact & High Impact -->
-    <section class="max-w-6xl mx-auto px-5 text-center pt-4 pb-1 relative">
+  <!-- MAIN HERO STAGE (Elevated Train Placement: Right Above the Fold!) -->
+  <main class="relative z-10 pt-24 sm:pt-28">
+
+    <!-- Hero Header -->
+    <section class="max-w-6xl mx-auto px-5 text-center pt-3 pb-1 relative">
       
-      <!-- Floating Playful Geometric Shapes (From Reel) -->
-      <div class="hidden sm:block absolute left-8 lg:left-14 top-8 w-10 h-5 bg-[#e11d48] rounded-t-full opacity-90 animate-float pointer-events-none"></div>
-      <div class="hidden sm:block absolute left-24 lg:left-32 top-28 w-3 h-3 bg-[#2563eb] rounded-full opacity-90 pointer-events-none"></div>
+      <!-- Floating Shapes -->
+      <div class="hidden sm:block absolute left-8 lg:left-14 top-4 w-10 h-5 bg-[#e11d48] rounded-t-full opacity-90 animate-float pointer-events-none"></div>
+      <div class="hidden sm:block absolute left-24 lg:left-32 top-24 w-3 h-3 bg-[#2563eb] rounded-full opacity-90 pointer-events-none"></div>
       
-      <div class="hidden sm:block absolute right-12 lg:right-20 top-6 w-7 h-7 opacity-90 animate-spin-slow pointer-events-none">
+      <div class="hidden sm:block absolute right-12 lg:right-20 top-4 w-7 h-7 opacity-90 animate-spin-slow pointer-events-none">
         <svg viewBox="0 0 24 24" fill="#eab308">
           <path d="M12 0L14.59 4.41L19.5 3.5L18.59 8.41L23 11L19.59 14.59L20.5 19.5L15.59 18.59L13 23L9.41 19.59L4.5 20.5L5.41 15.59L1 13L4.41 9.41L3.5 4.5L8.41 5.41L11 1Z"/>
         </svg>
       </div>
-      <div class="hidden sm:block absolute right-20 lg:right-32 top-32 w-10 h-3.5 bg-[#16a34a] rounded-full opacity-90 pointer-events-none"></div>
+      <div class="hidden sm:block absolute right-20 lg:right-32 top-28 w-10 h-3.5 bg-[#16a34a] rounded-full opacity-90 pointer-events-none"></div>
 
-      <!-- Hero Badge Capsule -->
+      <!-- Hero Badge -->
       <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-white border border-paper-border text-xs font-mono text-ink-muted mb-2 shadow-2xs">
-        <span class="w-3.5 h-3.5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[9px] font-bold">S</span>
-        <span>PORTFOLIO '26 &bull; ALGO SYSTEMS &bull; FULL-STACK</span>
+        <span class="w-3.5 h-3.5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[9px] font-bold">S</span>
+        <span>VERIFIED RESULTS &bull; ALGORITHMIC BOTS &bull; FULL-STACK</span>
       </div>
 
-      <!-- Greeting Subtitle -->
+      <!-- Greeting -->
       <p class="text-xs sm:text-sm font-mono text-ink-muted mb-1 tracking-wide">
         Hi, I'm Sohail Ahmed Buledi &mdash; Web Developer, Algorithmic Engineer &amp; IT Instructor.
       </p>
 
-      <!-- Iconic Editorial Serif Headline (From Reel) -->
+      <!-- Iconic Headline -->
       <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif text-ink tracking-tight leading-[1.08] mb-2 max-w-4xl mx-auto">
         I build the systems, so<br class="hidden sm:inline">
         your business <span class="italic font-serif text-[#e11d48]">enjoys the ride.</span>
       </h1>
 
-      <!-- High-Ticket Value Proposition -->
-      <p class="text-ink-muted text-xs sm:text-sm max-w-2xl mx-auto font-normal leading-relaxed mb-3">
-        From institutional web portals and test-verified AI agents to high-frequency algorithmic Forex &amp; crypto trading engines, I engineer software that moves friction out of the way.
+      <!-- Value Proposition -->
+      <p class="text-ink-muted text-xs sm:text-sm max-w-2xl mx-auto font-normal leading-relaxed mb-2">
+        From quantitative algorithmic trading engines and multi-agent AI marketing copilots to institutional web examination platforms with real-time integrity safeguards.
       </p>
+
+      <!-- LIVE PERFORMANCE TICKER COUNTERS (Animated Count-Up) -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto my-3 text-left">
+        
+        <div class="p-3 rounded-xl bg-white border border-paper-border shadow-2xs">
+          <div class="text-[10px] font-mono text-ink-muted uppercase">Forex Win Rate</div>
+          <div class="text-xl sm:text-2xl font-serif font-bold text-emerald-600 flex items-baseline gap-0.5">
+            <span class="counter" data-target="75.0">0</span>%
+          </div>
+          <div class="text-[10px] font-mono text-emerald-700">18 Wins / 6 Losses (Live)</div>
+        </div>
+
+        <div class="p-3 rounded-xl bg-white border border-paper-border shadow-2xs">
+          <div class="text-[10px] font-mono text-ink-muted uppercase">Sophi Quant Orders</div>
+          <div class="text-xl sm:text-2xl font-serif font-bold text-blue-600 flex items-baseline gap-0.5">
+            <span class="counter" data-target="14323">0</span>
+          </div>
+          <div class="text-[10px] font-mono text-blue-700">22-Day Live Soak Test</div>
+        </div>
+
+        <div class="p-3 rounded-xl bg-white border border-paper-border shadow-2xs">
+          <div class="text-[10px] font-mono text-ink-muted uppercase">Trade Turnover</div>
+          <div class="text-xl sm:text-2xl font-serif font-bold text-amber-600 flex items-baseline gap-0.5">
+            $<span class="counter" data-target="6.1">0</span>M+
+          </div>
+          <div class="text-[10px] font-mono text-amber-700">8 Multi-Pair Coverage</div>
+        </div>
+
+        <div class="p-3 rounded-xl bg-white border border-paper-border shadow-2xs">
+          <div class="text-[10px] font-mono text-ink-muted uppercase">Students Mentored</div>
+          <div class="text-xl sm:text-2xl font-serif font-bold text-ink flex items-baseline gap-0.5">
+            <span class="counter" data-target="1000">0</span>+
+          </div>
+          <div class="text-[10px] font-mono text-ink-muted">Web Dev &amp; OOP Lead</div>
+        </div>
+
+      </div>
 
     </section>
 
-    <!-- THE INTERACTIVE TRAIN ARENA (Higher up, completely visible above fold!) -->
+    <!-- THE INTERACTIVE TRAIN ARENA (Elevated Above the Fold) -->
     <section id="track-arena" class="relative w-full max-w-6xl mx-auto px-4 select-none cursor-pointer" title="Click and hold anywhere to speed up the train!">
       
       <!-- SVG Bridge & Roller Coaster Railway -->
-      <div class="relative w-full overflow-hidden" style="min-height: 330px;">
+      <div class="relative w-full overflow-hidden" style="min-height: 320px;">
         <svg id="railwaySvg" class="w-full h-auto block" viewBox="0 0 1200 380" preserveAspectRatio="xMidYMid meet">
           <defs>
-            <!-- Rail Green Gradient (Daylight) -->
+            <!-- Rail Green Gradient -->
             <linearGradient id="railGrad" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stop-color="#1b6b47"/>
               <stop offset="50%" stop-color="#2a9d66"/>
@@ -341,7 +429,7 @@
           <path id="bridgeArch" d="M -150,180 C 180,260 380,330 600,330 C 820,330 1020,240 1350,80" 
                 fill="none" stroke="#1e784f" stroke-width="2.5" opacity="0.6"/>
 
-          <!-- TRUSS WEB LATTICE CONNECTING LOWER ARCH AND RAIL -->
+          <!-- TRUSS WEB LATTICE -->
           <g id="bridgeLattice" stroke="#1e784f" stroke-width="1.4" opacity="0.5">
             <line x1="60" y1="155" x2="120" y2="215"/>
             <line x1="120" y1="185" x2="60" y2="200"/>
@@ -380,15 +468,15 @@
                 d="M -300,125 C 150,225 380,305 600,305 C 820,305 1050,190 1500,10" 
                 fill="none" stroke="url(#railGrad)" stroke-width="5" stroke-linecap="round"/>
 
-          <!-- SMOKE PARTICLES GROUP (Behind Train) -->
+          <!-- SMOKE PARTICLES GROUP -->
           <g id="smokeGroup"></g>
 
-          <!-- TRAIN CONTAINER (DYNAMICALLY POPULATED & ANIMATED BY JS) -->
+          <!-- TRAIN CONTAINER -->
           <g id="trainGroup"></g>
         </svg>
 
         <!-- SPEEDOMETER & ADVANCED INTERACTIVE CONTROLS HUD -->
-        <div class="mt-3 flex flex-wrap items-center justify-between gap-3 px-3 font-mono text-xs text-ink-muted">
+        <div class="mt-2 flex flex-wrap items-center justify-between gap-3 px-3 font-mono text-xs text-ink-muted">
           
           <!-- Speedometer & Telemetry -->
           <div class="flex items-center gap-2">
@@ -413,7 +501,7 @@
             </button>
           </div>
 
-          <!-- Boost Prompt from Reel -->
+          <!-- Boost Prompt -->
           <div class="text-[11px] text-ink-muted flex items-center gap-1">
             <span>⚡</span>
             <span id="boostPrompt">HOLD ANYWHERE TO GO FASTER</span>
@@ -425,32 +513,276 @@
 
     </section>
 
-    <!-- SECTION 01: SELECTED PRODUCTION WORKS -->
-    <section id="work" class="py-20 max-w-6xl mx-auto px-6 border-t border-paper-border mt-12 scroll-mt-20">
+    <!-- SECTION 01: HIGH-TICKET ALGORITHMIC & QUANT TRADING (CENTER STAGE!) -->
+    <section id="quant" class="py-16 max-w-6xl mx-auto px-6 border-t border-paper-border mt-10 scroll-mt-20">
       
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
         <div>
-          <div class="font-mono text-xs text-track-green uppercase tracking-wider mb-1">// STATION 01</div>
+          <div class="font-mono text-xs text-amber-600 uppercase tracking-wider mb-1 font-bold">// STATION 01 &bull; QUANTITATIVE SYSTEMS</div>
           <h2 class="text-3xl sm:text-4xl font-serif font-bold text-ink tracking-tight">
-            Selected Works &amp; Real Systems
+            Algorithmic Trading &amp; Quantitative Engines
           </h2>
           <p class="text-ink-muted text-xs sm:text-sm mt-1 max-w-xl">
-            Real software built for real operations: anti-cheat examination engines, sandboxed AI agents, and lead prospectors.
+            High-frequency MetaTrader 5 Expert Advisors and multi-pair quantitative engines engineered with institutional risk gates, sub-second latency, and live performance telemetry.
           </p>
         </div>
-        <div class="font-mono text-xs text-ink-muted bg-white px-3 py-1.5 rounded-full border border-paper-border self-start sm:self-auto shadow-2xs">
-          PRODUCTION VERIFIED
+        <div class="font-mono text-xs text-amber-700 bg-amber-100 px-3 py-1.5 rounded-full border border-amber-300 self-start sm:self-auto shadow-2xs font-bold">
+          VERIFIED PRODUCTION METRICS
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- 1. ZainForexAutoBot — MT5 Gold Engine -->
+        <article class="station-card p-7 sm:p-8 rounded-2xl border-2 border-emerald-300/80 bg-gradient-to-br from-white via-white to-emerald-50/30 flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute -right-12 -top-12 w-32 h-32 bg-emerald-100 rounded-full opacity-40 pointer-events-none"></div>
+
+          <div>
+            <!-- Header Badges -->
+            <div class="flex items-center justify-between text-xs font-mono text-ink-muted mb-4 pb-3 border-b border-paper-border">
+              <span class="text-emerald-700 font-bold flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 pulse-dot"></span>
+                <span>FOREX ALGO &bull; XAUUSD</span>
+              </span>
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300 text-[10px] font-bold">
+                75.0% VERIFIED WIN RATE
+              </span>
+            </div>
+
+            <h3 class="text-2xl font-serif font-bold text-ink mb-2">
+              ZainForexAutoBot — XAU/USD Smart Scalper V2
+            </h3>
+
+            <p class="text-xs sm:text-sm text-ink-muted leading-relaxed mb-5">
+              An institutional-grade algorithmic Expert Advisor built for Exness MetaTrader 5 (MT5). Engineered specifically to scalp Gold volatility with microsecond execution, dynamic position sizing, and zero manual intervention.
+            </p>
+
+            <!-- ANIMATED MINI EQUITY CURVE SVG -->
+            <div class="mb-5 p-4 bg-paper rounded-xl border border-paper-border relative overflow-hidden">
+              <div class="flex items-center justify-between text-[11px] font-mono text-ink-muted mb-2">
+                <span>VERIFIED LIVE EQUITY CURVE</span>
+                <span class="text-emerald-600 font-bold">+75.0% WIN ACCURACY</span>
+              </div>
+              <svg class="w-full h-16 block" viewBox="0 0 300 70" preserveAspectRatio="none">
+                <!-- Grid Lines -->
+                <line x1="0" y1="18" x2="300" y2="18" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
+                <line x1="0" y1="36" x2="300" y2="36" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
+                <line x1="0" y1="54" x2="300" y2="54" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
+                <!-- Equity Curve Line -->
+                <path d="M 0,58 Q 30,52 60,42 T 120,38 T 180,24 T 240,16 L 300,8" 
+                      fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" class="animate-draw"/>
+                <!-- Fill Area under curve -->
+                <path d="M 0,58 Q 30,52 60,42 T 120,38 T 180,24 T 240,16 L 300,8 L 300,70 L 0,70 Z" 
+                      fill="rgba(16, 185, 129, 0.1)"/>
+                <!-- Final Glow Point -->
+                <circle cx="300" cy="8" r="4" fill="#10b981" class="glow-pulse"/>
+              </svg>
+            </div>
+
+            <!-- Quantitative Stats Grid -->
+            <div class="grid grid-cols-3 gap-2.5 mb-5 font-mono text-center">
+              <div class="p-2.5 rounded-lg bg-white border border-paper-border">
+                <div class="text-[10px] text-ink-muted uppercase">Total Trades</div>
+                <div class="text-lg font-bold text-ink">24</div>
+                <div class="text-[9px] text-emerald-600 font-semibold">18 W / 6 L</div>
+              </div>
+              <div class="p-2.5 rounded-lg bg-white border border-paper-border">
+                <div class="text-[10px] text-ink-muted uppercase">Avg Duration</div>
+                <div class="text-lg font-bold text-emerald-600">1m 42s</div>
+                <div class="text-[9px] text-ink-muted">M5 High Velocity</div>
+              </div>
+              <div class="p-2.5 rounded-lg bg-white border border-paper-border">
+                <div class="text-[10px] text-ink-muted uppercase">Max Drawdown</div>
+                <div class="text-lg font-bold text-blue-600">&lt; 2.8%</div>
+                <div class="text-[9px] text-blue-700">Circuit Capped</div>
+              </div>
+            </div>
+
+            <!-- Core Specifications -->
+            <div class="space-y-2 mb-6 text-xs text-ink font-mono bg-paper p-4 rounded-xl border border-paper-border">
+              <div class="text-[10px] text-ink-muted uppercase font-bold text-emerald-700">SYSTEM AXIOMS &amp; RISK GATES</div>
+              <div>✔ Strict 1% Equity Risk Engine (Refuses trades if min lot risks &gt; 1%)</div>
+              <div>✔ 3-Tier Confluence (H1 Regime EMA200 + M15 POI + M5 Closed Bar)</div>
+              <div>✔ Multi-Circuit Breakers (1.5% Daily Loss Stop &bull; 10% Drawdown Halt)</div>
+              <div>✔ Native Economic Calendar Scanner (Blackout window around USD news)</div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-paper-border flex flex-wrap items-center justify-between gap-3">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-ink-muted">
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">MetaTrader 5</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">MQL5</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Python Bridge</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Risk Engine</span>
+            </div>
+            <a href="https://wa.me/923093174020?text=Hello%20Sohail,%20I%20am%20interested%20in%20a%20technical%20walkthrough%20of%20your%20ZainForexAutoBot%20MT5%20EA" target="_blank" rel="noopener" class="text-xs font-mono text-emerald-700 hover:text-emerald-800 font-bold flex items-center gap-1">
+              Architecture Demo &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- 2. Sophi Quantitative Trading Bot -->
+        <article class="station-card p-7 sm:p-8 rounded-2xl border-2 border-blue-300/80 bg-gradient-to-br from-white via-white to-blue-50/30 flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute -right-12 -top-12 w-32 h-32 bg-blue-100 rounded-full opacity-40 pointer-events-none"></div>
+
+          <div>
+            <!-- Header Badges -->
+            <div class="flex items-center justify-between text-xs font-mono text-ink-muted mb-4 pb-3 border-b border-paper-border">
+              <span class="text-blue-700 font-bold flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-blue-500 pulse-dot"></span>
+                <span>QUANT SYSTEM &bull; MULTI-PAIR</span>
+              </span>
+              <span class="px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800 border border-blue-300 text-[10px] font-bold">
+                14,323 EXECUTED TRADES
+              </span>
+            </div>
+
+            <h3 class="text-2xl font-serif font-bold text-ink mb-2">
+              Sophi — Autonomous Multi-Pair Quantitative Trading Bot
+            </h3>
+
+            <p class="text-xs sm:text-sm text-ink-muted leading-relaxed mb-5">
+              A high-concurrency Python quantitative trading bot soak-tested in production. Features real-time trade execution logging, SQLite audit ledgers, automated FIFO realized PnL matching, and live performance metrics calculation.
+            </p>
+
+            <!-- SOAK TEST TELEMETRY GRAPHIC -->
+            <div class="mb-5 p-4 bg-paper rounded-xl border border-paper-border">
+              <div class="flex items-center justify-between text-[11px] font-mono text-ink-muted mb-2">
+                <span>SOAK TEST: SEPT 17 &ndash; OCT 09, 2026</span>
+                <span class="text-blue-600 font-bold">500+ HOURS UPTIME</span>
+              </div>
+              <div class="space-y-1.5 text-[11px] font-mono">
+                <div class="flex justify-between items-center">
+                  <span>BTC/USDT Volume: $1,627,600</span>
+                  <span class="text-blue-600 font-semibold">3,404 Orders</span>
+                </div>
+                <div class="w-full bg-zinc-200 h-1.5 rounded-full overflow-hidden">
+                  <div class="bg-blue-600 h-full rounded-full" style="width: 85%"></div>
+                </div>
+
+                <div class="flex justify-between items-center pt-1">
+                  <span>ETH &amp; SOL Volume: $1,783,000</span>
+                  <span class="text-blue-600 font-semibold">3,717 Orders</span>
+                </div>
+                <div class="w-full bg-zinc-200 h-1.5 rounded-full overflow-hidden">
+                  <div class="bg-emerald-500 h-full rounded-full" style="width: 72%"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quantitative Stats Grid -->
+            <div class="grid grid-cols-3 gap-2.5 mb-5 font-mono text-center">
+              <div class="p-2.5 rounded-lg bg-white border border-paper-border">
+                <div class="text-[10px] text-ink-muted uppercase">Cumulative Vol</div>
+                <div class="text-lg font-bold text-ink">$6.16M</div>
+                <div class="text-[9px] text-blue-600 font-semibold">Buy &amp; Sell Balanced</div>
+              </div>
+              <div class="p-2.5 rounded-lg bg-white border border-paper-border">
+                <div class="text-[10px] text-ink-muted uppercase">Pairs Active</div>
+                <div class="text-lg font-bold text-amber-600">8 Pairs</div>
+                <div class="text-[9px] text-ink-muted">BTC, ETH, SOL+</div>
+              </div>
+              <div class="p-2.5 rounded-lg bg-white border border-paper-border">
+                <div class="text-[10px] text-ink-muted uppercase">Ledger PnL</div>
+                <div class="text-lg font-bold text-emerald-600">ACID FIFO</div>
+                <div class="text-[9px] text-emerald-700">Strict Audit Trail</div>
+              </div>
+            </div>
+
+            <!-- Core Specifications -->
+            <div class="space-y-2 mb-6 text-xs text-ink font-mono bg-paper p-4 rounded-xl border border-paper-border">
+              <div class="text-[10px] text-ink-muted uppercase font-bold text-blue-700">TECHNICAL ARCHITECTURE</div>
+              <div>✔ Sub-second order routing across 8 concurrent cryptocurrency markets</div>
+              <div>✔ Persistent SQLite database tracking every tick, slippage, and execution</div>
+              <div>✔ Automated FIFO position matching engine calculating realized PnL</div>
+              <div>✔ Autonomous daemon background architecture with zero crash downtime</div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-paper-border flex flex-wrap items-center justify-between gap-3">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-ink-muted">
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Python 3</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">AsyncIO</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">SQLite3</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">FIFO Matching</span>
+            </div>
+            <a href="https://wa.me/923093174020?text=Hello%20Sohail,%20I%20am%20interested%20in%20your%20Sophi%20Quantitative%20Trading%20Bot%20architecture" target="_blank" rel="noopener" class="text-xs font-mono text-blue-700 hover:text-blue-800 font-bold flex items-center gap-1">
+              Technical Overview &rarr;
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SECTION 02: PRODUCTION WEB PLATFORMS & APEX MARKETING AI AGENT -->
+    <section id="work" class="py-16 max-w-6xl mx-auto px-6 border-t border-paper-border scroll-mt-20">
+      
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+        <div>
+          <div class="font-mono text-xs text-track-green uppercase tracking-wider mb-1 font-bold">// STATION 02 &bull; FULL-STACK &amp; AI AGENTS</div>
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-ink tracking-tight">
+            Production Web Platforms &amp; AI Orchestrators
+          </h2>
+          <p class="text-ink-muted text-xs sm:text-sm mt-1 max-w-xl">
+            Enterprise marketing agent teams, anti-cheat examination platforms, and client acquisition engines.
+          </p>
+        </div>
+        <div class="font-mono text-xs text-ink-muted bg-white px-3 py-1.5 rounded-full border border-paper-border self-start sm:self-auto shadow-2xs font-semibold">
+          TESTED &bull; DEPLOYED
         </div>
       </div>
 
       <div class="grid md:grid-cols-2 gap-7">
 
-        <!-- Project 01: Secure Intelligent Online Assessment System -->
+        <!-- 1. APEX Marketing AI Engine (PROMINENT SPOTLIGHT) -->
+        <article class="station-card p-7 sm:p-8 rounded-2xl border-2 border-purple-200/80 bg-gradient-to-br from-white via-white to-purple-50/20 flex flex-col justify-between md:col-span-2">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-ink-muted mb-4 pb-3 border-b border-paper-border">
+              <span class="text-purple-700 font-bold flex items-center gap-1.5">
+                <span>🤖</span>
+                <span>MULTI-AGENT COPILOT // 01</span>
+              </span>
+              <span class="px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-800 border border-purple-300 text-[10px] font-bold">
+                15 ORCHESTRATED ROLES
+              </span>
+            </div>
+
+            <h3 class="text-2xl sm:text-3xl font-serif font-bold text-ink mb-2">
+              APEX Marketing AI Command Center — Campaign &amp; Strategy Orchestrator
+            </h3>
+            
+            <p class="text-xs sm:text-sm text-ink-muted leading-relaxed mb-5 max-w-3xl">
+              An enterprise multi-agent marketing operations platform built for modern agencies. Takes a raw product brief or URL and orchestrates 15 specialized prompt agent personas (Strategist, Copywriter, SEO Specialist, Email Architect) to generate complete, cohesive multi-channel marketing campaigns.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-3 mb-6 text-xs text-ink font-mono bg-paper p-4 rounded-xl border border-paper-border">
+              <div>✔ 15 specialized agent personas running structured JSON workflows</div>
+              <div>✔ Competitive positioning matrix &amp; value hook extractor</div>
+              <div>✔ 30-day cross-platform content matrix generator</div>
+              <div>✔ High-converting cold outreach email sequences with follow-ups</div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-paper-border flex flex-wrap items-center justify-between gap-3">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-ink-muted">
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Python</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Gemini 2.5 API</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">FastAPI</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Tailwind CSS</span>
+            </div>
+            <a href="https://wa.me/923093174020?text=Hello%20Sohail,%20I%20am%20interested%20in%20your%20APEX%20Marketing%20AI%20Command%20Center" target="_blank" rel="noopener" class="text-xs font-mono text-purple-700 hover:text-purple-800 font-bold flex items-center gap-1">
+              Explore Architecture &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- 2. Secure Online Assessment System -->
         <article class="station-card p-7 rounded-2xl flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between text-xs font-mono text-ink-muted mb-4 pb-3 border-b border-paper-border">
-              <span class="text-rose-600 font-bold">STOP // 01</span>
-              <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px]">INSTITUTIONAL CODEBASE</span>
+              <span class="text-rose-600 font-bold">STOP // 02</span>
+              <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-semibold">INSTITUTIONAL CODEBASE</span>
             </div>
 
             <h3 class="text-xl sm:text-2xl font-serif font-bold text-ink mb-2">
@@ -481,48 +813,12 @@
           </div>
         </article>
 
-        <!-- Project 02: Taskeen AI Assistant -->
-        <article class="station-card p-7 rounded-2xl flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between text-xs font-mono text-ink-muted mb-4 pb-3 border-b border-paper-border">
-              <span class="text-blue-600 font-bold">STOP // 02</span>
-              <span class="px-2 py-0.5 rounded-full bg-purple-50 text-purple-700 border border-purple-200 text-[10px]">114 TESTS PASSING</span>
-            </div>
-
-            <h3 class="text-xl sm:text-2xl font-serif font-bold text-ink mb-2">
-              Taskeen — Local-First Multilingual AI Assistant
-            </h3>
-            
-            <p class="text-xs sm:text-sm text-ink-muted leading-relaxed mb-5">
-              A local-first, memory-enabled personal AI assistant built with an explicit tool execution engine. Solves the safety risks of unrestrained LLMs through a 4-tier permission gate (<code class="bg-paper px-1 py-0.5 rounded">SAFE</code> to <code class="bg-paper px-1 py-0.5 rounded">DESTRUCTIVE</code>).
-            </p>
-
-            <div class="space-y-2 mb-6 text-xs text-ink font-mono bg-paper p-4 rounded-xl border border-paper-border">
-              <div class="text-[10px] text-ink-muted uppercase font-semibold">CORE CAPABILITIES</div>
-              <div>✔ 114 automated unit &amp; integration tests passing</div>
-              <div>✔ Typed Tool Registry with schemas and timeouts</div>
-              <div>✔ 4-Tier Permission System (Refuses unsafe actions)</div>
-              <div>✔ Persistent SQLite memory (English, Roman Urdu, Urdu)</div>
-            </div>
-          </div>
-
-          <div class="pt-4 border-t border-paper-border flex flex-wrap items-center justify-between gap-3">
-            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-ink-muted">
-              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Python 3</span>
-              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Ollama</span>
-              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">SQLite</span>
-              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Pytest</span>
-            </div>
-            <span class="text-xs font-mono text-purple-700 font-medium">Local Codebase &amp; Tests</span>
-          </div>
-        </article>
-
-        <!-- Project 03: SiteSeller Lead Engine -->
+        <!-- 3. SiteSeller Lead Engine -->
         <article class="station-card p-7 rounded-2xl flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between text-xs font-mono text-ink-muted mb-4 pb-3 border-b border-paper-border">
               <span class="text-emerald-600 font-bold">STOP // 03</span>
-              <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px]">OPEN SOURCE</span>
+              <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-semibold">OPEN SOURCE</span>
             </div>
 
             <h3 class="text-xl sm:text-2xl font-serif font-bold text-ink mb-2">
@@ -554,12 +850,12 @@
           </div>
         </article>
 
-        <!-- Project 04: Faceless Video Autopilot -->
-        <article class="station-card p-7 rounded-2xl flex flex-col justify-between">
+        <!-- 4. Faceless Video Autopilot -->
+        <article class="station-card p-7 rounded-2xl flex flex-col justify-between md:col-span-2">
           <div>
             <div class="flex items-center justify-between text-xs font-mono text-ink-muted mb-4 pb-3 border-b border-paper-border">
               <span class="text-amber-600 font-bold">STOP // 04</span>
-              <span class="px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200 text-[10px]">AUTOMATION PIPELINE</span>
+              <span class="px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200 text-[10px] font-semibold">AUTOMATION PIPELINE</span>
             </div>
 
             <h3 class="text-xl sm:text-2xl font-serif font-bold text-ink mb-2">
@@ -570,8 +866,7 @@
               An end-to-end Python pipeline for creating short-form vertical videos automatically. Generates niche scripts, produces synchronized voiceovers via Microsoft Edge TTS, matches royalty-free B-roll, and overlays dynamic animated captions.
             </p>
 
-            <div class="space-y-2 mb-6 text-xs text-ink font-mono bg-paper p-4 rounded-xl border border-paper-border">
-              <div class="text-[10px] text-ink-muted uppercase font-semibold">CORE CAPABILITIES</div>
+            <div class="grid sm:grid-cols-2 gap-3 mb-6 text-xs text-ink font-mono bg-paper p-4 rounded-xl border border-paper-border">
               <div>✔ Automated script writing tuned for TikTok/Reels/Shorts</div>
               <div>✔ High-quality neural speech synthesis (edge-tts)</div>
               <div>✔ MoviePy video rendering &amp; audio ducking engine</div>
@@ -593,150 +888,13 @@
       </div>
     </section>
 
-    <!-- SECTION 02: HIGH-FREQUENCY ALGORITHMIC & QUANT TRADING (PREMIER SPOTLIGHT) -->
-    <section id="quant" class="py-20 max-w-6xl mx-auto px-6 border-t border-paper-border scroll-mt-20">
-      
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
-        <div>
-          <div class="font-mono text-xs text-amber-600 uppercase tracking-wider mb-1">// STATION 02 &bull; HIGH-TICKET SYSTEMS</div>
-          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-ink tracking-tight">
-            Algorithmic Trading &amp; Quantitative Bots
-          </h2>
-          <p class="text-ink-muted text-xs sm:text-sm mt-1 max-w-xl">
-            High-concurrency trading execution engines engineered with automated risk gates, low latency, and FIFO realized PnL telemetry.
-          </p>
-        </div>
-        <div class="font-mono text-xs text-amber-600 bg-amber-50 px-3 py-1.5 rounded-full border border-amber-200 self-start sm:self-auto shadow-2xs font-semibold">
-          PROPRIETARY IP ENGINES
-        </div>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8">
-
-        <!-- 1. ZainForexAutoBot — MT5 Gold Engine -->
-        <article class="station-card p-8 rounded-2xl border-2 border-amber-200/80 bg-gradient-to-br from-white via-white to-amber-50/20 flex flex-col justify-between relative overflow-hidden">
-          <div class="absolute -right-12 -top-12 w-32 h-32 bg-amber-100 rounded-full opacity-30 pointer-events-none"></div>
-
-          <div>
-            <div class="flex items-center justify-between text-xs font-mono text-ink-muted mb-4 pb-3 border-b border-paper-border">
-              <span class="text-amber-700 font-bold flex items-center gap-1.5">
-                <span>⚡</span>
-                <span>FOREX ALGO STOP // 01</span>
-              </span>
-              <span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-300 text-[10px] font-bold">
-                PROPRIETARY &bull; PRIVATE REPO
-              </span>
-            </div>
-
-            <h3 class="text-2xl font-serif font-bold text-ink mb-2">
-              ZainForexAutoBot — MT5 Algorithmic Gold (XAUUSD) Engine
-            </h3>
-
-            <p class="text-xs sm:text-sm text-ink-muted leading-relaxed mb-6">
-              An institutional-grade algorithmic trading bot built for MetaTrader 5 (MT5). Engineered specifically to trade Gold volatility with microsecond execution, dynamic position sizing, and zero manual latency.
-            </p>
-
-            <div class="space-y-2.5 mb-6 text-xs text-ink font-mono bg-paper p-4 rounded-xl border border-paper-border">
-              <div class="text-[10px] text-ink-muted uppercase font-bold text-amber-700">TECHNICAL ARCHITECTURE</div>
-              <div class="flex items-center gap-2">
-                <span class="text-emerald-500 font-bold">✔</span>
-                <span>Real-time MT5 Python API bridge &amp; order dispatch</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="text-emerald-500 font-bold">✔</span>
-                <span>Dynamic lot sizing tied directly to account free equity</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="text-emerald-500 font-bold">✔</span>
-                <span>Automated trailing stops, breakeven shifts &amp; profit locks</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="text-emerald-500 font-bold">✔</span>
-                <span>Spread spike detector &amp; high-impact news circuit breaker</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="pt-4 border-t border-paper-border flex flex-wrap items-center justify-between gap-3">
-            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-ink-muted">
-              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Python</span>
-              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">MetaTrader 5</span>
-              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">MQL5 Bridge</span>
-              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Risk Engine</span>
-            </div>
-            <a href="https://wa.me/923093174020?text=Hello%20Sohail,%20I%20am%20interested%20in%20a%20technical%20walkthrough%20of%20your%20ZainForexAutoBot%20MT5%20system" target="_blank" rel="noopener" class="text-xs font-mono text-amber-700 hover:text-amber-800 font-semibold flex items-center gap-1">
-              Architecture Demo &rarr;
-            </a>
-          </div>
-        </article>
-
-        <!-- 2. Sophi Quantitative Trading Bot -->
-        <article class="station-card p-8 rounded-2xl border-2 border-blue-200/80 bg-gradient-to-br from-white via-white to-blue-50/20 flex flex-col justify-between relative overflow-hidden">
-          <div class="absolute -right-12 -top-12 w-32 h-32 bg-blue-100 rounded-full opacity-30 pointer-events-none"></div>
-
-          <div>
-            <div class="flex items-center justify-between text-xs font-mono text-ink-muted mb-4 pb-3 border-b border-paper-border">
-              <span class="text-blue-700 font-bold flex items-center gap-1.5">
-                <span>📈</span>
-                <span>QUANT SYSTEM // 02</span>
-              </span>
-              <span class="px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800 border border-blue-300 text-[10px] font-bold">
-                SOAK TESTED &bull; LIVE DATABASE
-              </span>
-            </div>
-
-            <h3 class="text-2xl font-serif font-bold text-ink mb-2">
-              Sophi — Autonomous Multi-Pair Quantitative Trading Bot
-            </h3>
-
-            <p class="text-xs sm:text-sm text-ink-muted leading-relaxed mb-6">
-              A high-concurrency Python algorithmic trading bot soak-tested in production. Features real-time trade execution logging, SQLite audit ledgers, automated FIFO realized PnL matching, and live performance metrics calculation.
-            </p>
-
-            <div class="space-y-2.5 mb-6 text-xs text-ink font-mono bg-paper p-4 rounded-xl border border-paper-border">
-              <div class="text-[10px] text-ink-muted uppercase font-bold text-blue-700">TECHNICAL ARCHITECTURE</div>
-              <div class="flex items-center gap-2">
-                <span class="text-emerald-500 font-bold">✔</span>
-                <span>Multi-pair trade execution with sub-second order dispatch</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="text-emerald-500 font-bold">✔</span>
-                <span>Persistent transaction database with strict ACID guarantees</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="text-emerald-500 font-bold">✔</span>
-                <span>Automated FIFO matching engine for realized PnL tracking</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="text-emerald-500 font-bold">✔</span>
-                <span>Real-time win-rate telemetry &amp; volume aggregators</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="pt-4 border-t border-paper-border flex flex-wrap items-center justify-between gap-3">
-            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-ink-muted">
-              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Python 3</span>
-              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">AsyncIO</span>
-              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">SQLite3</span>
-              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">FIFO PnL</span>
-            </div>
-            <a href="https://wa.me/923093174020?text=Hello%20Sohail,%20I%20am%20interested%20in%20your%20Sophi%20Quantitative%20Trading%20Bot%20architecture" target="_blank" rel="noopener" class="text-xs font-mono text-blue-700 hover:text-blue-800 font-semibold flex items-center gap-1">
-              Technical Overview &rarr;
-            </a>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
     <!-- SECTION 03: ABOUT THE CONDUCTOR -->
-    <section id="about" class="py-20 max-w-6xl mx-auto px-6 border-t border-paper-border scroll-mt-20">
+    <section id="about" class="py-16 max-w-6xl mx-auto px-6 border-t border-paper-border scroll-mt-20">
       
       <div class="grid lg:grid-cols-12 gap-12 items-start">
         
         <div class="lg:col-span-5">
-          <div class="font-mono text-xs text-track-green uppercase tracking-wider mb-1">// STATION 03</div>
+          <div class="font-mono text-xs text-track-green uppercase tracking-wider mb-1 font-bold">// STATION 03</div>
           <h2 class="text-3xl sm:text-4xl font-serif font-bold text-ink tracking-tight mb-6">
             Meet the Conductor
           </h2>
@@ -773,12 +931,12 @@
               <div class="text-xs font-mono text-ink-muted mt-1">Students Mentored</div>
             </div>
             <div class="p-4 bg-white rounded-xl border border-paper-border">
-              <div class="text-2xl font-serif font-bold text-ink">114</div>
-              <div class="text-xs font-mono text-ink-muted mt-1">Passing Unit Tests</div>
+              <div class="text-2xl font-serif font-bold text-emerald-600">75.0%</div>
+              <div class="text-xs font-mono text-ink-muted mt-1">Forex Win Rate</div>
             </div>
             <div class="p-4 bg-white rounded-xl border border-paper-border">
-              <div class="text-2xl font-serif font-bold text-ink">100%</div>
-              <div class="text-xs font-mono text-ink-muted mt-1">Zero-Hype Verified</div>
+              <div class="text-2xl font-serif font-bold text-blue-600">14,323</div>
+              <div class="text-xs font-mono text-ink-muted mt-1">Quant Executed Orders</div>
             </div>
           </div>
         </div>
@@ -788,10 +946,10 @@
     </section>
 
     <!-- SECTION 04: THE RAIL YARD (SKILLS & TOOLING) -->
-    <section id="skills" class="py-20 max-w-6xl mx-auto px-6 border-t border-paper-border scroll-mt-20">
+    <section id="skills" class="py-16 max-w-6xl mx-auto px-6 border-t border-paper-border scroll-mt-20">
       
       <div class="mb-10">
-        <div class="font-mono text-xs text-track-green uppercase tracking-wider mb-1">// STATION 04</div>
+        <div class="font-mono text-xs text-track-green uppercase tracking-wider mb-1 font-bold">// STATION 04</div>
         <h2 class="text-3xl sm:text-4xl font-serif font-bold text-ink tracking-tight">
           The Rail Yard: Tools &amp; Tracks
         </h2>
@@ -826,35 +984,35 @@
           <div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center font-mono font-bold text-xs mb-4 border border-amber-200">
             02
           </div>
-          <h3 class="font-serif font-bold text-lg text-ink mb-2">Algorithmic &amp; Automation</h3>
+          <h3 class="font-serif font-bold text-lg text-ink mb-2">Algorithmic &amp; Quant</h3>
           <p class="text-xs text-ink-muted mb-4">MetaTrader 5 bots, quantitative asset systems, and zero-touch Python pipelines.</p>
           <div class="flex flex-wrap gap-1.5 text-xs font-mono text-ink">
             <span class="px-2 py-1 bg-paper rounded border border-paper-border">Python 3</span>
             <span class="px-2 py-1 bg-paper rounded border border-paper-border">MetaTrader 5</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">MQL5</span>
             <span class="px-2 py-1 bg-paper rounded border border-paper-border">AsyncIO</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">SQLite3 (ACID)</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">FIFO PnL</span>
             <span class="px-2 py-1 bg-paper rounded border border-paper-border">Playwright</span>
-            <span class="px-2 py-1 bg-paper rounded border border-paper-border">BeautifulSoup</span>
             <span class="px-2 py-1 bg-paper rounded border border-paper-border">FastAPI</span>
-            <span class="px-2 py-1 bg-paper rounded border border-paper-border">MoviePy</span>
-            <span class="px-2 py-1 bg-paper rounded border border-paper-border">edge-tts</span>
           </div>
         </div>
 
         <!-- Track 03 -->
         <div class="station-card p-6 rounded-2xl">
-          <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-mono font-bold text-xs mb-4 border border-emerald-200">
+          <div class="w-8 h-8 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center font-mono font-bold text-xs mb-4 border border-purple-200">
             03
           </div>
-          <h3 class="font-serif font-bold text-lg text-ink mb-2">AI Agents &amp; Safety</h3>
-          <p class="text-xs text-ink-muted mb-4">Sandboxed LLM applications with permission enforcement, tool registries, and local memory.</p>
+          <h3 class="font-serif font-bold text-lg text-ink mb-2">AI Copilots &amp; Agents</h3>
+          <p class="text-xs text-ink-muted mb-4">Multi-agent campaign teams, structured JSON output, prompt routing, and browser copilots.</p>
           <div class="flex flex-wrap gap-1.5 text-xs font-mono text-ink">
-            <span class="px-2 py-1 bg-paper rounded border border-paper-border">Ollama (Local)</span>
-            <span class="px-2 py-1 bg-paper rounded border border-paper-border">Gemini 2.5</span>
-            <span class="px-2 py-1 bg-paper rounded border border-paper-border">Tool Schemas</span>
-            <span class="px-2 py-1 bg-paper rounded border border-paper-border">Safety Gates</span>
-            <span class="px-2 py-1 bg-paper rounded border border-paper-border">SQLite Memory</span>
-            <span class="px-2 py-1 bg-paper rounded border border-paper-border">Pytest</span>
-            <span class="px-2 py-1 bg-paper rounded border border-paper-border">Structured Output</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">Gemini 2.5 API</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">Agent Teams</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">JSON Schemas</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">Prompt Roles</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">MoviePy Video</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">edge-tts</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">FFmpeg</span>
           </div>
         </div>
 
@@ -863,10 +1021,10 @@
     </section>
 
     <!-- SECTION 05: BOARDING PASS CONTACT TERMINAL -->
-    <section id="contact" class="py-20 max-w-4xl mx-auto px-6 border-t border-paper-border scroll-mt-20">
+    <section id="contact" class="py-16 max-w-4xl mx-auto px-6 border-t border-paper-border scroll-mt-20">
       
       <div class="text-center mb-10">
-        <div class="font-mono text-xs text-track-green uppercase tracking-wider mb-1">// FINAL DESTINATION</div>
+        <div class="font-mono text-xs text-track-green uppercase tracking-wider mb-1 font-bold">// FINAL DESTINATION</div>
         <h2 class="text-3xl sm:text-4xl font-serif font-bold text-ink tracking-tight mb-2">
           Your Boarding Pass to Reliable Systems
         </h2>
@@ -916,7 +1074,7 @@
           <div class="grid sm:grid-cols-3 gap-4">
             
             <!-- WhatsApp -->
-            <a href="https://wa.me/923093174020?text=Hello%20Sohail,%20I%20saw%20your%20train%20portfolio%20and%20would%20like%20to%20discuss%20a%20project" 
+            <a href="https://wa.me/923093174020?text=Hello%20Sohail,%20I%20saw%20your%20algo%20trading%20and%20web%20portfolio%20and%20would%20like%20to%20discuss%20a%20project" 
                target="_blank" 
                rel="noopener"
                class="p-5 rounded-2xl bg-paper hover:bg-emerald-50 border border-paper-border hover:border-emerald-300 transition-all text-center group">
@@ -996,7 +1154,7 @@
     </div>
   </footer>
 
-  <!-- JAVASCRIPT: ADVANCED TRAIN PHYSICS + WEB AUDIO WHISTLE + STEAM PARTICLES + TWILIGHT MODE -->
+  <!-- JAVASCRIPT: TRAIN PHYSICS + ANIMATED COUNTERS + STEAM WHISTLE & PARTICLES -->
   <script>
     // Carriages configuration (Reading P O R T F O L I O left to right)
     const letters = ['P', 'O', 'R', 'T', 'F', 'O', 'L', 'I', 'O'];
@@ -1161,7 +1319,6 @@
       try {
         const ctx = getAudioCtx();
         const now = ctx.currentTime;
-        // Two-tone steam train whistle chord (D5 & A5 harmonic)
         const tones = [587.33, 880.00, 1174.66];
         tones.forEach((freq, idx) => {
           const osc = ctx.createOscillator();
@@ -1188,7 +1345,6 @@
           osc.stop(now + 0.7);
         });
 
-        // Trigger visual burst of steam
         spawnSteamBurst();
       } catch (err) {
         console.warn("Audio unavailable:", err);
@@ -1326,6 +1482,31 @@
       themeToggleBtn.addEventListener('click', toggleTwilight);
     }
 
+    // ANIMATED COUNT-UP NUMBERS
+    function animateCounters() {
+      document.querySelectorAll('.counter').forEach(counter => {
+        const target = parseFloat(counter.getAttribute('data-target'));
+        const isDecimal = target % 1 !== 0;
+        let current = 0;
+        const duration = 1800;
+        const stepTime = 20;
+        const steps = duration / stepTime;
+        const increment = target / steps;
+
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          counter.textContent = isDecimal ? current.toFixed(1) : Math.round(current).toLocaleString();
+        }, stepTime);
+      });
+    }
+
+    // Trigger counters on window load
+    window.addEventListener('DOMContentLoaded', animateCounters);
+
     // MAIN 60FPS PHYSICS & TELEMETRY ENGINE
     function updateTrain() {
       frameCount++;
@@ -1339,7 +1520,6 @@
       let leadPoint = null;
 
       for (let i = 0; i < carriageCount; i++) {
-        // Carriage 0 ('P') is at the rear (left); Carriage 8 ('O') is at the lead front (right)
         const carriageDist = distance - ((carriageCount - 1 - i) * carriageSpacing);
 
         if (carriageDist < 0 || carriageDist > totalPathLength) {
@@ -1352,7 +1532,6 @@
         const pt = track.getPointAtLength(carriageDist);
         if (i === carriageCount - 1) leadPoint = pt;
 
-        // Curve tangent vector
         const step = 2;
         const ptAhead = track.getPointAtLength(Math.min(totalPathLength, carriageDist + step));
         const ptBehind = track.getPointAtLength(Math.max(0, carriageDist - step));
@@ -1363,7 +1542,6 @@
 
         carriages[i].setAttribute('transform', `translate(${pt.x}, ${pt.y}) rotate(${angle})`);
 
-        // Emit steam puff from front locomotive chimney every 6 frames (or 3 frames in turbo)
         if (i === carriageCount - 1) {
           const emitInterval = isBoosted ? 3 : 7;
           if (frameCount % emitInterval === 0 && pt.x > 30 && pt.x < 1170) {
@@ -1397,4 +1575,4 @@
     requestAnimationFrame(updateTrain);
   </script>
 </body>
-</html>
+</html>\n

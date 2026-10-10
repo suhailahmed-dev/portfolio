@@ -18,13 +18,12 @@ Live Website: [https://suhailahmed-dev.github.io/portfolio/](https://suhailahmed
 
 ## 🏛️ Featured Work & Algorithmic Systems Showcased
 
-1. **ZainForexAutoBot — MT5 Algorithmic Gold Engine** (Proprietary / Private Repo) — High-frequency MetaTrader 5 algorithmic execution engine for XAUUSD with dynamic equity-based lot sizing, trailing stops, and spread anomaly circuit breakers.
-2. **Sophi Quantitative Trading Engine** (Soak Tested / Production DB) — Autonomous multi-pair crypto/asset trading bot with ACID SQLite transaction audit logs, automated FIFO realized PnL calculations, and win-rate telemetry.
-3. **Secure Intelligent Online Assessment System** — PHP & MySQL examination engine with anti-cheating tracking, client-side tab switch counters, and difficulty blueprints.
-4. **Taskeen — Local-First Multilingual AI Assistant** — Local-first AI agent with typed tool registry, 4-tier permission gate, and **114 automated unit tests**.
+1. **ZainForexAutoBot — MT5 Algorithmic Gold Engine** (75.0% Verified Win Rate) — High-frequency MetaTrader 5 algorithmic execution engine for XAUUSD with 18 wins / 6 losses, strict 1.0% equity risk engine, dynamic lot sizing, trailing stops, and spread anomaly circuit breakers.
+2. **Sophi Quantitative Trading Engine** (14,323 Live Executed Orders) — Autonomous multi-pair crypto trading bot soak-tested in production (22-day continuous run, $6.16M turnover across 8 pairs) with ACID SQLite transaction audit logs and automated FIFO realized PnL matching.
+3. **APEX Marketing AI Command Center** (15 Orchestrated Prompt Agents) — Multi-agent marketing operations platform coordinating 15 specialized prompt agent personas (Strategist, Copywriter, SEO Specialist, Email Architect) for autonomous campaign generation.
+4. **Secure Intelligent Online Assessment System** — Institutional PHP & MySQL examination platform with anti-cheating tracking, client-side tab switch counters, and difficulty blueprints.
 5. **SiteSeller Lead Engine** — Node.js & Google Places API automated prospector and demo page generator.
 6. **Faceless Video Autopilot** — Python, MoviePy, and edge-tts zero-touch vertical media pipeline.
-7. **APEX Marketing AI Command Center** — Gemini API enterprise marketing campaign & strategy orchestrator.
 
 ---
 
