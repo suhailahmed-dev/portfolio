@@ -24,7 +24,7 @@ portfolio/
 ├── README.md                     # Documentation and setup instructions
 └── assets/                       # Static media and project screenshots
     ├── suhail_profile.jpg        # Profile portrait
-    ├── dotcom_elite_admin.png    # Screen capture of DotCom Elite Admin Reports
+    ├── ...
     └── ...                       # Other supporting assets
 ```
 
@@ -52,7 +52,7 @@ Open `http://localhost:8080` in your web browser.
 ## Featured Work Showcased
 
 1. **Secure Intelligent Online Assessment System** — PHP & MySQL examination engine with anti-cheating tracking and difficulty blueprints.
-2. **DotCom Elite** — Multi-campus institutional management portal for DotCom Institute of I.T. (Hyderabad).
+2. **APEX Marketing AI Command Center** — Autonomous multi-agent marketing operating system coordinating 15 specialized prompt roles.
 3. **Taskeen** — Local-first multilingual AI agent with typed tool registry and 114 passing unit tests.
 4. **SiteSeller Lead Engine** — Node.js & Google Places API automated prospector and demo page generator.
 5. **Faceless Video Autopilot** — Python, Playwright, and FFmpeg zero-touch vertical media pipeline.
