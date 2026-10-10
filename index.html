@@ -3,13 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suhail Ahmed | AI Systems Engineer & Autonomous Automation Architect</title>
-  <meta name="description" content="Autonomous AI Systems Engineer and Algorithmic Trading Architect. Engineering trading systems, multi-agent workflows, and zero-touch business automations.">
+  <title>Sohail Ahmed Buledi | Web Developer &amp; Python Automation Specialist</title>
+  <meta name="description" content="Portfolio of Sohail Ahmed Buledi — Web Developer, Python Automation Specialist, and IT Instructor from Hyderabad, Pakistan. Building practical web applications, database systems, and automated workflows.">
+  <meta name="author" content="Sohail Ahmed Buledi">
 
-  <!-- Technical Typography -->
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Sohail Ahmed Buledi | Web Developer &amp; Python Automation Specialist">
+  <meta property="og:description" content="Practical web applications (PHP, MySQL, JavaScript), Python automation, and AI-assisted engineering workflows.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://suhailahmed-dev.github.io/portfolio/">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -24,21 +31,16 @@
           fontFamily: {
             sans: ['"Inter"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'monospace'],
-            display: ['"Space Grotesk"', 'sans-serif'],
           },
           colors: {
-            void: '#07080b',
-            surface: {
-              DEFAULT: '#0d0f15',
-              elevated: '#12151e',
-              border: 'rgba(255, 255, 255, 0.08)',
-              hover: 'rgba(255, 255, 255, 0.14)',
-            },
-            tech: {
-              green: '#10b981',
-              amber: '#f59e0b',
+            brand: {
+              dark: '#0b0f19',
+              card: '#111827',
+              elevated: '#172033',
+              border: '#1f2937',
+              teal: '#0d9488',
+              accent: '#14b8a6',
               blue: '#3b82f6',
-              zinc: '#71717a',
               muted: '#94a3b8',
             }
           }
@@ -52,1020 +54,966 @@
       color-scheme: dark;
     }
     body {
-      background-color: #07080b;
+      background-color: #0b0f19;
       color: #e2e8f0;
       font-family: 'Inter', sans-serif;
-      letter-spacing: -0.011em;
     }
-
-    /* Engineering Grid */
-    .eng-grid {
-      background-size: 32px 32px;
+    /* Subtle Grid Background */
+    .bg-grid {
+      background-size: 36px 36px;
       background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
     }
-
-    /* Technical Card */
-    .sys-card {
-      background: #0d0f15;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: border-color 0.25s ease, background-color 0.25s ease;
+    /* Card Hover */
+    .pro-card {
+      background: #111827;
+      border: 1px solid #1f2937;
+      transition: border-color 0.2s ease, transform 0.2s ease;
     }
-    .sys-card:hover {
-      border-color: rgba(255, 255, 255, 0.18);
-      background: #10131c;
+    .pro-card:hover {
+      border-color: #374151;
+      transform: translateY(-2px);
     }
-
-    /* Monospace Tech Pill */
-    .tech-pill {
+    /* Tag Pill */
+    .tag-pill {
       font-family: 'JetBrains Mono', monospace;
       font-size: 11px;
-      padding: 2px 8px;
-      border-radius: 3px;
+      padding: 3px 8px;
+      border-radius: 4px;
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.08);
       color: #94a3b8;
     }
-
-    /* Status Pulse */
-    @keyframes statusBlink {
+    /* Pulse */
+    @keyframes pulseSoft {
       0%, 100% { opacity: 1; }
-      50% { opacity: 0.35; }
+      50% { opacity: 0.4; }
     }
-    .status-pulse {
-      animation: statusBlink 2.5s infinite ease-in-out;
-    }
-
-    /* Data Pipeline Line */
-    .pipe-step {
-      transition: all 0.2s ease;
-    }
-    .pipe-step:hover {
-      border-color: #10b981;
-      background: rgba(16, 185, 129, 0.05);
+    .pulse-dot {
+      animation: pulseSoft 2s infinite ease-in-out;
     }
   </style>
 </head>
-<body class="bg-void min-h-screen text-slate-300 selection:bg-emerald-500 selection:text-black antialiased relative">
+<body class="bg-brand-dark min-h-screen text-slate-200 selection:bg-brand-teal selection:text-white antialiased relative">
 
-  <!-- Subtle Engineering Grid Background -->
-  <div class="fixed inset-0 eng-grid pointer-events-none z-0"></div>
+  <!-- Background Grid Pattern -->
+  <div class="fixed inset-0 bg-grid pointer-events-none z-0"></div>
 
-  <!-- Top System Control Bar -->
-  <header class="fixed top-0 inset-x-0 z-50 bg-[#07080b]/90 backdrop-blur-md border-b border-white/[0.08]">
-    <div class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
-      <div class="flex items-center gap-4">
-        <a href="#" class="flex items-center gap-2.5 group">
-          <div class="w-7 h-7 rounded bg-surface border border-white/10 flex items-center justify-center font-mono text-xs font-bold text-white group-hover:border-emerald-500/50 transition-colors">
-            SA
-          </div>
-          <div>
-            <span class="font-mono text-xs font-semibold text-white tracking-tight uppercase">Suhail Ahmed</span>
-            <span class="hidden sm:inline text-slate-500 font-mono text-[11px] ml-2">/ SYSTEMS ARCHITECT</span>
-          </div>
-        </a>
-      </div>
+  <!-- Top Navigation Bar -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-[#0b0f19]/90 backdrop-blur-md border-b border-brand-border">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-8 h-8 rounded bg-brand-elevated border border-brand-border flex items-center justify-center font-mono text-xs font-bold text-brand-accent group-hover:border-brand-accent transition-colors">
+          SB
+        </div>
+        <div>
+          <span class="font-semibold text-sm text-white tracking-tight">Sohail Ahmed Buledi</span>
+          <span class="hidden sm:inline text-slate-400 font-mono text-xs ml-2">/ Web &amp; Automation</span>
+        </div>
+      </a>
 
-      <!-- Navigation -->
-      <nav class="hidden md:flex items-center gap-8 font-mono text-xs text-slate-400">
-        <a href="#systems" class="hover:text-white transition-colors">01 // SYSTEMS</a>
-        <a href="#architecture" class="hover:text-white transition-colors">02 // PIPELINE</a>
-        <a href="#case-studies" class="hover:text-white transition-colors">03 // CASE STUDIES</a>
-        <a href="#stack" class="hover:text-white transition-colors">04 // STACK</a>
-        <a href="#about" class="hover:text-white transition-colors">05 // ABOUT</a>
-        <a href="#contact" class="hover:text-white transition-colors">06 // CONTACT</a>
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-7 text-xs font-medium text-slate-400">
+        <a href="#about" class="hover:text-white transition-colors">About</a>
+        <a href="#skills" class="hover:text-white transition-colors">Skills</a>
+        <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+        <a href="#workflow" class="hover:text-white transition-colors">Workflow</a>
+        <a href="#teaching" class="hover:text-white transition-colors">Teaching</a>
+        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
       </nav>
 
-      <!-- System Status & GitHub -->
+      <!-- Action Buttons -->
       <div class="flex items-center gap-3">
-        <div class="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded bg-surface border border-white/[0.08] font-mono text-[11px] text-slate-300">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 status-pulse"></span>
-          <span>SYSTEM STATUS: ONLINE</span>
+        <div class="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded bg-brand-card border border-brand-border text-[11px] font-mono text-slate-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
+          <span>AVAILABLE FOR REMOTE ROLES</span>
         </div>
-        <a href="https://github.com/suhailahmed-dev" target="_blank" rel="noopener" class="p-1.5 text-slate-400 hover:text-white transition-colors" title="GitHub Profile">
-          <i data-lucide="github" class="w-4 h-4"></i>
+        <a href="https://github.com/suhailahmed-dev" target="_blank" rel="noopener" class="p-2 text-slate-400 hover:text-white transition-colors" title="GitHub Profile">
+          <i data-lucide="github" class="w-5 h-5"></i>
         </a>
       </div>
+
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Main Content Container -->
   <main class="relative z-10 pt-28 pb-20 max-w-6xl mx-auto px-6">
-    
-    <!-- Engineering Identity Header -->
-    <div class="pt-8 pb-12 border-b border-white/[0.08]">
-      <div class="flex flex-wrap items-center gap-3 mb-6">
-        <span class="font-mono text-[11px] text-emerald-400 uppercase tracking-wider bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded">
-          AI SYSTEMS ENGINEER
-        </span>
-        <span class="text-slate-600 font-mono text-xs">•</span>
-        <span class="font-mono text-[11px] text-slate-400 uppercase">
-          AUTOMATION BUILDER
-        </span>
-        <span class="text-slate-600 font-mono text-xs">•</span>
-        <span class="font-mono text-[11px] text-slate-400 uppercase">
-          AUTONOMOUS ARCHITECT
-        </span>
+
+    <!-- Hero Section -->
+    <section class="pt-8 pb-16 border-b border-brand-border">
+      
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-brand-card border border-brand-border text-xs font-mono text-brand-accent mb-6">
+        <i data-lucide="code" class="w-3.5 h-3.5"></i>
+        <span>WEB DEVELOPER • PYTHON AUTOMATION • IT INSTRUCTOR</span>
       </div>
 
-      <!-- Hero Statement -->
-      <h1 class="font-display font-extrabold text-4xl sm:text-6xl text-white tracking-tight leading-[1.08] mb-6 max-w-4xl uppercase">
-        I build systems<br>
-        that work<br>
-        without me.
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12] mb-6 max-w-4xl">
+        Building practical web applications, robust automations, and AI-assisted workflows.
       </h1>
 
       <p class="text-slate-400 text-base sm:text-lg max-w-2xl font-normal leading-relaxed mb-8">
-        AI agents, algorithmic trading automation, and end-to-end business workflows engineered to turn repetitive operations into reliable, intelligent execution with zero constant human supervision.
+        I am a web developer and technical instructor based in Hyderabad, Pakistan. I specialize in solid database-driven web systems (PHP &amp; MySQL), resilient browser and backend automation scripts (Python), and disciplined, test-verified AI coding workflows.
       </p>
 
-      <!-- Direct Engineering CTAs -->
+      <!-- Primary Action Buttons -->
       <div class="flex flex-wrap items-center gap-4">
-        <a href="#systems" class="bg-white text-black hover:bg-slate-200 font-mono text-xs font-semibold px-5 py-2.5 rounded transition-all flex items-center gap-2">
-          <span>INSPECT PRODUCTION SYSTEMS</span>
-          <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
+        <a href="#projects" class="bg-brand-accent text-brand-dark hover:bg-emerald-400 font-medium text-xs sm:text-sm px-6 py-3 rounded transition-all flex items-center gap-2 font-mono">
+          <span>VIEW FEATURED PROJECTS</span>
+          <i data-lucide="arrow-down" class="w-4 h-4"></i>
         </a>
-        <a href="https://wa.me/923093174020?text=Hello%20Suhail,%20I%20reviewed%20your%20autonomous%20systems%20and%20would%20like%20to%20discuss%20an%20engineering%20role" target="_blank" rel="noopener" class="sys-card hover:bg-surface-elevated text-slate-300 hover:text-white font-mono text-xs px-5 py-2.5 rounded transition-all flex items-center gap-2">
-          <i data-lucide="terminal" class="w-3.5 h-3.5 text-emerald-400"></i>
-          <span>DIRECT OUTREACH / WHATSAPP</span>
+        <a href="#contact" class="bg-brand-card hover:bg-brand-elevated text-slate-200 hover:text-white border border-brand-border font-medium text-xs sm:text-sm px-6 py-3 rounded transition-all flex items-center gap-2 font-mono">
+          <i data-lucide="mail" class="w-4 h-4 text-brand-accent"></i>
+          <span>CONTACT ME</span>
+        </a>
+        <a href="https://wa.me/923093174020?text=Hello%20Sohail,%20I%20reviewed%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20development%20opportunity" target="_blank" rel="noopener" class="bg-brand-card hover:bg-brand-elevated text-emerald-400 hover:text-emerald-300 border border-brand-border font-medium text-xs sm:text-sm px-5 py-3 rounded transition-all flex items-center gap-2 font-mono" title="Direct WhatsApp">
+          <i data-lucide="message-square" class="w-4 h-4 text-emerald-400"></i>
+          <span>WHATSAPP CHAT</span>
         </a>
       </div>
-    </div>
 
-    <!-- Live System Telemetry Strip (Real Metadata) -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/[0.08] border border-white/[0.08] my-12">
-      <div class="bg-surface p-5">
-        <div class="font-mono text-[11px] text-slate-500 uppercase mb-1">01 // VERIFIED WIN RATE</div>
-        <div class="font-mono text-2xl font-bold text-white">75.0%</div>
-        <div class="font-mono text-[11px] text-amber-400 mt-1">Exness MT5 (18W / 6L Forward-Tested)</div>
-      </div>
-      <div class="bg-surface p-5">
-        <div class="font-mono text-[11px] text-slate-500 uppercase mb-1">02 // AUDIT TELEMETRY</div>
-        <div class="font-mono text-2xl font-bold text-white">14,323</div>
-        <div class="font-mono text-[11px] text-slate-400 mt-1">Real Executed Trades Logged (SQLite)</div>
-      </div>
-      <div class="bg-surface p-5">
-        <div class="font-mono text-[11px] text-slate-500 uppercase mb-1">03 // 48H STRESS DRAWDOWN</div>
-        <div class="font-mono text-2xl font-bold text-white">-1.37%</div>
-        <div class="font-mono text-[11px] text-emerald-400 mt-1">98.63% Capital Preserved Under Soak</div>
-      </div>
-      <div class="bg-surface p-5">
-        <div class="font-mono text-[11px] text-slate-500 uppercase mb-1">04 // MULTI-PLATFORM AUTONOMY</div>
-        <div class="font-mono text-2xl font-bold text-white">4 NODES</div>
-        <div class="font-mono text-[11px] text-slate-400 mt-1">TikTok • Shorts • Reels • Facebook</div>
-      </div>
-    </div>
-
-    <!-- Section: The Autonomous System Pipeline -->
-    <section id="architecture" class="mb-24 scroll-mt-24">
-      <div class="mb-6 flex items-center justify-between">
-        <div>
-          <span class="font-mono text-[11px] text-slate-500 uppercase block mb-1">PIPELINE // 01</span>
-          <h2 class="font-display font-bold text-xl text-white uppercase tracking-tight">The Autonomous Execution Pipeline</h2>
+      <!-- Quick Proof Highlights -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 pt-8 border-t border-brand-border/60">
+        <div class="bg-brand-card p-4 rounded border border-brand-border">
+          <div class="text-xs text-slate-400 font-mono mb-1">CORE WEB STACK</div>
+          <div class="text-lg font-bold text-white">PHP &amp; MySQL</div>
+          <div class="text-xs text-slate-400 mt-1">OOP, MVC &amp; Bootstrap</div>
         </div>
-        <span class="font-mono text-xs text-slate-500 hidden sm:inline">UNIVERSAL SYSTEM TOPOLOGY</span>
+        <div class="bg-brand-card p-4 rounded border border-brand-border">
+          <div class="text-xs text-slate-400 font-mono mb-1">AUTOMATION ENGINE</div>
+          <div class="text-lg font-bold text-white">Python 3</div>
+          <div class="text-xs text-slate-400 mt-1">Playwright &amp; Batch APIs</div>
+        </div>
+        <div class="bg-brand-card p-4 rounded border border-brand-border">
+          <div class="text-xs text-slate-400 font-mono mb-1">AI AGENT SAFETY</div>
+          <div class="text-lg font-bold text-white">114 Unit Tests</div>
+          <div class="text-xs text-slate-400 mt-1">Taskeen Permission Engine</div>
+        </div>
+        <div class="bg-brand-card p-4 rounded border border-brand-border">
+          <div class="text-xs text-slate-400 font-mono mb-1">MENTORSHIP</div>
+          <div class="text-lg font-bold text-white">IT Instructor</div>
+          <div class="text-xs text-slate-400 mt-1">DotCom Institute, Hyderabad</div>
+        </div>
       </div>
 
-      <!-- Pipeline Visualization -->
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-3">
-        <div class="pipe-step sys-card p-4 rounded border border-white/[0.08]">
-          <div class="font-mono text-[10px] text-slate-500 mb-1">STAGE 01</div>
-          <div class="font-mono text-xs font-bold text-white mb-2">INPUT INGESTION</div>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Market WebSockets, raw Google Maps POIs, social video topics, or webhook payloads.
-          </p>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-16 border-b border-brand-border scroll-mt-20">
+      <div class="grid md:grid-cols-3 gap-10 items-center">
+        
+        <!-- Profile Picture Column -->
+        <div class="flex flex-col items-center text-center">
+          <div class="w-40 h-40 sm:w-48 sm:h-48 rounded-xl overflow-hidden border border-brand-border p-1 bg-brand-elevated mb-4 shadow-lg">
+            <img src="assets/suhail_profile.jpg" alt="Sohail Ahmed Buledi" class="w-full h-full object-cover rounded-lg">
+          </div>
+          <h2 class="text-lg font-bold text-white">Sohail Ahmed Buledi</h2>
+          <div class="text-xs font-mono text-brand-accent mt-0.5">Hyderabad, Sindh, Pakistan</div>
+          <div class="text-xs text-slate-400 mt-1">Web Developer • Instructor</div>
         </div>
 
-        <div class="pipe-step sys-card p-4 rounded border border-white/[0.08]">
-          <div class="font-mono text-[10px] text-slate-500 mb-1">STAGE 02</div>
-          <div class="font-mono text-xs font-bold text-white mb-2">INTELLIGENCE</div>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Multi-timeframe indicator confluence, Gemini LLM agents, or heuristic data filters.
+        <!-- Narrative Column -->
+        <div class="md:col-span-2 space-y-4">
+          <div class="font-mono text-xs text-brand-accent uppercase tracking-wider">// ABOUT ME</div>
+          <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+            Practical development with solid fundamentals and modern tooling.
+          </h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            I am a software developer with a practical background in web architecture, relational databases, and automation scripting. As a Web Development Instructor at an IT institute in Hyderabad, I spend my days teaching foundational programming, relational database normalization, and secure coding practices to future developers.
           </p>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            In my own software work, I focus on building systems that solve operational friction: multi-campus administrative portals (like <strong>DotCom Elite</strong>), anti-cheating digital examination engines (like the <strong>Secure Online Assessment System</strong>), and headless Python automation workflows that eliminate repetitive manual labor.
+          </p>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            I also actively research and practice <strong>AI-assisted software development and tool-augmented AI agents</strong>. Through projects like <strong>Taskeen</strong>, I explore how LLMs can plan and execute real tool calls securely behind strict permission gates, supported by over a hundred automated unit tests rather than blind prompts.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-3 pt-3 font-mono text-xs text-slate-300">
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
+              <span>Clean Relational Data Modeling</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
+              <span>Defensive Code &amp; Security Validation</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
+              <span>Test-Driven Agent Architecture</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
+              <span>Available for Remote Global Roles</span>
+            </div>
+          </div>
         </div>
 
-        <div class="pipe-step sys-card p-4 rounded border border-white/[0.08]">
-          <div class="font-mono text-[10px] text-slate-500 mb-1">STAGE 03</div>
-          <div class="font-mono text-xs font-bold text-white mb-2">DECISION & RISK</div>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Hard circuit breakers, 1% capital stop gates, quality scoring, and news blackouts.
-          </p>
-        </div>
-
-        <div class="pipe-step sys-card p-4 rounded border border-white/[0.08]">
-          <div class="font-mono text-[10px] text-slate-500 mb-1">STAGE 04</div>
-          <div class="font-mono text-xs font-bold text-white mb-2">EXECUTION</div>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Idempotent order placement, headless browser publishing, and automated dispatch.
-          </p>
-        </div>
-
-        <div class="pipe-step sys-card p-4 rounded border border-white/[0.08]">
-          <div class="font-mono text-[10px] text-slate-500 mb-1">STAGE 05</div>
-          <div class="font-mono text-xs font-bold text-white mb-2">MONITORING</div>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            SQLite state reconciliation, live heartbeat reporting, and audit trail logging.
-          </p>
-        </div>
       </div>
     </section>
 
-    <!-- Section: Production Systems -->
-    <section id="systems" class="mb-24 scroll-mt-24">
-      <div class="mb-8 pb-4 border-b border-white/[0.08] flex items-end justify-between">
-        <div>
-          <span class="font-mono text-[11px] text-emerald-400 uppercase tracking-wider block mb-1">01 // PRODUCTION ARCHITECTURES</span>
-          <h2 class="font-display font-bold text-2xl text-white uppercase tracking-tight">Verified Engineering Systems</h2>
+    <!-- Technical Skills Section -->
+    <section id="skills" class="py-16 border-b border-brand-border scroll-mt-20">
+      
+      <div class="mb-10">
+        <div class="font-mono text-xs text-brand-accent uppercase tracking-wider mb-1">// TECHNICAL CAPABILITIES</div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Verified Skills &amp; Technology Stack</h2>
+        <p class="text-slate-400 text-sm mt-2 max-w-2xl">
+          Categorized by practical application across real web projects, automation scripts, and instructional coursework.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Category 1: Frontend Development -->
+        <div class="pro-card p-6 rounded-lg">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2 rounded bg-brand-elevated border border-brand-border text-brand-accent">
+              <i data-lucide="layout" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-semibold text-white text-base">Frontend Development</h3>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Building responsive, accessible user interfaces with clean markup and interactive client-side logic.
+          </p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="tag-pill">HTML5</span>
+            <span class="tag-pill">CSS3</span>
+            <span class="tag-pill">Bootstrap 5</span>
+            <span class="tag-pill">JavaScript (ES6+)</span>
+            <span class="tag-pill">jQuery</span>
+            <span class="tag-pill">AJAX</span>
+            <span class="tag-pill">Responsive Design</span>
+          </div>
         </div>
-        <div class="font-mono text-xs text-slate-500">
-          6 ARCHITECTURES DOCUMENTED
+
+        <!-- Category 2: Backend Development -->
+        <div class="pro-card p-6 rounded-lg">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2 rounded bg-brand-elevated border border-brand-border text-emerald-400">
+              <i data-lucide="server" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-semibold text-white text-base">Backend &amp; Architecture</h3>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Designing server-side business logic, authentication gates, and modular MVC architectures.
+          </p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="tag-pill">PHP 8</span>
+            <span class="tag-pill">OOP Concepts</span>
+            <span class="tag-pill">MVC Patterns</span>
+            <span class="tag-pill">Node.js / Express</span>
+            <span class="tag-pill">Python FastAPI</span>
+            <span class="tag-pill">Apache .htaccess</span>
+            <span class="tag-pill">XAMPP Environment</span>
+          </div>
+        </div>
+
+        <!-- Category 3: Databases & Modeling -->
+        <div class="pro-card p-6 rounded-lg">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2 rounded bg-brand-elevated border border-brand-border text-blue-400">
+              <i data-lucide="database" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-semibold text-white text-base">Databases &amp; Modeling</h3>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Designing normalized relational schemas with constraints, indexing, and reproducible migrations.
+          </p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="tag-pill">MySQL</span>
+            <span class="tag-pill">MariaDB</span>
+            <span class="tag-pill">Schema Normalization</span>
+            <span class="tag-pill">SQL Migrations</span>
+            <span class="tag-pill">Foreign Key Integrity</span>
+            <span class="tag-pill">SQLite</span>
+          </div>
+        </div>
+
+        <!-- Category 4: Python & Automation -->
+        <div class="pro-card p-6 rounded-lg">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2 rounded bg-brand-elevated border border-brand-border text-amber-400">
+              <i data-lucide="cpu" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-semibold text-white text-base">Python &amp; Automation</h3>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Writing resilient automation scripts for browser interactions, media processing, and batch tasks.
+          </p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="tag-pill">Python 3</span>
+            <span class="tag-pill">Playwright</span>
+            <span class="tag-pill">Headless Browsers</span>
+            <span class="tag-pill">FFmpeg</span>
+            <span class="tag-pill">AsyncIO</span>
+            <span class="tag-pill">Web Scraping</span>
+            <span class="tag-pill">Batch Processing</span>
+          </div>
+        </div>
+
+        <!-- Category 5: AI Agents & Modern Tooling -->
+        <div class="pro-card p-6 rounded-lg">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2 rounded bg-brand-elevated border border-brand-border text-purple-400">
+              <i data-lucide="bot" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-semibold text-white text-base">AI Agents &amp; Tool Use</h3>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Architecting tool-using AI agents with typed permissions, schema outputs, and rigorous testing.
+          </p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="tag-pill">Tool Registries</span>
+            <span class="tag-pill">Permission Gates</span>
+            <span class="tag-pill">Ollama / Local LLMs</span>
+            <span class="tag-pill">Gemini 2.0 API</span>
+            <span class="tag-pill">JSON Schemas</span>
+            <span class="tag-pill">Vibe Coding Workflows</span>
+          </div>
+        </div>
+
+        <!-- Category 6: Tools & Workflow -->
+        <div class="pro-card p-6 rounded-lg">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2 rounded bg-brand-elevated border border-brand-border text-rose-400">
+              <i data-lucide="git-branch" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-semibold text-white text-base">Tools &amp; Workflow</h3>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Employing standard industry toolchains for version control, API testing, and dependency management.
+          </p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="tag-pill">Git</span>
+            <span class="tag-pill">GitHub</span>
+            <span class="tag-pill">VS Code</span>
+            <span class="tag-pill">Postman</span>
+            <span class="tag-pill">Composer</span>
+            <span class="tag-pill">NPM</span>
+            <span class="tag-pill">Pytest</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="py-16 border-b border-brand-border scroll-mt-20">
+      
+      <div class="mb-10 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+        <div>
+          <div class="font-mono text-xs text-brand-accent uppercase tracking-wider mb-1">// PROJECT PORTFOLIO</div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Verified Production Systems &amp; Codebases</h2>
+          <p class="text-slate-400 text-sm mt-2 max-w-2xl">
+            Each project represents real code solving specific operational, educational, or automation requirements.
+          </p>
+        </div>
+        <div class="text-xs font-mono text-slate-400 bg-brand-card px-3 py-1.5 rounded border border-brand-border self-start sm:self-auto">
+          6 SHOWCASED SYSTEMS
         </div>
       </div>
 
-      <!-- SYSTEM 01: ZainForex AutoBot (Gold MT5) -->
-      <article class="sys-card p-8 rounded-lg mb-8 border border-white/[0.08]">
-        <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-white/[0.06]">
-          <div class="flex items-center gap-3">
-            <span class="tech-pill text-amber-400 border-amber-500/30 bg-amber-500/10">SYS // 01</span>
-            <span class="font-mono text-xs text-slate-500">CATEGORY: TRADING AUTOMATION</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-amber-400 status-pulse"></span>
-            <span class="font-mono text-xs text-amber-300">STATUS: VALIDATION / ACTIVE LIVE TESTING</span>
-          </div>
-        </div>
+      <div class="space-y-10">
 
-        <div class="grid lg:grid-cols-3 gap-8">
-          <div class="lg:col-span-2 space-y-4">
-            <h3 class="font-display font-bold text-2xl text-white">
-              ZainForex AutoBot — XAU/USD Gold Scalping & Risk Engine
-            </h3>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              An institutional quantitative execution engine built for MetaTrader 5 and Exness. It executes high-probability Gold trades based on multi-timeframe price momentum while enforcing non-negotiable capital protection gates.
-            </p>
+        <!-- PROJECT 01: Secure Intelligent Online Assessment System -->
+        <article class="pro-card p-6 sm:p-8 rounded-xl border border-brand-border">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-5 pb-4 border-b border-brand-border">
+            <div class="flex items-center gap-3">
+              <span class="tag-pill text-brand-accent border-brand-accent/30 bg-brand-accent/10">PROJECT // 01</span>
+              <span class="text-xs font-mono text-slate-400">CATEGORY: WEB APPLICATION &amp; SECURITY</span>
+            </div>
+            <span class="text-xs font-mono text-emerald-400 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              STATUS: PRODUCTION-READY
+            </span>
+          </div>
 
-            <div class="grid sm:grid-cols-2 gap-4 pt-2">
-              <div class="bg-surface-elevated p-4 rounded border border-white/[0.04]">
-                <div class="font-mono text-[10px] text-slate-500 uppercase mb-1">THE PROBLEM</div>
-                <p class="text-xs text-slate-300 leading-relaxed">
-                  Gold (XAU/USD) is notoriously volatile. Manual retail traders suffer catastrophic slippage, emotional drawdown, and account blowouts during high-impact US economic news spikes.
-                </p>
+          <div class="grid lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 space-y-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Secure Intelligent Online Assessment &amp; Skill Development System
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                An automated examination and assessment platform built for IT training environments. It enables instructors to build question banks and generate balanced difficulty tests, while safeguarding exam integrity through real-time anti-cheating tracking.
+              </p>
+
+              <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                <div class="bg-brand-elevated p-4 rounded border border-brand-border">
+                  <div class="font-mono text-[10px] text-slate-400 uppercase mb-1">THE PROBLEM</div>
+                  <p class="text-xs text-slate-300 leading-relaxed">
+                    Unsupervised online exams suffer from frequent tab-switching, unauthorized searching, and inconsistent test difficulty distributions across student cohorts.
+                  </p>
+                </div>
+                <div class="bg-brand-elevated p-4 rounded border border-brand-border">
+                  <div class="font-mono text-[10px] text-slate-400 uppercase mb-1">THE SOLUTION</div>
+                  <p class="text-xs text-slate-300 leading-relaxed">
+                    Client-side visibility listeners that log tab switches, enforce countdown timeouts with auto-submission, and build balanced tests based on difficulty blueprints.
+                  </p>
+                </div>
               </div>
 
-              <div class="bg-surface-elevated p-4 rounded border border-white/[0.04]">
-                <div class="font-mono text-[10px] text-slate-500 uppercase mb-1">THE SOLUTION</div>
-                <p class="text-xs text-slate-300 leading-relaxed">
-                  Algorithmic M5 momentum scalp triggers validated against M15 Point of Interest structures, paired with strict 1.0% dynamic capital stops and automated economic calendar blackouts.
-                </p>
+              <!-- Working Features List -->
+              <div class="space-y-2 pt-2">
+                <div class="text-xs font-mono text-brand-accent uppercase">VERIFIED WORKING FEATURES:</div>
+                <ul class="text-xs text-slate-300 space-y-1.5 font-mono">
+                  <li>✔ Anti-cheating tab-switch detection &amp; session violation counter</li>
+                  <li>✔ Automated test generator with balanced subject/difficulty blueprints</li>
+                  <li>✔ Role-based dashboards for Administrator, Teacher, and Student</li>
+                  <li>✔ Timed exam sessions with graceful auto-submit on countdown expiry</li>
+                  <li>✔ Instant score generation, MCQ usage tracking, and topic analytics</li>
+                </ul>
               </div>
             </div>
 
-            <!-- Architecture Flowchart -->
-            <div class="bg-black/60 p-4 rounded border border-white/[0.06] font-mono text-xs">
-              <div class="text-slate-500 text-[10px] uppercase mb-2">SYSTEM ARCHITECTURE</div>
-              <div class="text-slate-300 text-[11px] leading-loose">
-                <span class="text-slate-400">EXNESS MT5 FEED</span>
-                <span class="text-slate-600"> &rarr; </span>
-                <span class="text-slate-300">M15 POI FILTER</span>
-                <span class="text-slate-600"> &rarr; </span>
-                <span class="text-slate-300">M5 MOMENTUM TRIGGER</span>
-                <span class="text-slate-600"> &rarr; </span>
-                <span class="text-emerald-400 font-semibold">1% DYNAMIC RISK GATE</span>
-                <span class="text-slate-600"> &rarr; </span>
-                <span class="text-slate-300">IDEMPOTENT MT5 ORDER</span>
+            <!-- Tech Specs Column -->
+            <div class="bg-brand-elevated p-6 rounded-lg border border-brand-border flex flex-col justify-between">
+              <div>
+                <div class="font-mono text-[11px] text-slate-400 uppercase mb-3">TECHNICAL ARCHITECTURE</div>
+                <div class="space-y-2 text-xs text-slate-300 mb-6 font-mono">
+                  <div><span class="text-slate-400">Backend:</span> PHP (Modular Structure)</div>
+                  <div><span class="text-slate-400">Database:</span> MySQL / MariaDB (Normalized)</div>
+                  <div><span class="text-slate-400">Frontend:</span> Bootstrap 5, Vanilla JS, AJAX</div>
+                  <div><span class="text-slate-400">Security:</span> Session token check, CSRF controls</div>
+                  <div><span class="text-slate-400">Integrity:</span> Proctoring logs &amp; violation tables</div>
+                </div>
+              </div>
+
+              <div class="pt-4 border-t border-brand-border">
+                <div class="font-mono text-[10px] text-slate-400 uppercase mb-2">TECHNOLOGIES USED</div>
+                <div class="flex flex-wrap gap-1 mb-4">
+                  <span class="tag-pill">PHP</span>
+                  <span class="tag-pill">MySQL</span>
+                  <span class="tag-pill">JavaScript</span>
+                  <span class="tag-pill">AJAX</span>
+                  <span class="tag-pill">Bootstrap</span>
+                </div>
+                <span class="text-xs font-mono text-slate-400">
+                  Institutional Codebase Verified
+                </span>
               </div>
             </div>
           </div>
+        </article>
 
-          <!-- Specs & Telemetry Column -->
-          <div class="space-y-4 flex flex-col justify-between bg-surface-elevated p-6 rounded border border-white/[0.04]">
-            <div>
-              <div class="font-mono text-[10px] text-slate-500 uppercase mb-3">VERIFIED TELEMETRY</div>
-              <div class="space-y-3 font-mono">
-                <div>
-                  <div class="text-2xl font-bold text-amber-400">75.0%</div>
-                  <div class="text-[11px] text-slate-400">Win Rate (18 Wins / 6 Losses)</div>
+        <!-- PROJECT 02: DotCom Elite — Multi-Campus Institute Management Platform -->
+        <article class="pro-card p-6 sm:p-8 rounded-xl border border-brand-border">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-5 pb-4 border-b border-brand-border">
+            <div class="flex items-center gap-3">
+              <span class="tag-pill text-blue-400 border-blue-500/30 bg-blue-500/10">PROJECT // 02</span>
+              <span class="text-xs font-mono text-slate-400">CATEGORY: INSTITUTIONAL WEB APPLICATION</span>
+            </div>
+            <span class="text-xs font-mono text-emerald-400 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              STATUS: PRODUCTION-READY
+            </span>
+          </div>
+
+          <div class="grid lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 space-y-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                DotCom Elite — Multi-Campus Institute Management Platform
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Centralized management system and public portal built specifically for DotCom Institute of I.T. (Hyderabad, Pakistan). Integrates three separate branch campuses under one unified database architecture with isolated campus-level administrative permissions.
+              </p>
+
+              <!-- Real Screenshot Embed -->
+              <div class="rounded-lg overflow-hidden border border-brand-border bg-brand-elevated">
+                <img src="assets/dotcom_elite_admin.png" alt="DotCom Elite Admin Report Dashboard Screenshot" class="w-full h-auto object-cover max-h-72">
+                <div class="p-2 bg-brand-card text-[11px] font-mono text-slate-400 text-center border-t border-brand-border">
+                  Actual production screen capture of DotCom Elite Admin Reports &amp; Management Interface
                 </div>
-                <div>
-                  <div class="text-sm font-semibold text-white">Exness #108821</div>
-                  <div class="text-[11px] text-slate-400">Forward-Tested Real Account Feed</div>
-                </div>
-                <div>
-                  <div class="text-sm font-semibold text-emerald-400">1.0% Hard Cap</div>
-                  <div class="text-[11px] text-slate-400">Max Loss Per Executed Trade</div>
-                </div>
+              </div>
+
+              <!-- Working Features List -->
+              <div class="space-y-2 pt-2">
+                <div class="text-xs font-mono text-blue-400 uppercase">VERIFIED WORKING FEATURES:</div>
+                <ul class="text-xs text-slate-300 space-y-1.5 font-mono">
+                  <li>✔ One centralized database supporting Super Admin + 3 isolated Campus Admin panels</li>
+                  <li>✔ Course catalog, admissions pipeline, and staff directory management</li>
+                  <li>✔ Clean PHP architecture without heavy framework dependencies; shared-hosting ready</li>
+                  <li>✔ CSV/Excel batch migration tool (`migrate_csv.php`) for monthly examination results</li>
+                  <li>✔ Clean routing system with local development router and production `.htaccess` rules</li>
+                </ul>
               </div>
             </div>
 
-            <div class="pt-4 border-t border-white/[0.06]">
-              <div class="font-mono text-[10px] text-slate-500 uppercase mb-2">TECHNOLOGIES</div>
-              <div class="flex flex-wrap gap-1.5 mb-4">
-                <span class="tech-pill">MQL5</span>
-                <span class="tech-pill">MetaTrader 5</span>
-                <span class="tech-pill">Python 3</span>
-                <span class="tech-pill">Exness API</span>
-              <div class="flex items-center justify-between gap-3">
-                <span class="tech-pill text-amber-400/80 border-amber-500/20">PROPRIETARY CORE</span>
-                <a href="https://wa.me/923093174020?text=Hello%20Suhail,%20I%20would%20like%20to%20request%20a%20private%20demo%20or%20audit%20review%20of%20ZainForexAutoBot%20MT5" target="_blank" rel="noopener" class="text-xs font-mono font-semibold text-amber-300 hover:text-white transition-colors flex items-center gap-1.5">
-                  <span>REQUEST AUDIT / DEMO</span>
-                  <i data-lucide="lock" class="w-3 h-3 text-amber-400"></i>
+            <!-- Tech Specs Column -->
+            <div class="bg-brand-elevated p-6 rounded-lg border border-brand-border flex flex-col justify-between">
+              <div>
+                <div class="font-mono text-[11px] text-slate-400 uppercase mb-3">TECHNICAL ARCHITECTURE</div>
+                <div class="space-y-2 text-xs text-slate-300 mb-6 font-mono">
+                  <div><span class="text-slate-400">Architecture:</span> Custom Clean PHP MVC</div>
+                  <div><span class="text-slate-400">Database:</span> MySQL (Centralized Schema)</div>
+                  <div><span class="text-slate-400">Access Control:</span> Multi-Tenant Campus Isolation</div>
+                  <div><span class="text-slate-400">Environment:</span> .env Configuration &amp; Apache</div>
+                  <div><span class="text-slate-400">Reporting:</span> Excel / CSV Data Processor</div>
+                </div>
+              </div>
+
+              <div class="pt-4 border-t border-brand-border">
+                <div class="font-mono text-[10px] text-slate-400 uppercase mb-2">TECHNOLOGIES USED</div>
+                <div class="flex flex-wrap gap-1 mb-4">
+                  <span class="tag-pill">PHP 8</span>
+                  <span class="tag-pill">MySQL</span>
+                  <span class="tag-pill">MVC</span>
+                  <span class="tag-pill">Apache</span>
+                  <span class="tag-pill">CSS3</span>
+                </div>
+                <span class="text-xs font-mono text-slate-400">
+                  DotCom Institute of I.T. (Hyderabad)
+                </span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 03: Taskeen — Local-First Multilingual AI Assistant -->
+        <article class="pro-card p-6 sm:p-8 rounded-xl border border-brand-border">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-5 pb-4 border-b border-brand-border">
+            <div class="flex items-center gap-3">
+              <span class="tag-pill text-purple-400 border-purple-500/30 bg-purple-500/10">PROJECT // 03</span>
+              <span class="text-xs font-mono text-slate-400">CATEGORY: PYTHON AI AGENT &amp; TOOL USE</span>
+            </div>
+            <span class="text-xs font-mono text-purple-300 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+              VERIFIED BY 114 TESTS
+            </span>
+          </div>
+
+          <div class="grid lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 space-y-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Taskeen — Local-First Multilingual AI Assistant
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                A local-first, memory-enabled personal AI assistant designed with an explicit, sandboxed tool execution architecture. Solves the safety risks of unrestrained LLM execution through a strict typed tool registry and permission boundary.
+              </p>
+
+              <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                <div class="bg-brand-elevated p-4 rounded border border-brand-border">
+                  <div class="font-mono text-[10px] text-slate-400 uppercase mb-1">THE SAFETY PROBLEM</div>
+                  <p class="text-xs text-slate-300 leading-relaxed">
+                    Giving language models direct system execution can lead to destructive file overwrites, unvetted commands, and untracked errors without recovery.
+                  </p>
+                </div>
+                <div class="bg-brand-elevated p-4 rounded border border-brand-border">
+                  <div class="font-mono text-[10px] text-slate-400 uppercase mb-1">THE AGENT SOLUTION</div>
+                  <p class="text-xs text-slate-300 leading-relaxed">
+                    A decoupled Execution Engine where the model only requests tool calls, which are checked against 4-tier permission levels (SAFE to DESTRUCTIVE) before execution.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Working Features List -->
+              <div class="space-y-2 pt-2">
+                <div class="text-xs font-mono text-purple-400 uppercase">VERIFIED WORKING FEATURES:</div>
+                <ul class="text-xs text-slate-300 space-y-1.5 font-mono">
+                  <li>✔ 114 automated unit and integration tests passing with 100% reliability</li>
+                  <li>✔ Typed Tool Registry with strict input/output schemas and timeouts</li>
+                  <li>✔ 4-Tier Permission Gate (SAFE, NORMAL, SENSITIVE, DESTRUCTIVE)</li>
+                  <li>✔ Persistent SQLite memory for explicit knowledge retention</li>
+                  <li>✔ Multilingual conversation support: English, Roman Urdu, Urdu</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Tech Specs Column -->
+            <div class="bg-brand-elevated p-6 rounded-lg border border-brand-border flex flex-col justify-between">
+              <div>
+                <div class="font-mono text-[11px] text-slate-400 uppercase mb-3">TECHNICAL ARCHITECTURE</div>
+                <div class="space-y-2 text-xs text-slate-300 mb-6 font-mono">
+                  <div><span class="text-slate-400">Runtime:</span> Python 3.11 (AsyncIO)</div>
+                  <div><span class="text-slate-400">LLM Provider:</span> Local Ollama / Swappable API</div>
+                  <div><span class="text-slate-400">Persistence:</span> SQLite Memory DB</div>
+                  <div><span class="text-slate-400">Testing:</span> Pytest (114 automated tests)</div>
+                  <div><span class="text-slate-400">Security:</span> Strict Permission System</div>
+                </div>
+              </div>
+
+              <div class="pt-4 border-t border-brand-border">
+                <div class="font-mono text-[10px] text-slate-400 uppercase mb-2">TECHNOLOGIES USED</div>
+                <div class="flex flex-wrap gap-1 mb-4">
+                  <span class="tag-pill">Python 3</span>
+                  <span class="tag-pill">Ollama</span>
+                  <span class="tag-pill">SQLite</span>
+                  <span class="tag-pill">Pytest</span>
+                  <span class="tag-pill">AsyncIO</span>
+                </div>
+                <span class="text-xs font-mono text-slate-400">
+                  Verified Local Codebase &amp; Test Suite
+                </span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 04: SiteSeller — Autonomous Lead Discovery & Outreach Engine -->
+        <article class="pro-card p-6 sm:p-8 rounded-xl border border-brand-border">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-5 pb-4 border-b border-brand-border">
+            <div class="flex items-center gap-3">
+              <span class="tag-pill text-teal-400 border-teal-500/30 bg-teal-500/10">PROJECT // 04</span>
+              <span class="text-xs font-mono text-slate-400">CATEGORY: DATA EXTRACTION &amp; LEAD AUTOMATION</span>
+            </div>
+            <span class="text-xs font-mono text-emerald-400 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              STATUS: PUBLIC REPOSITORY
+            </span>
+          </div>
+
+          <div class="grid lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 space-y-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                SiteSeller — Autonomous Lead Discovery &amp; Dynamic Outreach Engine
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                An automated client acquisition engine that scans Google Places API for high-intent local businesses that lack an active website, automatically generates a completed custom landing page preview for each prospect, and prepares tailored outreach messages.
+              </p>
+
+              <!-- Working Features List -->
+              <div class="space-y-2 pt-2">
+                <div class="text-xs font-mono text-teal-400 uppercase">VERIFIED WORKING FEATURES:</div>
+                <ul class="text-xs text-slate-300 space-y-1.5 font-mono">
+                  <li>✔ Automated Google Places POI query pipeline with website presence filtering</li>
+                  <li>✔ Dynamic landing page template generator producing real interactive demo previews</li>
+                  <li>✔ Value-first WhatsApp link constructor with pre-filled personalized demo URLs</li>
+                  <li>✔ Deal stage pipeline tracking for outreach management</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Tech Specs Column -->
+            <div class="bg-brand-elevated p-6 rounded-lg border border-brand-border flex flex-col justify-between">
+              <div>
+                <div class="font-mono text-[11px] text-slate-400 uppercase mb-3">TECHNICAL ARCHITECTURE</div>
+                <div class="space-y-2 text-xs text-slate-300 mb-6 font-mono">
+                  <div><span class="text-slate-400">Runtime:</span> Node.js (Express)</div>
+                  <div><span class="text-slate-400">API:</span> Google Places &amp; Geocoding</div>
+                  <div><span class="text-slate-400">Frontend:</span> Tailwind CSS Dynamic Demos</div>
+                  <div><span class="text-slate-400">Outreach:</span> WhatsApp &amp; Email Links</div>
+                </div>
+              </div>
+
+              <div class="pt-4 border-t border-brand-border">
+                <div class="font-mono text-[10px] text-slate-400 uppercase mb-2">TECHNOLOGIES USED</div>
+                <div class="flex flex-wrap gap-1 mb-4">
+                  <span class="tag-pill">Node.js</span>
+                  <span class="tag-pill">Express</span>
+                  <span class="tag-pill">Google Places</span>
+                  <span class="tag-pill">Tailwind CSS</span>
+                </div>
+                <a href="https://github.com/suhailahmed-dev/SiteSeller-Lead-Engine" target="_blank" rel="noopener" class="text-xs font-mono font-medium text-brand-accent hover:text-white transition-colors flex items-center gap-1.5">
+                  <span>VIEW REPOSITORY</span>
+                  <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                 </a>
               </div>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <!-- SYSTEM 02: SOPHI Institutional Engine -->
-      <article class="sys-card p-8 rounded-lg mb-8 border border-white/[0.08]">
-        <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-white/[0.06]">
-          <div class="flex items-center gap-3">
-            <span class="tech-pill text-cyan-400 border-cyan-500/30 bg-cyan-500/10">SYS // 02</span>
-            <span class="font-mono text-xs text-slate-500">CATEGORY: CRYPTO ASSET ARBITRAGE & QUANT</span>
+        <!-- PROJECT 05: Faceless Video Autopilot -->
+        <article class="pro-card p-6 sm:p-8 rounded-xl border border-brand-border">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-5 pb-4 border-b border-brand-border">
+            <div class="flex items-center gap-3">
+              <span class="tag-pill text-amber-400 border-amber-500/30 bg-amber-500/10">PROJECT // 05</span>
+              <span class="text-xs font-mono text-slate-400">CATEGORY: PYTHON BROWSER &amp; MEDIA AUTOMATION</span>
+            </div>
+            <span class="text-xs font-mono text-emerald-400 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              STATUS: PUBLIC REPOSITORY
+            </span>
           </div>
-          <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-cyan-400 status-pulse"></span>
-            <span class="font-mono text-xs text-cyan-300">STATUS: VALIDATION / BINANCE TESTNET</span>
-          </div>
-        </div>
 
-        <div class="grid lg:grid-cols-3 gap-8">
-          <div class="lg:col-span-2 space-y-4">
-            <h3 class="font-display font-bold text-2xl text-white">
-              SOPHI — Multi-Asset Institutional Crypto Trading Engine
-            </h3>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              A high-frequency algorithmic execution platform streaming live market data across 8 major crypto pairs. Features multi-timeframe trend confirmation, non-linear position sizing, and automated emergency brakes to preserve trading capital.
-            </p>
+          <div class="grid lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 space-y-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                Faceless Video Autopilot — Zero-Touch Vertical Media Pipeline
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                An end-to-end programmatic video composition and headless publishing pipeline. Converts written topical concepts into fully produced vertical short-form video content with synchronized neural voiceovers, dynamic kinetic subtitles, and automated browser-based dispatch.
+              </p>
 
-            <div class="grid sm:grid-cols-2 gap-4 pt-2">
-              <div class="bg-surface-elevated p-4 rounded border border-white/[0.04]">
-                <div class="font-mono text-[10px] text-slate-500 uppercase mb-1">THE PROBLEM</div>
-                <p class="text-xs text-slate-300 leading-relaxed">
-                  Crypto markets suffer from extreme flash crashes, exchange disconnections, and cascading stop-outs that drain automated bots without strict state recovery.
-                </p>
-              </div>
-
-              <div class="bg-surface-elevated p-4 rounded border border-white/[0.04]">
-                <div class="font-mono text-[10px] text-slate-500 uppercase mb-1">THE SOLUTION</div>
-                <p class="text-xs text-slate-300 leading-relaxed">
-                  A hardened pipeline separating signals from execution. Incorporates funded challenge drawdown gates (4% max daily loss), persistent power loss monitoring, and idempotent SQLite state persistence.
-                </p>
+              <!-- Working Features List -->
+              <div class="space-y-2 pt-2">
+                <div class="text-xs font-mono text-amber-400 uppercase">VERIFIED WORKING FEATURES:</div>
+                <ul class="text-xs text-slate-300 space-y-1.5 font-mono">
+                  <li>✔ Automated script generation tailored for high audience retention</li>
+                  <li>✔ 24kHz neural audio synthesis supporting English, Urdu, and Roman Urdu</li>
+                  <li>✔ FFmpeg video compositor rendering 60FPS vertical video with animated word subtitles</li>
+                  <li>✔ Playwright headless browser automation for multi-platform uploading</li>
+                </ul>
               </div>
             </div>
 
-            <!-- Architecture Flowchart -->
-            <div class="bg-black/60 p-4 rounded border border-white/[0.06] font-mono text-xs">
-              <div class="text-slate-500 text-[10px] uppercase mb-2">SYSTEM ARCHITECTURE</div>
-              <div class="text-slate-300 text-[11px] leading-loose">
-                <span class="text-slate-400">BINANCE WEBSOCKETS</span>
-                <span class="text-slate-600"> &rarr; </span>
-                <span class="text-slate-300">CONFLUENCE ENGINE (EMA/RSI/ATR)</span>
-                <span class="text-slate-600"> &rarr; </span>
-                <span class="text-cyan-400 font-semibold">RISK GATE (DAILY 4% LIMIT)</span>
-                <span class="text-slate-600"> &rarr; </span>
-                <span class="text-slate-300">IDEMPOTENT EXECUTOR</span>
-                <span class="text-slate-600"> &rarr; </span>
-                <span class="text-slate-400">SQLITE STATE SYNC</span>
+            <!-- Tech Specs Column -->
+            <div class="bg-brand-elevated p-6 rounded-lg border border-brand-border flex flex-col justify-between">
+              <div>
+                <div class="font-mono text-[11px] text-slate-400 uppercase mb-3">TECHNICAL ARCHITECTURE</div>
+                <div class="space-y-2 text-xs text-slate-300 mb-6 font-mono">
+                  <div><span class="text-slate-400">Core Runtime:</span> Python 3 (AsyncIO)</div>
+                  <div><span class="text-slate-400">Audio Synthesis:</span> Edge-TTS Engine</div>
+                  <div><span class="text-slate-400">Video Compositing:</span> FFmpeg Hardware Filters</div>
+                  <div><span class="text-slate-400">Browser Automation:</span> Playwright Headless</div>
+                </div>
               </div>
-            </div>
-          </div>
 
-          <!-- Specs & Telemetry Column -->
-          <div class="space-y-4 flex flex-col justify-between bg-surface-elevated p-6 rounded border border-white/[0.04]">
-            <div>
-              <div class="font-mono text-[10px] text-slate-500 uppercase mb-3">VERIFIED TELEMETRY</div>
-              <div class="space-y-3 font-mono">
-                <div>
-                  <div class="text-2xl font-bold text-cyan-400">14,323</div>
-                  <div class="text-[11px] text-slate-400">Real Trades Recorded in SQLite DB</div>
+              <div class="pt-4 border-t border-brand-border">
+                <div class="font-mono text-[10px] text-slate-400 uppercase mb-2">TECHNOLOGIES USED</div>
+                <div class="flex flex-wrap gap-1 mb-4">
+                  <span class="tag-pill">Python 3</span>
+                  <span class="tag-pill">FFmpeg</span>
+                  <span class="tag-pill">Playwright</span>
+                  <span class="tag-pill">Edge-TTS</span>
                 </div>
-                <div>
-                  <div class="text-sm font-semibold text-emerald-400">-1.37% Max Drawdown</div>
-                  <div class="text-[11px] text-slate-400">48-Hour Continuous Stress Test Passed</div>
-                </div>
-                <div>
-                  <div class="text-sm font-semibold text-white">8 Active Asset Pairs</div>
-                  <div class="text-[11px] text-slate-400">BTC, ETH, SOL, BNB, AVAX, XRP, ADA, DOGE</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="pt-4 border-t border-white/[0.06]">
-              <div class="font-mono text-[10px] text-slate-500 uppercase mb-2">TECHNOLOGIES</div>
-              <div class="flex flex-wrap gap-1.5 mb-4">
-                <span class="tech-pill">Python 3.11</span>
-                <span class="tech-pill">FastAPI</span>
-                <span class="tech-pill">AsyncIO</span>
-                <span class="tech-pill">Binance WS</span>
-                <span class="tech-pill">SQLite</span>
-                <span class="tech-pill">React 18</span>
-              </div>
-              <div class="flex items-center justify-between gap-3">
-                <span class="tech-pill text-cyan-400/80 border-cyan-500/20">PROPRIETARY CORE</span>
-                <a href="https://wa.me/923093174020?text=Hello%20Suhail,%20I%20would%20like%20to%20request%20a%20private%20audit%20review%20of%20SOPHI%20Trading%20Engine" target="_blank" rel="noopener" class="text-xs font-mono font-semibold text-cyan-300 hover:text-white transition-colors flex items-center gap-1.5">
-                  <span>REQUEST AUDIT / DEMO</span>
-                  <i data-lucide="lock" class="w-3 h-3 text-cyan-400"></i>
+                <a href="https://github.com/suhailahmed-dev/Faceless-Video-Autopilot" target="_blank" rel="noopener" class="text-xs font-mono font-medium text-amber-400 hover:text-white transition-colors flex items-center gap-1.5">
+                  <span>VIEW REPOSITORY</span>
+                  <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                 </a>
               </div>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <!-- SYSTEM 03: APEX Marketing AI Command Center -->
-      <article class="sys-card p-8 rounded-lg mb-8 border border-white/[0.08]">
-        <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-white/[0.06]">
-          <div class="flex items-center gap-3">
-            <span class="tech-pill text-emerald-400 border-emerald-500/30 bg-emerald-500/10">SYS // 03</span>
-            <span class="font-mono text-xs text-slate-500">CATEGORY: MULTI-AGENT WORKFLOWS</span>
+        <!-- PROJECT 06: AI Document Controller (Concept Prototype) -->
+        <article class="pro-card p-6 sm:p-8 rounded-xl border border-brand-border">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-5 pb-4 border-b border-brand-border">
+            <div class="flex items-center gap-3">
+              <span class="tag-pill text-slate-400 border-slate-500/30 bg-slate-500/10">PROJECT // 06</span>
+              <span class="text-xs font-mono text-slate-400">CATEGORY: ARCHITECTURAL CONCEPT &amp; SPECIFICATION</span>
+            </div>
+            <span class="text-xs font-mono text-amber-400 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+              STATUS: ARCHITECTURAL PROTOTYPE
+            </span>
           </div>
-          <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-            <span class="font-mono text-xs text-emerald-400">STATUS: PRODUCTION DEPLOYED</span>
-          </div>
-        </div>
 
-        <div class="grid lg:grid-cols-3 gap-8">
-          <div class="lg:col-span-2 space-y-4">
-            <h3 class="font-display font-bold text-2xl text-white">
-              APEX — Autonomous 15-Agent Multi-Channel Marketing Hub
-            </h3>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              An autonomous multi-agent agency hub orchestrating 15 specialized AI roles. Ingests business parameters and generates targeted, platform-adapted copy, SEO strategies, and 30-day content roadmaps across 4 major social networks.
-            </p>
+          <div class="grid lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 space-y-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white">
+                AI Document Controller — Automated Classification &amp; Revision Tracker
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                An architectural design for engineering and construction documentation workflows. Designed to ingest incoming drawings, invoices, and contracts, extract structured metadata using vision models and OCR, and maintain an audit-proof Excel and database register.
+              </p>
 
-            <div class="grid sm:grid-cols-2 gap-4 pt-2">
-              <div class="bg-surface-elevated p-4 rounded border border-white/[0.04]">
-                <div class="font-mono text-[10px] text-slate-500 uppercase mb-1">THE PROBLEM</div>
-                <p class="text-xs text-slate-300 leading-relaxed">
-                  Managing continuous content across multiple channels requires coordinating copywriters, SEO analysts, and ad strategists, leading to high human cost and slow turnaround.
-                </p>
-              </div>
-
-              <div class="bg-surface-elevated p-4 rounded border border-white/[0.04]">
-                <div class="font-mono text-[10px] text-slate-500 uppercase mb-1">THE SOLUTION</div>
-                <p class="text-xs text-slate-300 leading-relaxed">
-                  A centralized agent orchestrator that breaks marketing generation into deterministic roles (VSL Writer, Ad Studio, Reels Hook Architect) with persistent SQLite storage.
-                </p>
+              <!-- Concept Details -->
+              <div class="space-y-2 pt-2">
+                <div class="text-xs font-mono text-slate-400 uppercase">PLANNED ARCHITECTURAL WORKFLOW:</div>
+                <ul class="text-xs text-slate-300 space-y-1.5 font-mono">
+                  <li>• Document intake folder watching and file type normalization</li>
+                  <li>• Title block OCR metadata extraction (Revision No., Sheet ID, Project Code, Date)</li>
+                  <li>• Duplicate hash comparison and superseding revision detection</li>
+                  <li>• Automated export to master Excel register and relational database</li>
+                </ul>
               </div>
             </div>
 
-            <!-- Workflow Diagram -->
-            <div class="bg-black/60 p-4 rounded border border-white/[0.06] font-mono text-xs">
-              <div class="text-slate-500 text-[10px] uppercase mb-2">WORKFLOW ARCHITECTURE</div>
-              <div class="text-slate-300 text-[11px] leading-loose">
-                <span class="text-slate-400">CAMPAIGN INPUT</span>
-                <span class="text-slate-600"> &rarr; </span>
-                <span class="text-emerald-400 font-semibold">15 SPECIALIZED AGENTS</span>
-                <span class="text-slate-600"> &rarr; </span>
-                <span class="text-slate-300">PLATFORM ADAPTATION</span>
-                <span class="text-slate-600"> &rarr; </span>
-                <span class="text-slate-300">SQLITE ARCHIVE</span>
-                <span class="text-slate-600"> &rarr; </span>
-                <span class="text-slate-400">DISPATCH TO IG / FB / LI / X</span>
+            <!-- Tech Specs Column -->
+            <div class="bg-brand-elevated p-6 rounded-lg border border-brand-border flex flex-col justify-between">
+              <div>
+                <div class="font-mono text-[11px] text-slate-400 uppercase mb-3">PLANNED TECH STACK</div>
+                <div class="space-y-2 text-xs text-slate-300 mb-6 font-mono">
+                  <div><span class="text-slate-400">Backend:</span> Python 3</div>
+                  <div><span class="text-slate-400">Vision/OCR:</span> Tesseract / Vision APIs</div>
+                  <div><span class="text-slate-400">Spreadsheet:</span> OpenPyXL &amp; Pandas</div>
+                  <div><span class="text-slate-400">Database:</span> SQLite / MySQL Register</div>
+                </div>
               </div>
-            </div>
-          </div>
 
-          <!-- Specs & Telemetry Column -->
-          <div class="space-y-4 flex flex-col justify-between bg-surface-elevated p-6 rounded border border-white/[0.04]">
-            <div>
-              <div class="font-mono text-[10px] text-slate-500 uppercase mb-3">SYSTEM CAPABILITIES</div>
-              <div class="space-y-3 font-mono">
-                <div>
-                  <div class="text-2xl font-bold text-white">15 Roles</div>
-                  <div class="text-[11px] text-slate-400">Autonomous Specialized Agents</div>
-                </div>
-                <div>
-                  <div class="text-sm font-semibold text-emerald-400">4 Platforms</div>
-                  <div class="text-[11px] text-slate-400">Instagram, Facebook, LinkedIn, X</div>
-                </div>
-                <div>
-                  <div class="text-sm font-semibold text-white">Zero Cliché Guard</div>
-                  <div class="text-[11px] text-slate-400">Enforces High-Conversion Hook Formulas</div>
+              <div class="pt-4 border-t border-brand-border">
+                <div class="font-mono text-[10px] text-slate-400 uppercase mb-2">CLASSIFICATION</div>
+                <div class="text-xs font-mono text-slate-400">
+                  Concept specification &amp; prototype schema
                 </div>
               </div>
             </div>
-
-            <div class="pt-4 border-t border-white/[0.06]">
-              <div class="font-mono text-[10px] text-slate-500 uppercase mb-2">TECHNOLOGIES</div>
-              <div class="flex flex-wrap gap-1.5 mb-4">
-                <span class="tech-pill">Python 3</span>
-                <span class="tech-pill">Gemini 2.0</span>
-                <span class="tech-pill">SQLite</span>
-                <span class="tech-pill">AsyncIO</span>
-                <span class="tech-pill">Cloudflare</span>
-              </div>
-              <a href="https://github.com/suhailahmed-dev/APEX-Marketing-AI-CommandCenter" target="_blank" rel="noopener" class="text-xs font-mono font-semibold text-emerald-400 hover:text-white transition-colors flex items-center gap-1.5">
-                <span>INSPECT REPOSITORY</span>
-                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-              </a>
-            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <!-- SYSTEM 04: Faceless Video Autopilot -->
-      <article class="sys-card p-8 rounded-lg mb-8 border border-white/[0.08]">
-        <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-white/[0.06]">
-          <div class="flex items-center gap-3">
-            <span class="tech-pill text-purple-400 border-purple-500/30 bg-purple-500/10">SYS // 04</span>
-            <span class="font-mono text-xs text-slate-500">CATEGORY: CONTENT AUTOMATION PIPELINE</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-            <span class="font-mono text-xs text-emerald-400">STATUS: PRODUCTION DEPLOYED</span>
-          </div>
-        </div>
-
-        <div class="grid lg:grid-cols-3 gap-8">
-          <div class="lg:col-span-2 space-y-4">
-            <h3 class="font-display font-bold text-2xl text-white">
-              Faceless Video Autopilot — 4-Platform Autonomous Media Studio
-            </h3>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              A zero-touch autonomous video pipeline that ingests topical ideas, writes viral retention scripts, synthesizes 24kHz neural speech, renders 60FPS video with word-by-word kinetic subtitles, and publishes headlessly to TikTok and Shorts.
-            </p>
-
-            <div class="grid sm:grid-cols-2 gap-4 pt-2">
-              <div class="bg-surface-elevated p-4 rounded border border-white/[0.04]">
-                <div class="font-mono text-[10px] text-slate-500 uppercase mb-1">THE PROBLEM</div>
-                <p class="text-xs text-slate-300 leading-relaxed">
-                  Creating and editing vertical video manually takes hours per clip (recording voice, syncing subtitles, rendering, and manual web uploading).
-                </p>
-              </div>
-
-              <div class="bg-surface-elevated p-4 rounded border border-white/[0.04]">
-                <div class="font-mono text-[10px] text-slate-500 uppercase mb-1">THE SOLUTION</div>
-                <p class="text-xs text-slate-300 leading-relaxed">
-                  End-to-end programmatic media composition using FFmpeg hardware-accelerated filters, edge neural voice synthesis, and headless browser automation.
-                </p>
-              </div>
-            </div>
-
-            <!-- Workflow Diagram -->
-            <div class="bg-black/60 p-4 rounded border border-white/[0.06] font-mono text-xs">
-              <div class="text-slate-500 text-[10px] uppercase mb-2">PIPELINE WORKFLOW</div>
-              <div class="text-slate-300 text-[11px] leading-loose">
-                <span class="text-slate-400">TOPIC HOOK</span>
-                <span class="text-slate-600"> &rarr; </span>
-                <span class="text-slate-300">RETENTION SCRIPTING</span>
-                <span class="text-slate-600"> &rarr; </span>
-                <span class="text-purple-400 font-semibold">24kHz NEURAL TTS</span>
-                <span class="text-slate-600"> &rarr; </span>
-                <span class="text-slate-300">FFMPEG 60FPS SUBTITLE COMPOSITOR</span>
-                <span class="text-slate-600"> &rarr; </span>
-                <span class="text-emerald-400">HEADLESS UPLOAD TO 4 PLATFORMS</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Specs & Telemetry Column -->
-          <div class="space-y-4 flex flex-col justify-between bg-surface-elevated p-6 rounded border border-white/[0.04]">
-            <div>
-              <div class="font-mono text-[10px] text-slate-500 uppercase mb-3">SYSTEM CAPABILITIES</div>
-              <div class="space-y-3 font-mono">
-                <div>
-                  <div class="text-2xl font-bold text-white">Zero Touch</div>
-                  <div class="text-[11px] text-slate-400">Idea to Published Video with 0 Clicks</div>
-                </div>
-                <div>
-                  <div class="text-sm font-semibold text-purple-400">Multi-Lingual Voice</div>
-                  <div class="text-[11px] text-slate-400">Natural Urdu, Roman Urdu & English</div>
-                </div>
-                <div>
-                  <div class="text-sm font-semibold text-white">Kinetic Subtitles</div>
-                  <div class="text-[11px] text-slate-400">Frame-Perfect Word Highlighting</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="pt-4 border-t border-white/[0.06]">
-              <div class="font-mono text-[10px] text-slate-500 uppercase mb-2">TECHNOLOGIES</div>
-              <div class="flex flex-wrap gap-1.5 mb-4">
-                <span class="tech-pill">Python 3</span>
-                <span class="tech-pill">FFmpeg</span>
-                <span class="tech-pill">Edge-TTS</span>
-                <span class="tech-pill">Playwright</span>
-                <span class="tech-pill">Meta API</span>
-              </div>
-              <a href="https://github.com/suhailahmed-dev/Faceless-Video-Autopilot" target="_blank" rel="noopener" class="text-xs font-mono font-semibold text-purple-400 hover:text-white transition-colors flex items-center gap-1.5">
-                <span>INSPECT REPOSITORY</span>
-                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- SYSTEM 05: SiteSeller Lead Generation & Outreach -->
-      <article class="sys-card p-8 rounded-lg mb-8 border border-white/[0.08]">
-        <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-white/[0.06]">
-          <div class="flex items-center gap-3">
-            <span class="tech-pill text-blue-400 border-blue-500/30 bg-blue-500/10">SYS // 05</span>
-            <span class="font-mono text-xs text-slate-500">CATEGORY: DATA EXTRACTION & CLIENT ACQUISITION</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-            <span class="font-mono text-xs text-emerald-400">STATUS: PRODUCTION OPERATIONAL</span>
-          </div>
-        </div>
-
-        <div class="grid lg:grid-cols-3 gap-8">
-          <div class="lg:col-span-2 space-y-4">
-            <h3 class="font-display font-bold text-2xl text-white">
-              SiteSeller — Autonomous Lead Discovery & Outreach Engine
-            </h3>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              An autonomous client acquisition engine that discovers high-intent local businesses lacking an active web presence, dynamically builds tailored landing page demos for each prospect, and crafts personalized direct WhatsApp & email outreach.
-            </p>
-
-            <div class="grid sm:grid-cols-2 gap-4 pt-2">
-              <div class="bg-surface-elevated p-4 rounded border border-white/[0.04]">
-                <div class="font-mono text-[10px] text-slate-500 uppercase mb-1">THE PROBLEM</div>
-                <p class="text-xs text-slate-300 leading-relaxed">
-                  Cold outreach for digital agencies typically relies on generic, low-converting messages. Agency founders waste dozens of hours pitching without tangible proof of value.
-                </p>
-              </div>
-
-              <div class="bg-surface-elevated p-4 rounded border border-white/[0.04]">
-                <div class="font-mono text-[10px] text-slate-500 uppercase mb-1">THE SOLUTION</div>
-                <p class="text-xs text-slate-300 leading-relaxed">
-                  Automated value-first outreach: The system extracts verified business data, generates a completed interactive website for that specific brand, and pitches with a working live preview link.
-                </p>
-              </div>
-            </div>
-
-            <!-- Workflow Diagram -->
-            <div class="bg-black/60 p-4 rounded border border-white/[0.06] font-mono text-xs">
-              <div class="text-slate-500 text-[10px] uppercase mb-2">WORKFLOW ARCHITECTURE</div>
-              <div class="text-slate-300 text-[11px] leading-loose">
-                <span class="text-slate-400">NICHE & LOCATION</span>
-                <span class="text-slate-600"> &rarr; </span>
-                <span class="text-slate-300">MAPS DISCOVERY</span>
-                <span class="text-slate-600"> &rarr; </span>
-                <span class="text-slate-300">QUALIFICATION (NO-SITE FILTER)</span>
-                <span class="text-slate-600"> &rarr; </span>
-                <span class="text-blue-400 font-semibold">AUTO-DEMO BUILDER</span>
-                <span class="text-slate-600"> &rarr; </span>
-                <span class="text-emerald-400">WHATSAPP OUTREACH DISPATCH</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Specs & Telemetry Column -->
-          <div class="space-y-4 flex flex-col justify-between bg-surface-elevated p-6 rounded border border-white/[0.04]">
-            <div>
-              <div class="font-mono text-[10px] text-slate-500 uppercase mb-3">SYSTEM CAPABILITIES</div>
-              <div class="space-y-3 font-mono">
-                <div>
-                  <div class="text-2xl font-bold text-white">Zero Cold Friction</div>
-                  <div class="text-[11px] text-slate-400">Value-First Live Demo Previews</div>
-                </div>
-                <div>
-                  <div class="text-sm font-semibold text-blue-400">Multi-Region Search</div>
-                  <div class="text-[11px] text-slate-400">UAE, US, UK, Australia, Pakistan</div>
-                </div>
-                <div>
-                  <div class="text-sm font-semibold text-white">Deal Tracking Funnel</div>
-                  <div class="text-[11px] text-slate-400">Real-Time Stage & Revenue Tracking</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="pt-4 border-t border-white/[0.06]">
-              <div class="font-mono text-[10px] text-slate-500 uppercase mb-2">TECHNOLOGIES</div>
-              <div class="flex flex-wrap gap-1.5 mb-4">
-                <span class="tech-pill">Node.js</span>
-                <span class="tech-pill">Express</span>
-                <span class="tech-pill">Google Places</span>
-                <span class="tech-pill">Tailwind CSS</span>
-                <span class="tech-pill">Cloudflare</span>
-              </div>
-              <a href="https://github.com/suhailahmed-dev/SiteSeller-Lead-Engine" target="_blank" rel="noopener" class="text-xs font-mono font-semibold text-blue-400 hover:text-white transition-colors flex items-center gap-1.5">
-                <span>INSPECT REPOSITORY</span>
-                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- SYSTEM 06: Zain AI Enterprise Commander -->
-      <article class="sys-card p-8 rounded-lg mb-8 border border-white/[0.08]">
-        <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-white/[0.06]">
-          <div class="flex items-center gap-3">
-            <span class="tech-pill text-emerald-400 border-emerald-500/30 bg-emerald-500/10">SYS // 06</span>
-            <span class="font-mono text-xs text-slate-500">CATEGORY: ENTERPRISE AI ORCHESTRATION & SUPERVISION</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-            <span class="font-mono text-xs text-emerald-400">STATUS: PRODUCTION OPERATIONAL</span>
-          </div>
-        </div>
-
-        <div class="grid lg:grid-cols-3 gap-8">
-          <div class="lg:col-span-2 space-y-4">
-            <h3 class="font-display font-bold text-2xl text-white">
-              Zain AI Enterprise — Central Command Center & Department Supervisor
-            </h3>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              A unified command and supervision dashboard managing multi-department AI business operations in real time. Coordinates four specialized functional departments (Content Creation, Quantitative Trading, Client Acquisition, and Cloud Operations) through a central FastAPI event bus with live status telemetry and automated audio announcements.
-            </p>
-
-            <div class="grid sm:grid-cols-2 gap-4 pt-2">
-              <div class="bg-surface-elevated p-4 rounded border border-white/[0.04]">
-                <div class="font-mono text-[10px] text-slate-500 uppercase mb-1">THE PROBLEM</div>
-                <p class="text-xs text-slate-300 leading-relaxed">
-                  Operating multiple autonomous pipelines independently creates visibility silos, fragmented logging, and disjointed process supervision across servers.
-                </p>
-              </div>
-
-              <div class="bg-surface-elevated p-4 rounded border border-white/[0.04]">
-                <div class="font-mono text-[10px] text-slate-500 uppercase mb-1">THE SOLUTION</div>
-                <p class="text-xs text-slate-300 leading-relaxed">
-                  A high-throughput WebSocket supervisor combining centralized JSON telemetry, dynamic health heartbeat checks, automated task triggers, and neural TTS voice announcements.
-                </p>
-              </div>
-            </div>
-
-            <!-- Workflow Diagram -->
-            <div class="bg-black/60 p-4 rounded border border-white/[0.06] font-mono text-xs">
-              <div class="text-slate-500 text-[10px] uppercase mb-2">SUPERVISOR TOPOLOGY</div>
-              <div class="text-slate-300 text-[11px] leading-loose">
-                <span class="text-slate-400">DEPARTMENT NODES</span>
-                <span class="text-slate-600"> &rarr; </span>
-                <span class="text-emerald-400 font-semibold">FASTAPI EVENT BUS</span>
-                <span class="text-slate-600"> &rarr; </span>
-                <span class="text-slate-300">WEBSOCKET BROADCAST</span>
-                <span class="text-slate-600"> &rarr; </span>
-                <span class="text-slate-300">VOICE SYNTHESIS ENGINE</span>
-                <span class="text-slate-600"> &rarr; </span>
-                <span class="text-emerald-400">REAL-TIME MISSION DASHBOARD</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Specs & Telemetry Column -->
-          <div class="space-y-4 flex flex-col justify-between bg-surface-elevated p-6 rounded border border-white/[0.04]">
-            <div>
-              <div class="font-mono text-[10px] text-slate-500 uppercase mb-3">SUPERVISION SPECS</div>
-              <div class="space-y-3 font-mono">
-                <div>
-                  <div class="text-2xl font-bold text-white">4 Depts</div>
-                  <div class="text-[11px] text-slate-400">Content • Trading • Leads • Operations</div>
-                </div>
-                <div>
-                  <div class="text-sm font-semibold text-emerald-400">Real-Time Telemetry</div>
-                  <div class="text-[11px] text-slate-400">Live WebSockets & Voice Synthesis</div>
-                </div>
-                <div>
-                  <div class="text-sm font-semibold text-white">Zero Polling Delay</div>
-                  <div class="text-[11px] text-slate-400">Event-Driven Asynchronous Pipeline</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="pt-4 border-t border-white/[0.06]">
-              <div class="font-mono text-[10px] text-slate-500 uppercase mb-2">TECHNOLOGIES</div>
-              <div class="flex flex-wrap gap-1.5 mb-4">
-                <span class="tech-pill">Python 3</span>
-                <span class="tech-pill">FastAPI</span>
-                <span class="tech-pill">WebSockets</span>
-                <span class="tech-pill">Tailwind CSS</span>
-                <span class="tech-pill">Neural TTS</span>
-              </div>
-              <a href="https://github.com/suhailahmed-dev/Zain-AI-Enterprise-Commander" target="_blank" rel="noopener" class="text-xs font-mono font-semibold text-emerald-400 hover:text-white transition-colors flex items-center gap-1.5">
-                <span>INSPECT REPOSITORY</span>
-                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-    </section>
-
-    <!-- Section: Engineering Lessons & Case Studies -->
-    <section id="case-studies" class="mb-24 scroll-mt-24">
-      <div class="mb-8 pb-4 border-b border-white/[0.08] flex items-end justify-between">
-        <div>
-          <span class="font-mono text-[11px] text-slate-500 uppercase tracking-wider block mb-1">02 // FIELD INSIGHTS</span>
-          <h2 class="font-display font-bold text-2xl text-white uppercase tracking-tight">Engineering Case Studies</h2>
-        </div>
-        <div class="font-mono text-xs text-slate-500">
-          LESSONS FROM PRODUCTION
-        </div>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-6">
-        <!-- Case Study 01 -->
-        <div class="sys-card p-6 rounded border border-white/[0.08]">
-          <div class="flex items-center justify-between mb-3">
-            <span class="tech-pill text-amber-400 border-amber-500/20 bg-amber-500/5">CASE // 01</span>
-            <span class="font-mono text-[11px] text-slate-500">TRADING RUNTIME</span>
-          </div>
-          <h3 class="font-display font-bold text-lg text-white mb-2">
-            Eliminating Catastrophic Drawdown in Live Algorithmic Execution
-          </h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
-            During early forward testing, volatile market spikes exposed that simple technical signals alone are vulnerable without hard infrastructure-level risk controls.
+    </section>
+
+    <!-- Development Workflow Section -->
+    <section id="workflow" class="py-16 border-b border-brand-border scroll-mt-20">
+      
+      <div class="mb-10">
+        <div class="font-mono text-xs text-brand-accent uppercase tracking-wider mb-1">// METHODOLOGY</div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">My Engineering Workflow</h2>
+        <p class="text-slate-400 text-sm mt-2 max-w-2xl">
+          How I approach software development: from clear requirement specifications to clean relational models, defensive code, and responsible AI-assisted verification.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+        
+        <div class="pro-card p-5 rounded-lg">
+          <div class="font-mono text-[11px] text-brand-accent mb-2">PHASE 01</div>
+          <h3 class="font-semibold text-white text-sm mb-2">Requirements &amp; Scope</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Clarify user workflows, determine security boundaries, and identify core data entities before writing code.
           </p>
-          <div class="space-y-2 border-t border-white/[0.06] pt-3 text-xs">
-            <div>
-              <span class="font-mono text-slate-500">ENGINEERING DECISION: </span>
-              <span class="text-slate-300">Decoupled signal calculation from order dispatch. Implemented an asynchronous pre-flight validator enforcing a 1.0% hard equity stop and economic news blackout before an order can touch the broker API.</span>
-            </div>
-            <div>
-              <span class="font-mono text-slate-500">OUTCOME: </span>
-              <span class="text-emerald-400 font-semibold">Zero account breaches during high-impact US CPI releases; achieved 75% verified win rate across 24 forward trades.</span>
-            </div>
-          </div>
         </div>
 
-        <!-- Case Study 02 -->
-        <div class="sys-card p-6 rounded border border-white/[0.08]">
-          <div class="flex items-center justify-between mb-3">
-            <span class="tech-pill text-cyan-400 border-cyan-500/20 bg-cyan-500/5">CASE // 02</span>
-            <span class="font-mono text-[11px] text-slate-500">RESILIENCE & RECOVERY</span>
-          </div>
-          <h3 class="font-display font-bold text-lg text-white mb-2">
-            Surviving Power Loss & WebSocket Drops with Zero State Corruption
-          </h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
-            Running 48-hour continuous testnet trading bots locally means that unexpected hardware power cuts or network hiccups can cause orphaned orders or duplicate executions.
+        <div class="pro-card p-5 rounded-lg">
+          <div class="font-mono text-[11px] text-blue-400 mb-2">PHASE 02</div>
+          <h3 class="font-semibold text-white text-sm mb-2">Schema &amp; Architecture</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Design normalized relational schemas, define foreign keys, and establish modular directory structures.
           </p>
-          <div class="space-y-2 border-t border-white/[0.06] pt-3 text-xs">
-            <div>
-              <span class="font-mono text-slate-500">ENGINEERING DECISION: </span>
-              <span class="text-slate-300">Engineered a persistent SQLite idempotency barrier with a background PowerGuard monitor that validates pre-flight state integrity before reconnecting to exchange WebSockets.</span>
-            </div>
-            <div>
-              <span class="font-mono text-slate-500">OUTCOME: </span>
-              <span class="text-cyan-300 font-semibold">Completed 48-hour soak audit with zero crashes, preserving 98.63% capital with -1.37% maximum drawdown.</span>
-            </div>
-          </div>
         </div>
+
+        <div class="pro-card p-5 rounded-lg">
+          <div class="font-mono text-[11px] text-purple-400 mb-2">PHASE 03</div>
+          <h3 class="font-semibold text-white text-sm mb-2">Defensive Coding</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Implement clean business logic with parameter validation, session checks, and CSRF protection.
+          </p>
+        </div>
+
+        <div class="pro-card p-5 rounded-lg">
+          <div class="font-mono text-[11px] text-amber-400 mb-2">PHASE 04</div>
+          <h3 class="font-semibold text-white text-sm mb-2">AI-Assisted Verification</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Use AI tools to generate edge-case test suites, audit potential vulnerabilities, and verify boundary conditions.
+          </p>
+        </div>
+
+        <div class="pro-card p-5 rounded-lg">
+          <div class="font-mono text-[11px] text-emerald-400 mb-2">PHASE 05</div>
+          <h3 class="font-semibold text-white text-sm mb-2">Deployment &amp; Docs</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Write clear database setup instructions, provide environment templates (`.env.example`), and package cleanly.
+          </p>
+        </div>
+
       </div>
+
+      <!-- Responsible AI / Vibe Coding Explanation -->
+      <div class="mt-8 bg-brand-card p-6 rounded-lg border border-brand-border">
+        <div class="flex items-center gap-2 mb-2">
+          <i data-lucide="shield-check" class="w-4 h-4 text-brand-accent"></i>
+          <h3 class="text-sm font-semibold text-white">How I Use AI Coding Tools Responsibly</h3>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+          I use modern AI coding assistants (such as Gemini, Claude, and vibe coding workflows) as an accelerator for routine boilerplate, exploratory research, and test generation. However, I maintain strict engineering oversight: every AI-generated function is audited for input validation, database query safety, and architectural cohesion. Real systems require deterministic business rules, not unverified model outputs.
+        </p>
+      </div>
+
     </section>
 
-    <!-- Section: Technical Stack (Grouped by Function) -->
-    <section id="stack" class="mb-24 scroll-mt-24">
-      <div class="mb-8 pb-4 border-b border-white/[0.08] flex items-end justify-between">
-        <div>
-          <span class="font-mono text-[11px] text-slate-500 uppercase tracking-wider block mb-1">03 // COMPETENCIES</span>
-          <h2 class="font-display font-bold text-2xl text-white uppercase tracking-tight">Functional Technical Stack</h2>
-        </div>
-        <div class="font-mono text-xs text-slate-500">
-          PROVEN IN PRODUCTION
-        </div>
+    <!-- Teaching & Mentorship Section -->
+    <section id="teaching" class="py-16 border-b border-brand-border scroll-mt-20">
+      
+      <div class="mb-10">
+        <div class="font-mono text-xs text-brand-accent uppercase tracking-wider mb-1">// INSTRUCTION &amp; MENTORSHIP</div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Teaching Experience &amp; Technical Mentorship</h2>
+        <p class="text-slate-400 text-sm mt-2 max-w-2xl">
+          Explaining complex programming concepts clearly to beginners is one of the best ways to master engineering fundamentals.
+        </p>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.08] border border-white/[0.08]">
-        <div class="bg-surface p-6">
-          <div class="font-mono text-xs font-bold text-emerald-400 uppercase mb-3">AI & AGENT WORKFLOWS</div>
-          <ul class="space-y-2 text-xs font-mono text-slate-300">
-            <li>• Google Gemini 2.0 API</li>
-            <li>• Multi-Agent Systems</li>
-            <li>• Structured Output Pipelines</li>
-            <li>• Heuristic Guardrails</li>
-            <li>• Neural TTS Synthesis</li>
-          </ul>
-        </div>
-
-        <div class="bg-surface p-6">
-          <div class="font-mono text-xs font-bold text-amber-400 uppercase mb-3">TRADING & FINTECH</div>
-          <ul class="space-y-2 text-xs font-mono text-slate-300">
-            <li>• MetaTrader 5 (MQL5)</li>
-            <li>• Binance WebSockets & REST</li>
-            <li>• Risk Management Hard Gates</li>
-            <li>• Confluence Strategy Engines</li>
-            <li>• Idempotent Order Dispatch</li>
-          </ul>
-        </div>
-
-        <div class="bg-surface p-6">
-          <div class="font-mono text-xs font-bold text-cyan-400 uppercase mb-3">AUTOMATION & BACKEND</div>
-          <ul class="space-y-2 text-xs font-mono text-slate-300">
-            <li>• Python 3.11 (AsyncIO, FastAPI)</li>
-            <li>• Playwright Headless Browser</li>
-            <li>• FFmpeg 60FPS Video Processing</li>
-            <li>• Node.js & Express</li>
-            <li>• SQLite & Alembic Migrations</li>
-          </ul>
-        </div>
-
-        <div class="bg-surface p-6">
-          <div class="font-mono text-xs font-bold text-purple-400 uppercase mb-3">CLIENT & INTERFACES</div>
-          <ul class="space-y-2 text-xs font-mono text-slate-300">
-            <li>• Modern JavaScript / TypeScript</li>
-            <li>• Tailwind CSS Design Systems</li>
-            <li>• React 18 Dashboards</li>
-            <li>• Cloudflare Tunnel Networking</li>
-            <li>• Git & GitHub Version Control</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section: About The Engineer -->
-    <section id="about" class="mb-24 scroll-mt-24">
-      <div class="sys-card p-8 sm:p-12 rounded-lg border border-white/[0.08]">
-        <div class="grid md:grid-cols-3 gap-8 items-center">
-          <div class="flex flex-col items-center text-center">
-            <div class="w-32 h-32 rounded-lg overflow-hidden border border-white/10 p-1 bg-surface-elevated mb-4">
-              <img src="assets/suhail_profile.jpg" alt="Suhail Ahmed" class="w-full h-full object-cover rounded">
-            </div>
-            <h3 class="font-display font-bold text-white text-lg">Suhail Ahmed</h3>
-            <div class="font-mono text-xs text-slate-500">Hyderabad, Pakistan</div>
-            <div class="font-mono text-[11px] text-emerald-400 mt-1">BS in Information Technology</div>
+      <div class="pro-card p-8 rounded-xl border border-brand-border">
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-brand-border">
+          <div>
+            <h3 class="text-xl font-bold text-white">Web Development Instructor</h3>
+            <div class="text-xs font-mono text-brand-accent mt-1">IT Institute • Hyderabad, Sindh, Pakistan</div>
           </div>
+          <div class="tag-pill text-emerald-400 border-emerald-500/30">
+            ACTIVE TEACHING EXPERIENCE
+          </div>
+        </div>
 
-          <div class="md:col-span-2 space-y-4">
-            <div class="font-mono text-xs text-slate-500 uppercase">04 // ABOUT THE ENGINEER</div>
-            <h4 class="font-display font-bold text-2xl text-white uppercase tracking-tight">
-              I build autonomous software.
-            </h4>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              I am an AI Systems Engineer and BS-IT graduate focused on developing autonomous architectures that operate continuously without human intervention.
+        <div class="grid md:grid-cols-3 gap-6 text-sm text-slate-400">
+          <div class="space-y-2">
+            <h4 class="font-semibold text-white text-xs font-mono uppercase">Course Curriculum</h4>
+            <p class="text-xs leading-relaxed">
+              Leading cohorts through full-stack web fundamentals: semantic HTML5, modern CSS3 layout techniques, responsive Bootstrap, interactive JavaScript programming, and PHP server scripting.
             </p>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              My engineering philosophy is simple: write robust, self-healing code that respects capital and operational constraints. Whether it's managing risk in live financial markets or executing multi-step business pipelines headlessly, I engineer for reliability, deterministic execution, and verifiable outcomes.
+          </div>
+          <div class="space-y-2">
+            <h4 class="font-semibold text-white text-xs font-mono uppercase">Database Mastery</h4>
+            <p class="text-xs leading-relaxed">
+              Guiding students through practical relational database modeling with MySQL: table creation, primary/foreign key relationships, normalization, and executing secure parameterized SQL queries.
             </p>
-
-            <div class="grid sm:grid-cols-2 gap-3 pt-3 font-mono text-xs text-slate-300">
-              <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                <span>Async-First & Self-Sufficient</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                <span>Full Timezone Flexibility (EST / GMT)</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                <span>Clean Commits & Documentation</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                <span>Zero Hallucination Tolerance</span>
-              </div>
-            </div>
+          </div>
+          <div class="space-y-2">
+            <h4 class="font-semibold text-white text-xs font-mono uppercase">Real-World Projects</h4>
+            <p class="text-xs leading-relaxed">
+              Mentoring students on capstone web applications (student record portals, e-commerce prototypes, assessment systems) to build their problem-solving confidence for junior developer roles.
+            </p>
           </div>
         </div>
       </div>
+
     </section>
 
-    <!-- Section: Contact & Direct Engineering Engagement -->
-    <section id="contact" class="scroll-mt-24 mb-16 text-center max-w-2xl mx-auto">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-surface border border-white/[0.08] font-mono text-xs text-slate-400 mb-6">
-        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 status-pulse"></span>
-        <span>AVAILABLE FOR REMOTE ENGINEERING ROLES</span>
+    <!-- Contact & Engagement Section -->
+    <section id="contact" class="py-16 scroll-mt-20 text-center max-w-2xl mx-auto">
+      
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-brand-card border border-brand-border text-xs font-mono text-brand-accent mb-6">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
+        <span>OPEN FOR COLLABORATION &amp; REMOTE ROLES</span>
       </div>
 
-      <h2 class="font-display font-bold text-3xl sm:text-4xl text-white mb-4 uppercase tracking-tight">
-        Initiate System Collaboration
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+        Let's Build Something Reliable Together
       </h2>
 
-      <p class="text-slate-400 text-sm leading-relaxed mb-8">
-        Looking for an engineer to architect autonomous AI workflows, live algorithmic trading safeguards, or high-throughput automation pipelines? Reach out directly.
+      <p class="text-slate-400 text-sm sm:text-base leading-relaxed mb-8">
+        Looking for a developer to build full-stack web applications, write dependable Python automation scripts, or collaborate on remote engineering teams? Reach out directly.
       </p>
 
+      <!-- Direct Contact Buttons -->
       <div class="flex flex-wrap items-center justify-center gap-4">
+        
         <!-- Direct WhatsApp -->
-        <a href="https://wa.me/923093174020?text=Hello%20Suhail,%20I%20reviewed%20your%20autonomous%20systems%20and%20would%20like%20to%20discuss%20an%20engineering%20role" target="_blank" rel="noopener" class="bg-white text-black hover:bg-slate-200 font-mono text-xs font-semibold px-6 py-3 rounded transition-all flex items-center gap-2">
+        <a href="https://wa.me/923093174020?text=Hello%20Sohail,%20I%20reviewed%20your%20developer%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity" target="_blank" rel="noopener" class="bg-brand-accent text-brand-dark hover:bg-emerald-400 font-mono text-xs sm:text-sm font-semibold px-6 py-3 rounded transition-all flex items-center gap-2">
           <i data-lucide="message-square" class="w-4 h-4"></i>
           <span>WHATSAPP: +92 309 3174020</span>
         </a>
 
         <!-- Direct Email -->
-        <a href="mailto:sohailbuledi84@gmail.com" class="sys-card hover:bg-surface-elevated text-slate-300 hover:text-white font-mono text-xs px-6 py-3 rounded transition-all flex items-center gap-2">
-          <i data-lucide="mail" class="w-4 h-4 text-slate-400"></i>
+        <a href="mailto:sohailbuledi84@gmail.com" class="pro-card hover:bg-brand-elevated text-slate-200 hover:text-white font-mono text-xs sm:text-sm px-6 py-3 rounded transition-all flex items-center gap-2">
+          <i data-lucide="mail" class="w-4 h-4 text-brand-accent"></i>
           <span>sohailbuledi84@gmail.com</span>
         </a>
 
-        <!-- GitHub -->
-        <a href="https://github.com/suhailahmed-dev" target="_blank" rel="noopener" class="sys-card hover:bg-surface-elevated text-slate-300 hover:text-white font-mono text-xs px-5 py-3 rounded transition-all flex items-center gap-2">
+        <!-- GitHub Profile -->
+        <a href="https://github.com/suhailahmed-dev" target="_blank" rel="noopener" class="pro-card hover:bg-brand-elevated text-slate-200 hover:text-white font-mono text-xs sm:text-sm px-5 py-3 rounded transition-all flex items-center gap-2">
           <i data-lucide="github" class="w-4 h-4"></i>
           <span>GITHUB</span>
         </a>
+
       </div>
+
+      <div class="mt-8 text-xs font-mono text-slate-400">
+        📍 Hyderabad, Sindh, Pakistan • Flexible across EST / GMT / UTC timezones
+      </div>
+
     </section>
 
   </main>
 
-  <!-- Technical Engineering Footer -->
-  <footer class="border-t border-white/[0.08] py-8 relative z-10 bg-[#07080b]">
-    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-slate-500">
+  <!-- Professional Footer -->
+  <footer class="border-t border-brand-border py-8 relative z-10 bg-[#0b0f19]">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400">
       <div>
-        <span>SUHAIL AHMED BULEDI</span>
+        <span class="text-white font-semibold">Sohail Ahmed Buledi</span>
         <span class="mx-2">•</span>
-        <span>AUTONOMOUS SYSTEMS ARCHITECT</span>
+        <span>Web Developer &amp; Technical Instructor</span>
       </div>
-      <div class="flex items-center gap-4 text-[11px]">
-        <span>ALL SYSTEMS OPERATIONAL</span>
+      <div class="flex items-center gap-4">
+        <a href="#about" class="hover:text-white transition-colors">About</a>
         <span>•</span>
-        <a href="#" class="text-slate-400 hover:text-white transition-colors">TOP &uarr;</a>
+        <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+        <span>•</span>
+        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+        <span>•</span>
+        <a href="#" class="text-slate-400 hover:text-white transition-colors">Top &uarr;</a>
       </div>
     </div>
   </footer>
@@ -1075,4 +1023,4 @@
     lucide.createIcons();
   </script>
 </body>
-</html>
+</html>\n
