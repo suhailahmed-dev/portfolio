@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sohail Ahmed Buledi | The Train-Themed Developer Portfolio</title>
-  <meta name="description" content="Hop on! The viral train-themed developer portfolio of Sohail Ahmed Buledi — Web Developer, Python Automation Specialist, and IT Instructor from Hyderabad, Pakistan.">
+  <title>Sohail Ahmed Buledi | The Interactive Train Portfolio & Systems Architect</title>
+  <meta name="description" content="The interactive train-themed portfolio of Sohail Ahmed Buledi — Web Developer, Algorithmic Systems Engineer & IT Instructor. Featuring live SVG physics, Forex AutoBot & Sophi trading systems.">
   <meta name="author" content="Sohail Ahmed Buledi">
 
-  <!-- Open Graph Metadata -->
-  <meta property="og:title" content="Sohail Ahmed Buledi — The Train-Themed Portfolio">
-  <meta property="og:description" content="I build the systems, so your business enjoys the ride. Full-Stack Web Development, Python Automation & AI Agents.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sohail Ahmed Buledi — The Interactive Train-Themed Portfolio">
+  <meta property="og:description" content="I build the systems, so your business enjoys the ride. Full-Stack Web Development, Algorithmic Forex Trading Bots & AI Agents.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://suhailahmed-dev.github.io/portfolio/">
 
@@ -25,6 +25,7 @@
 
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           fontFamily: {
@@ -39,6 +40,12 @@
               card: '#ffffff',
               border: '#e8e2d8',
               borderDark: '#d5cbbe',
+            },
+            night: {
+              DEFAULT: '#0b0f19',
+              card: '#111827',
+              border: '#1f2937',
+              accent: '#10b981',
             },
             track: {
               green: '#1e784f',
@@ -58,13 +65,14 @@
   </script>
 
   <style>
-    /* Warm retro-editorial canvas matching the viral reel */
+    /* Base Daylight Theme (Matching the viral reel) */
     body {
       background-color: #faf8f5;
       color: #1c1917;
       font-family: 'Inter', sans-serif;
       overflow-x: hidden;
       user-select: none;
+      transition: background-color 0.4s ease, color 0.4s ease;
     }
 
     /* Subtle graph paper grid overlay */
@@ -75,10 +83,53 @@
         linear-gradient(to bottom, rgba(0, 0, 0, 0.024) 1px, transparent 1px);
     }
 
+    /* Twilight / Night Mode */
+    body.twilight {
+      background-color: #0b0f19;
+      color: #f3f4f6;
+    }
+    body.twilight .paper-grid {
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    }
+    body.twilight header {
+      background-color: rgba(11, 15, 25, 0.92);
+      border-color: #1f2937;
+    }
+    body.twilight .station-card {
+      background-color: #111827;
+      border-color: #1f2937;
+      color: #f3f4f6;
+    }
+    body.twilight .station-card:hover {
+      border-color: #10b981;
+      box-shadow: 0 14px 28px rgba(16, 185, 129, 0.15);
+    }
+    body.twilight .bg-white {
+      background-color: #111827 !important;
+      border-color: #1f2937 !important;
+      color: #f3f4f6 !important;
+    }
+    body.twilight .bg-paper {
+      background-color: #182234 !important;
+      border-color: #1f2937 !important;
+      color: #f3f4f6 !important;
+    }
+    body.twilight .text-ink {
+      color: #f9fafb !important;
+    }
+    body.twilight .text-ink-muted {
+      color: #9ca3af !important;
+    }
+    body.twilight .border-paper-border {
+      border-color: #1f2937 !important;
+    }
+
     /* Floating shapes animations */
     @keyframes floatSlow {
       0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-9px) rotate(3deg); }
+      50% { transform: translateY(-8px) rotate(3deg); }
     }
     @keyframes spinSlow {
       0% { transform: rotate(0deg); }
@@ -91,7 +142,7 @@
       animation: spinSlow 24s linear infinite;
     }
 
-    /* Station Card styling */
+    /* Station Card standard */
     .station-card {
       background: #ffffff;
       border: 1px solid #e8e2d8;
@@ -104,9 +155,9 @@
       box-shadow: 0 14px 28px rgba(30, 120, 79, 0.09);
     }
 
-    /* Train 3D block shadow effect */
+    /* 3D Train letter block effect */
     .train-block {
-      filter: drop-shadow(0 3px 2px rgba(0,0,0,0.18));
+      filter: drop-shadow(0 3px 2px rgba(0,0,0,0.22));
     }
 
     /* Pulse dot */
@@ -118,10 +169,10 @@
       animation: pulseGreen 1.8s infinite ease-in-out;
     }
 
-    /* Smooth focus rings */
-    a:focus-visible, button:focus-visible {
-      outline: 2px solid #1e784f;
-      outline-offset: 2px;
+    /* Smoke particle styling */
+    .steam-puff {
+      pointer-events: none;
+      transition: opacity 0.1s ease;
     }
   </style>
 </head>
@@ -130,11 +181,11 @@
   <!-- Subtle Paper Grid Overlay -->
   <div class="fixed inset-0 paper-grid pointer-events-none z-0"></div>
 
-  <!-- Top Sticky Navigation Bar (Matching Reel Header) -->
-  <header class="fixed top-0 inset-x-0 z-50 bg-[#faf8f5]/92 backdrop-blur-md border-b border-paper-border">
-    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+  <!-- Top Sticky Navigation Bar -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-[#faf8f5]/92 backdrop-blur-md border-b border-paper-border transition-colors">
+    <div class="max-w-6xl mx-auto px-5 h-15 flex items-center justify-between">
       
-      <!-- Brand Logo: Red square with 'S' and editorial serif 'Sohail.' -->
+      <!-- Brand Logo: Red badge 'S' with editorial serif 'Sohail.' -->
       <a href="#" class="flex items-center gap-2.5 group">
         <div class="w-7 h-7 rounded-md bg-[#e11d48] text-white flex items-center justify-center font-bold text-xs shadow-sm group-hover:scale-105 transition-transform">
           S
@@ -142,27 +193,37 @@
         <span class="font-serif font-bold text-base tracking-tight text-ink">Sohail.</span>
       </a>
 
-      <!-- Center Station Navigation -->
-      <nav class="hidden md:flex items-center gap-7 text-xs font-mono text-ink-muted">
+      <!-- Station Navigation Links -->
+      <nav class="hidden md:flex items-center gap-6 text-xs font-mono text-ink-muted">
         <a href="#work" class="hover:text-ink hover:font-semibold transition-all">01 Work</a>
-        <a href="#about" class="hover:text-ink hover:font-semibold transition-all">02 About</a>
-        <a href="#skills" class="hover:text-ink hover:font-semibold transition-all">03 Skills</a>
-        <a href="#process" class="hover:text-ink hover:font-semibold transition-all">04 Process</a>
-        <a href="#contact" class="hover:text-ink hover:font-semibold transition-all">05 Contact</a>
+        <a href="#quant" class="hover:text-ink hover:font-semibold transition-all">02 Algo Systems</a>
+        <a href="#about" class="hover:text-ink hover:font-semibold transition-all">03 About</a>
+        <a href="#skills" class="hover:text-ink hover:font-semibold transition-all">04 Rail Yard</a>
+        <a href="#contact" class="hover:text-ink hover:font-semibold transition-all">05 Boarding Pass</a>
       </nav>
 
-      <!-- Right Action Strip: Status + Let's Talk Pill -->
-      <div class="flex items-center gap-3">
-        <div class="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-paper-border text-[11px] font-mono text-ink-muted shadow-2xs">
+      <!-- Right Action Strip: Twilight Toggle + Status + Let's Talk Pill -->
+      <div class="flex items-center gap-2.5">
+        
+        <!-- Day / Night Express Mode Toggle -->
+        <button id="themeToggleBtn" 
+                class="px-2.5 py-1 rounded-full bg-white border border-paper-border text-xs font-mono text-ink-muted hover:text-ink transition-all flex items-center gap-1.5 shadow-2xs" 
+                title="Toggle Daylight / Twilight Express Mode">
+          <span id="themeIcon">🌙</span>
+          <span class="hidden sm:inline text-[11px]" id="themeText">Twilight</span>
+        </button>
+
+        <!-- Status Indicator -->
+        <div class="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded-full bg-white border border-paper-border text-[11px] font-mono text-ink-muted shadow-2xs">
           <span class="w-2 h-2 rounded-full bg-emerald-500 pulse-dot"></span>
-          <span>OPEN TO PROJECTS</span>
+          <span>OPEN TO ROLES</span>
         </div>
 
         <!-- Distinctive Black Pill Button with Yellow Arrow (From Reel) -->
         <a href="https://wa.me/923093174020?text=Hello%20Sohail,%20I%20saw%20your%20train%20portfolio%20and%20would%20like%20to%20discuss%20a%20project" 
            target="_blank" 
            rel="noopener" 
-           class="bg-ink hover:bg-black text-white text-xs font-semibold px-4 py-2 rounded-full flex items-center gap-2 transition-all shadow-sm group">
+           class="bg-ink hover:bg-black text-white text-xs font-semibold px-3.5 py-1.5 rounded-full flex items-center gap-2 transition-all shadow-sm group">
           <span>Let's talk</span>
           <span class="w-4 h-4 rounded-full bg-amber-400 text-black flex items-center justify-center text-[10px] group-hover:translate-x-0.5 transition-transform">
             &rarr;
@@ -173,172 +234,183 @@
     </div>
   </header>
 
-  <!-- Main Hero Stage -->
-  <main class="relative z-10 pt-24 sm:pt-28">
+  <!-- MAIN HERO STAGE (Elevated Train Placement — Front & Center Above the Fold!) -->
+  <main class="relative z-10 pt-16 sm:pt-20">
 
-    <!-- Hero Header Section -->
-    <section class="max-w-6xl mx-auto px-6 text-center pt-8 pb-2 relative">
+    <!-- Hero Header: Compact & High Impact -->
+    <section class="max-w-6xl mx-auto px-5 text-center pt-4 pb-1 relative">
       
-      <!-- Floating Playful Geometric Shapes (Identical to Reel) -->
-      <!-- Red Arch / Half-circle on Left -->
-      <div class="hidden sm:block absolute left-8 lg:left-14 top-20 w-11 h-6 bg-[#e11d48] rounded-t-full opacity-90 animate-float pointer-events-none"></div>
-      <!-- Blue Dot on Left-Center -->
-      <div class="hidden sm:block absolute left-24 lg:left-32 top-44 w-3.5 h-3.5 bg-[#2563eb] rounded-full opacity-90 pointer-events-none"></div>
+      <!-- Floating Playful Geometric Shapes (From Reel) -->
+      <div class="hidden sm:block absolute left-8 lg:left-14 top-8 w-10 h-5 bg-[#e11d48] rounded-t-full opacity-90 animate-float pointer-events-none"></div>
+      <div class="hidden sm:block absolute left-24 lg:left-32 top-28 w-3 h-3 bg-[#2563eb] rounded-full opacity-90 pointer-events-none"></div>
       
-      <!-- Golden 8-Point Star on Right-Top -->
-      <div class="hidden sm:block absolute right-12 lg:right-20 top-16 w-8 h-8 opacity-90 animate-spin-slow pointer-events-none">
+      <div class="hidden sm:block absolute right-12 lg:right-20 top-6 w-7 h-7 opacity-90 animate-spin-slow pointer-events-none">
         <svg viewBox="0 0 24 24" fill="#eab308">
           <path d="M12 0L14.59 4.41L19.5 3.5L18.59 8.41L23 11L19.59 14.59L20.5 19.5L15.59 18.59L13 23L9.41 19.59L4.5 20.5L5.41 15.59L1 13L4.41 9.41L3.5 4.5L8.41 5.41L11 1Z"/>
         </svg>
       </div>
-      <!-- Green Rounded Capsule on Right-Center -->
-      <div class="hidden sm:block absolute right-20 lg:right-32 top-48 w-11 h-4 bg-[#16a34a] rounded-full opacity-90 pointer-events-none"></div>
+      <div class="hidden sm:block absolute right-20 lg:right-32 top-32 w-10 h-3.5 bg-[#16a34a] rounded-full opacity-90 pointer-events-none"></div>
 
-      <!-- Small Badge Capsule -->
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-paper-border text-xs font-mono text-ink-muted mb-5 shadow-2xs">
-        <span class="w-4 h-4 rounded-full bg-blue-600 text-white flex items-center justify-center text-[9px] font-bold">S</span>
-        <span>PORTFOLIO '26</span>
+      <!-- Hero Badge Capsule -->
+      <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-white border border-paper-border text-xs font-mono text-ink-muted mb-2 shadow-2xs">
+        <span class="w-3.5 h-3.5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[9px] font-bold">S</span>
+        <span>PORTFOLIO '26 &bull; ALGO SYSTEMS &bull; FULL-STACK</span>
       </div>
 
-      <!-- Subtitle Greeting -->
-      <p class="text-xs sm:text-sm font-mono text-ink-muted mb-2 tracking-wide">
-        Hi, I'm Sohail, a Web &amp; Automation Developer.
+      <!-- Greeting Subtitle -->
+      <p class="text-xs sm:text-sm font-mono text-ink-muted mb-1 tracking-wide">
+        Hi, I'm Sohail Ahmed Buledi &mdash; Web Developer, Algorithmic Engineer &amp; IT Instructor.
       </p>
 
-      <!-- Signature Editorial Headline from Reel -->
-      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif text-ink tracking-tight leading-[1.12] mb-5 max-w-4xl mx-auto">
+      <!-- Iconic Editorial Serif Headline (From Reel) -->
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif text-ink tracking-tight leading-[1.08] mb-2 max-w-4xl mx-auto">
         I build the systems, so<br class="hidden sm:inline">
         your business <span class="italic font-serif text-[#e11d48]">enjoys the ride.</span>
       </h1>
 
-      <!-- Clean narrative sub-copy -->
-      <p class="text-ink-muted text-xs sm:text-sm max-w-xl mx-auto font-normal leading-relaxed mb-6">
-        From full-stack web applications to zero-touch Python automation and tool-using AI agents, I engineer software that moves friction out of the way. Hop on and explore my work.
+      <!-- High-Ticket Value Proposition -->
+      <p class="text-ink-muted text-xs sm:text-sm max-w-2xl mx-auto font-normal leading-relaxed mb-3">
+        From institutional web portals and test-verified AI agents to high-frequency algorithmic Forex &amp; crypto trading engines, I engineer software that moves friction out of the way.
       </p>
 
     </section>
 
-    <!-- THE INTERACTIVE TRAIN ARENA (Roller Coaster Green Truss Bridge + Train) -->
+    <!-- THE INTERACTIVE TRAIN ARENA (Higher up, completely visible above fold!) -->
     <section id="track-arena" class="relative w-full max-w-6xl mx-auto px-4 select-none cursor-pointer" title="Click and hold anywhere to speed up the train!">
       
       <!-- SVG Bridge & Roller Coaster Railway -->
-      <div class="relative w-full overflow-hidden" style="min-height: 380px;">
-        <svg id="railwaySvg" class="w-full h-auto block" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid meet">
+      <div class="relative w-full overflow-hidden" style="min-height: 330px;">
+        <svg id="railwaySvg" class="w-full h-auto block" viewBox="0 0 1200 380" preserveAspectRatio="xMidYMid meet">
           <defs>
-            <!-- Rail Green Gradient -->
+            <!-- Rail Green Gradient (Daylight) -->
             <linearGradient id="railGrad" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stop-color="#1b6b47"/>
               <stop offset="50%" stop-color="#2a9d66"/>
               <stop offset="100%" stop-color="#1b6b47"/>
             </linearGradient>
 
-            <!-- Wheel Shadow filter -->
-            <filter id="cartShadow" x="-20%" y="-20%" width="140%" height="140%">
-              <feDropShadow dx="0" dy="2" stdDeviation="1.5" flood-opacity="0.2"/>
+            <!-- Headlight Cone Gradient -->
+            <linearGradient id="headlightGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="rgba(250, 204, 21, 0.75)"/>
+              <stop offset="60%" stop-color="rgba(250, 204, 21, 0.25)"/>
+              <stop offset="100%" stop-color="rgba(250, 204, 21, 0)"/>
+            </linearGradient>
+
+            <!-- Night Rails Glow Filter -->
+            <filter id="nightGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#10b981" flood-opacity="0.6"/>
             </filter>
           </defs>
 
-          <!-- VERTICAL GREEN STEEL PILLARS (Anchored to ground) -->
-          <g stroke="#1e784f" stroke-width="2.2" opacity="0.75">
-            <line x1="80" y1="210" x2="80" y2="410"/>
-            <line x1="180" y1="250" x2="180" y2="410"/>
-            <line x1="280" y1="290" x2="280" y2="410"/>
-            <line x1="380" y1="320" x2="380" y2="410"/>
-            <line x1="480" y1="335" x2="480" y2="410"/>
-            <line x1="580" y1="335" x2="580" y2="410"/>
-            <line x1="680" y1="335" x2="680" y2="410"/>
-            <line x1="780" y1="315" x2="780" y2="410"/>
-            <line x1="880" y1="275" x2="880" y2="410"/>
-            <line x1="980" y1="215" x2="980" y2="410"/>
-            <line x1="1080" y1="150" x2="1080" y2="410"/>
+          <!-- VERTICAL GREEN STEEL PILLARS -->
+          <g id="bridgePillars" stroke="#1e784f" stroke-width="2.2" opacity="0.75">
+            <line x1="80" y1="180" x2="80" y2="370"/>
+            <line x1="180" y1="220" x2="180" y2="370"/>
+            <line x1="280" y1="260" x2="280" y2="370"/>
+            <line x1="380" y1="290" x2="380" y2="370"/>
+            <line x1="480" y1="305" x2="480" y2="370"/>
+            <line x1="580" y1="305" x2="580" y2="370"/>
+            <line x1="680" y1="305" x2="680" y2="370"/>
+            <line x1="780" y1="285" x2="780" y2="370"/>
+            <line x1="880" y1="245" x2="880" y2="370"/>
+            <line x1="980" y1="185" x2="980" y2="370"/>
+            <line x1="1080" y1="120" x2="1080" y2="370"/>
 
-            <!-- Structural Cross-Towers / Horizontal Struts -->
-            <line x1="40" y1="410" x2="1160" y2="410" stroke="#1e784f" stroke-width="3"/>
-            <line x1="80" y1="360" x2="1080" y2="360" stroke="#1e784f" stroke-width="1.2" opacity="0.4"/>
-            <line x1="180" y1="385" x2="980" y2="385" stroke="#1e784f" stroke-width="1.2" opacity="0.3"/>
+            <!-- Structural Ground Baseline -->
+            <line x1="40" y1="370" x2="1160" y2="370" stroke="#1e784f" stroke-width="3"/>
+            <line x1="80" y1="330" x2="1080" y2="330" stroke="#1e784f" stroke-width="1.2" opacity="0.4"/>
           </g>
 
-          <!-- TOWER DIAGONAL X-BRACES (Classic Rollercoaster Structural Truss) -->
-          <g stroke="#1e784f" stroke-width="1.2" opacity="0.35">
-            <line x1="80" y1="260" x2="180" y2="360"/>
-            <line x1="180" y1="260" x2="80" y2="360"/>
-            <line x1="180" y1="300" x2="280" y2="410"/>
-            <line x1="280" y1="300" x2="180" y2="410"/>
-            <line x1="280" y1="330" x2="380" y2="410"/>
-            <line x1="380" y1="330" x2="280" y2="410"/>
-            <line x1="780" y1="330" x2="880" y2="410"/>
-            <line x1="880" y1="330" x2="780" y2="410"/>
-            <line x1="880" y1="300" x2="980" y2="410"/>
-            <line x1="980" y1="300" x2="880" y2="410"/>
-            <line x1="980" y1="240" x2="1080" y2="360"/>
-            <line x1="1080" y1="240" x2="980" y2="360"/>
+          <!-- TOWER DIAGONAL X-BRACES -->
+          <g id="bridgeBraces" stroke="#1e784f" stroke-width="1.2" opacity="0.35">
+            <line x1="80" y1="230" x2="180" y2="330"/>
+            <line x1="180" y1="230" x2="80" y2="330"/>
+            <line x1="180" y1="270" x2="280" y2="370"/>
+            <line x1="280" y1="270" x2="180" y2="370"/>
+            <line x1="280" y1="300" x2="380" y2="370"/>
+            <line x1="380" y1="300" x2="280" y2="370"/>
+            <line x1="780" y1="300" x2="880" y2="370"/>
+            <line x1="880" y1="300" x2="780" y2="370"/>
+            <line x1="880" y1="270" x2="980" y2="370"/>
+            <line x1="980" y1="270" x2="880" y2="370"/>
+            <line x1="980" y1="210" x2="1080" y2="330"/>
+            <line x1="1080" y1="210" x2="980" y2="330"/>
           </g>
 
           <!-- LOWER PARALLEL RUNNER ARCH -->
-          <path d="M -150,210 C 180,290 380,360 600,360 C 820,360 1020,270 1350,110" 
+          <path id="bridgeArch" d="M -150,180 C 180,260 380,330 600,330 C 820,330 1020,240 1350,80" 
                 fill="none" stroke="#1e784f" stroke-width="2.5" opacity="0.6"/>
 
           <!-- TRUSS WEB LATTICE CONNECTING LOWER ARCH AND RAIL -->
-          <g stroke="#1e784f" stroke-width="1.4" opacity="0.5">
-            <line x1="60" y1="185" x2="120" y2="245"/>
-            <line x1="120" y1="215" x2="60" y2="230"/>
-            <line x1="160" y1="235" x2="220" y2="295"/>
-            <line x1="220" y1="265" x2="160" y2="280"/>
-            <line x1="260" y1="280" x2="320" y2="335"/>
-            <line x1="320" y1="305" x2="260" y2="325"/>
-            <line x1="360" y1="315" x2="420" y2="355"/>
-            <line x1="420" y1="328" x2="360" y2="345"/>
-            <line x1="460" y1="332" x2="520" y2="360"/>
-            <line x1="520" y1="335" x2="460" y2="358"/>
-            <line x1="560" y1="335" x2="620" y2="360"/>
-            <line x1="620" y1="335" x2="560" y2="360"/>
-            <line x1="660" y1="332" x2="720" y2="355"/>
-            <line x1="720" y1="325" x2="660" y2="358"/>
-            <line x1="760" y1="315" x2="820" y2="335"/>
-            <line x1="820" y1="295" x2="760" y2="340"/>
-            <line x1="860" y1="275" x2="920" y2="285"/>
-            <line x1="920" y1="245" x2="860" y2="305"/>
-            <line x1="960" y1="225" x2="1020" y2="225"/>
-            <line x1="1020" y1="185" x2="960" y2="255"/>
-            <line x1="1060" y1="160" x2="1120" y2="155"/>
-            <line x1="1120" y1="120" x2="1060" y2="195"/>
+          <g id="bridgeLattice" stroke="#1e784f" stroke-width="1.4" opacity="0.5">
+            <line x1="60" y1="155" x2="120" y2="215"/>
+            <line x1="120" y1="185" x2="60" y2="200"/>
+            <line x1="160" y1="205" x2="220" y2="265"/>
+            <line x1="220" y1="235" x2="160" y2="250"/>
+            <line x1="260" y1="250" x2="320" y2="305"/>
+            <line x1="320" y1="275" x2="260" y2="295"/>
+            <line x1="360" y1="285" x2="420" y2="325"/>
+            <line x1="420" y1="298" x2="360" y2="315"/>
+            <line x1="460" y1="302" x2="520" y2="330"/>
+            <line x1="520" y1="305" x2="460" y2="328"/>
+            <line x1="560" y1="305" x2="620" y2="330"/>
+            <line x1="620" y1="305" x2="560" y2="330"/>
+            <line x1="660" y1="302" x2="720" y2="325"/>
+            <line x1="720" y1="295" x2="660" y2="328"/>
+            <line x1="760" y1="285" x2="820" y2="305"/>
+            <line x1="820" y1="265" x2="760" y2="310"/>
+            <line x1="860" y1="245" x2="920" y2="255"/>
+            <line x1="920" y1="215" x2="860" y2="275"/>
+            <line x1="960" y1="195" x2="1020" y2="195"/>
+            <line x1="1020" y1="155" x2="960" y2="225"/>
+            <line x1="1060" y1="130" x2="1120" y2="125"/>
+            <line x1="1120" y1="90" x2="1060" y2="165"/>
           </g>
 
-          <!-- SECONDARY LOWER RAIL PIPE -->
-          <path d="M -300,165 C 150,265 380,345 600,345 C 820,345 1050,230 1500,50" 
+          <!-- SECONDARY LOWER RAIL -->
+          <path id="bridgeSubRail" d="M -300,135 C 150,235 380,315 600,315 C 820,315 1050,200 1500,20" 
                 fill="none" stroke="#1b6b47" stroke-width="3" opacity="0.7"/>
 
-          <!-- RAIL TIES / SLEEPERS -->
-          <path d="M -300,155 C 150,255 380,335 600,335 C 820,335 1050,220 1500,40" 
+          <!-- SLEEPER TIES -->
+          <path id="bridgeTies" d="M -300,125 C 150,225 380,305 600,305 C 820,305 1050,190 1500,10" 
                 fill="none" stroke="#145336" stroke-width="5" stroke-dasharray="2 18" opacity="0.6"/>
 
-          <!-- THE PRIMARY RUNNING RAIL (TRAIN TRACK PATH) -->
+          <!-- THE PRIMARY RUNNING RAIL -->
           <path id="trainTrack" 
-                d="M -300,155 C 150,255 380,335 600,335 C 820,335 1050,220 1500,40" 
+                d="M -300,125 C 150,225 380,305 600,305 C 820,305 1050,190 1500,10" 
                 fill="none" stroke="url(#railGrad)" stroke-width="5" stroke-linecap="round"/>
+
+          <!-- SMOKE PARTICLES GROUP (Behind Train) -->
+          <g id="smokeGroup"></g>
 
           <!-- TRAIN CONTAINER (DYNAMICALLY POPULATED & ANIMATED BY JS) -->
           <g id="trainGroup"></g>
         </svg>
 
-        <!-- SPEEDOMETER & CONTROLS HUD (Identical to Reel) -->
-        <div class="mt-4 flex flex-wrap items-center justify-between gap-4 px-4 font-mono text-xs text-ink-muted">
+        <!-- SPEEDOMETER & ADVANCED INTERACTIVE CONTROLS HUD -->
+        <div class="mt-3 flex flex-wrap items-center justify-between gap-3 px-3 font-mono text-xs text-ink-muted">
           
-          <!-- Speedometer & Dynamic Telemetry -->
+          <!-- Speedometer & Telemetry -->
           <div class="flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-emerald-500 pulse-dot"></span>
             <span id="speedDisplay" class="font-semibold text-ink">ARRIVING - BRAKING 45 km/h</span>
           </div>
 
-          <!-- Center Navigation Buttons from Reel -->
-          <div class="flex items-center gap-3">
-            <a href="#work" class="bg-ink hover:bg-black text-white text-xs font-sans font-medium px-4 py-2 rounded-full shadow-sm transition-all flex items-center gap-1.5">
-              <span>•</span>
-              <span>View selected work</span>
-            </a>
-            <a href="#about" class="bg-white hover:bg-paper-darker text-ink text-xs font-sans font-medium px-4 py-2 rounded-full border border-paper-borderDark transition-all">
-              About me
-            </a>
+          <!-- Interactive Speed Gear Buttons + Whistle Sound Trigger -->
+          <div class="flex items-center gap-2">
+            <button id="whistleBtn" class="bg-amber-400 hover:bg-amber-500 text-black text-xs font-semibold px-3 py-1.5 rounded-full shadow-xs transition-transform active:scale-95 flex items-center gap-1.5" title="Blow the Steam Whistle!">
+              <span>🚂</span>
+              <span>Whistle!</span>
+            </button>
+            <button class="speed-btn px-2.5 py-1 rounded-full bg-white border border-paper-border text-ink hover:border-track-green text-[11px]" data-speed="1.2">
+              45 km/h
+            </button>
+            <button class="speed-btn px-2.5 py-1 rounded-full bg-white border border-paper-border text-ink hover:border-track-green text-[11px]" data-speed="2.6">
+              85 km/h
+            </button>
+            <button class="speed-btn px-2.5 py-1 rounded-full bg-white border border-paper-border text-ink hover:border-track-green text-[11px] font-bold text-rose-600" data-speed="5.0">
+              Turbo 🚀
+            </button>
           </div>
 
           <!-- Boost Prompt from Reel -->
@@ -353,34 +425,32 @@
 
     </section>
 
-    <!-- SECTION 01: SELECTED WORK / THE STATION STOPS -->
-    <section id="work" class="py-24 max-w-6xl mx-auto px-6 border-t border-paper-border mt-16 scroll-mt-20">
+    <!-- SECTION 01: SELECTED PRODUCTION WORKS -->
+    <section id="work" class="py-20 max-w-6xl mx-auto px-6 border-t border-paper-border mt-12 scroll-mt-20">
       
-      <!-- Section Header -->
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
         <div>
           <div class="font-mono text-xs text-track-green uppercase tracking-wider mb-1">// STATION 01</div>
           <h2 class="text-3xl sm:text-4xl font-serif font-bold text-ink tracking-tight">
             Selected Works &amp; Real Systems
           </h2>
           <p class="text-ink-muted text-xs sm:text-sm mt-1 max-w-xl">
-            Real software built for real operations: automated assessment engines, test-guarded AI agents, and zero-touch business workflows.
+            Real software built for real operations: anti-cheat examination engines, sandboxed AI agents, and lead prospectors.
           </p>
         </div>
         <div class="font-mono text-xs text-ink-muted bg-white px-3 py-1.5 rounded-full border border-paper-border self-start sm:self-auto shadow-2xs">
-          5 PRODUCTION SYSTEMS
+          PRODUCTION VERIFIED
         </div>
       </div>
 
-      <!-- Projects Grid -->
-      <div class="grid md:grid-cols-2 gap-8">
+      <div class="grid md:grid-cols-2 gap-7">
 
         <!-- Project 01: Secure Intelligent Online Assessment System -->
         <article class="station-card p-7 rounded-2xl flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between text-xs font-mono text-ink-muted mb-4 pb-3 border-b border-paper-border">
               <span class="text-rose-600 font-bold">STOP // 01</span>
-              <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px]">VERIFIED CODEBASE</span>
+              <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px]">INSTITUTIONAL CODEBASE</span>
             </div>
 
             <h3 class="text-xl sm:text-2xl font-serif font-bold text-ink mb-2">
@@ -407,9 +477,7 @@
               <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">JavaScript</span>
               <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Bootstrap 5</span>
             </div>
-            <span class="text-xs font-mono text-ink-muted font-medium">
-              Institutional Platform
-            </span>
+            <span class="text-xs font-mono text-ink-muted font-medium">Institutional System</span>
           </div>
         </article>
 
@@ -426,7 +494,7 @@
             </h3>
             
             <p class="text-xs sm:text-sm text-ink-muted leading-relaxed mb-5">
-              A local-first, memory-enabled AI assistant built with an explicit sandboxed tool execution engine. Solves the safety risks of unrestrained LLM execution with a 4-tier permission gate (<code class="bg-paper px-1 py-0.5 rounded">SAFE</code> to <code class="bg-paper px-1 py-0.5 rounded">DESTRUCTIVE</code>).
+              A local-first, memory-enabled personal AI assistant built with an explicit tool execution engine. Solves the safety risks of unrestrained LLMs through a 4-tier permission gate (<code class="bg-paper px-1 py-0.5 rounded">SAFE</code> to <code class="bg-paper px-1 py-0.5 rounded">DESTRUCTIVE</code>).
             </p>
 
             <div class="space-y-2 mb-6 text-xs text-ink font-mono bg-paper p-4 rounded-xl border border-paper-border">
@@ -445,9 +513,7 @@
               <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">SQLite</span>
               <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Pytest</span>
             </div>
-            <span class="text-xs font-mono text-purple-700 font-medium">
-              Local Codebase &amp; Tests
-            </span>
+            <span class="text-xs font-mono text-purple-700 font-medium">Local Codebase &amp; Tests</span>
           </div>
         </article>
 
@@ -481,7 +547,6 @@
               <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Node.js</span>
               <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Express</span>
               <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Google Places</span>
-              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Tailwind</span>
             </div>
             <a href="https://github.com/suhailahmed-dev/siteseller-lead-engine" target="_blank" rel="noopener" class="text-xs font-mono text-ink hover:text-track-green font-medium flex items-center gap-1">
               GitHub Repo &rarr;
@@ -521,59 +586,157 @@
               <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">edge-tts</span>
               <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">FFmpeg</span>
             </div>
-            <span class="text-xs font-mono text-amber-700 font-medium">
-              Zero-Touch Pipeline
-            </span>
-          </div>
-        </article>
-
-        <!-- Project 05: APEX Marketing AI Engine (Spans across or nicely fits) -->
-        <article class="station-card p-7 rounded-2xl flex flex-col justify-between md:col-span-2">
-          <div>
-            <div class="flex items-center justify-between text-xs font-mono text-ink-muted mb-4 pb-3 border-b border-paper-border">
-              <span class="text-indigo-600 font-bold">STOP // 05</span>
-              <span class="px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200 text-[10px]">INTELLIGENT AGENT</span>
-            </div>
-
-            <h3 class="text-xl sm:text-2xl font-serif font-bold text-ink mb-2">
-              APEX Marketing AI Engine — Campaign &amp; Strategy Orchestrator
-            </h3>
-            
-            <p class="text-xs sm:text-sm text-ink-muted leading-relaxed mb-5">
-              An intelligent marketing operations platform built for agencies. Takes a single product URL or business brief and generates full marketing campaign roadmaps, SEO clusters, LinkedIn posts, email sequences, and competitive positioning matrices.
-            </p>
-
-            <div class="grid sm:grid-cols-2 gap-3 mb-6 text-xs text-ink font-mono bg-paper p-4 rounded-xl border border-paper-border">
-              <div>✔ Competitor positioning &amp; value angle extraction</div>
-              <div>✔ 30-day cross-platform content matrix generator</div>
-              <div>✔ High-converting cold email sequence creator</div>
-              <div>✔ Structured JSON export for seamless CMS ingestion</div>
-            </div>
-          </div>
-
-          <div class="pt-4 border-t border-paper-border flex flex-wrap items-center justify-between gap-3">
-            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-ink-muted">
-              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Python</span>
-              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Gemini API</span>
-              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">FastAPI</span>
-              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Tailwind</span>
-            </div>
-            <span class="text-xs font-mono text-indigo-700 font-medium">
-              Enterprise Marketing Copilot
-            </span>
+            <span class="text-xs font-mono text-amber-700 font-medium">Zero-Touch Pipeline</span>
           </div>
         </article>
 
       </div>
     </section>
 
-    <!-- SECTION 02: ABOUT THE CONDUCTOR -->
-    <section id="about" class="py-24 max-w-6xl mx-auto px-6 border-t border-paper-border scroll-mt-20">
+    <!-- SECTION 02: HIGH-FREQUENCY ALGORITHMIC & QUANT TRADING (PREMIER SPOTLIGHT) -->
+    <section id="quant" class="py-20 max-w-6xl mx-auto px-6 border-t border-paper-border scroll-mt-20">
+      
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+        <div>
+          <div class="font-mono text-xs text-amber-600 uppercase tracking-wider mb-1">// STATION 02 &bull; HIGH-TICKET SYSTEMS</div>
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-ink tracking-tight">
+            Algorithmic Trading &amp; Quantitative Bots
+          </h2>
+          <p class="text-ink-muted text-xs sm:text-sm mt-1 max-w-xl">
+            High-concurrency trading execution engines engineered with automated risk gates, low latency, and FIFO realized PnL telemetry.
+          </p>
+        </div>
+        <div class="font-mono text-xs text-amber-600 bg-amber-50 px-3 py-1.5 rounded-full border border-amber-200 self-start sm:self-auto shadow-2xs font-semibold">
+          PROPRIETARY IP ENGINES
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- 1. ZainForexAutoBot — MT5 Gold Engine -->
+        <article class="station-card p-8 rounded-2xl border-2 border-amber-200/80 bg-gradient-to-br from-white via-white to-amber-50/20 flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute -right-12 -top-12 w-32 h-32 bg-amber-100 rounded-full opacity-30 pointer-events-none"></div>
+
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-ink-muted mb-4 pb-3 border-b border-paper-border">
+              <span class="text-amber-700 font-bold flex items-center gap-1.5">
+                <span>⚡</span>
+                <span>FOREX ALGO STOP // 01</span>
+              </span>
+              <span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-300 text-[10px] font-bold">
+                PROPRIETARY &bull; PRIVATE REPO
+              </span>
+            </div>
+
+            <h3 class="text-2xl font-serif font-bold text-ink mb-2">
+              ZainForexAutoBot — MT5 Algorithmic Gold (XAUUSD) Engine
+            </h3>
+
+            <p class="text-xs sm:text-sm text-ink-muted leading-relaxed mb-6">
+              An institutional-grade algorithmic trading bot built for MetaTrader 5 (MT5). Engineered specifically to trade Gold volatility with microsecond execution, dynamic position sizing, and zero manual latency.
+            </p>
+
+            <div class="space-y-2.5 mb-6 text-xs text-ink font-mono bg-paper p-4 rounded-xl border border-paper-border">
+              <div class="text-[10px] text-ink-muted uppercase font-bold text-amber-700">TECHNICAL ARCHITECTURE</div>
+              <div class="flex items-center gap-2">
+                <span class="text-emerald-500 font-bold">✔</span>
+                <span>Real-time MT5 Python API bridge &amp; order dispatch</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-emerald-500 font-bold">✔</span>
+                <span>Dynamic lot sizing tied directly to account free equity</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-emerald-500 font-bold">✔</span>
+                <span>Automated trailing stops, breakeven shifts &amp; profit locks</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-emerald-500 font-bold">✔</span>
+                <span>Spread spike detector &amp; high-impact news circuit breaker</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-paper-border flex flex-wrap items-center justify-between gap-3">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-ink-muted">
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Python</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">MetaTrader 5</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">MQL5 Bridge</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Risk Engine</span>
+            </div>
+            <a href="https://wa.me/923093174020?text=Hello%20Sohail,%20I%20am%20interested%20in%20a%20technical%20walkthrough%20of%20your%20ZainForexAutoBot%20MT5%20system" target="_blank" rel="noopener" class="text-xs font-mono text-amber-700 hover:text-amber-800 font-semibold flex items-center gap-1">
+              Architecture Demo &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- 2. Sophi Quantitative Trading Bot -->
+        <article class="station-card p-8 rounded-2xl border-2 border-blue-200/80 bg-gradient-to-br from-white via-white to-blue-50/20 flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute -right-12 -top-12 w-32 h-32 bg-blue-100 rounded-full opacity-30 pointer-events-none"></div>
+
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-ink-muted mb-4 pb-3 border-b border-paper-border">
+              <span class="text-blue-700 font-bold flex items-center gap-1.5">
+                <span>📈</span>
+                <span>QUANT SYSTEM // 02</span>
+              </span>
+              <span class="px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800 border border-blue-300 text-[10px] font-bold">
+                SOAK TESTED &bull; LIVE DATABASE
+              </span>
+            </div>
+
+            <h3 class="text-2xl font-serif font-bold text-ink mb-2">
+              Sophi — Autonomous Multi-Pair Quantitative Trading Bot
+            </h3>
+
+            <p class="text-xs sm:text-sm text-ink-muted leading-relaxed mb-6">
+              A high-concurrency Python algorithmic trading bot soak-tested in production. Features real-time trade execution logging, SQLite audit ledgers, automated FIFO realized PnL matching, and live performance metrics calculation.
+            </p>
+
+            <div class="space-y-2.5 mb-6 text-xs text-ink font-mono bg-paper p-4 rounded-xl border border-paper-border">
+              <div class="text-[10px] text-ink-muted uppercase font-bold text-blue-700">TECHNICAL ARCHITECTURE</div>
+              <div class="flex items-center gap-2">
+                <span class="text-emerald-500 font-bold">✔</span>
+                <span>Multi-pair trade execution with sub-second order dispatch</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-emerald-500 font-bold">✔</span>
+                <span>Persistent transaction database with strict ACID guarantees</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-emerald-500 font-bold">✔</span>
+                <span>Automated FIFO matching engine for realized PnL tracking</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-emerald-500 font-bold">✔</span>
+                <span>Real-time win-rate telemetry &amp; volume aggregators</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-paper-border flex flex-wrap items-center justify-between gap-3">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-ink-muted">
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Python 3</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">AsyncIO</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">SQLite3</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">FIFO PnL</span>
+            </div>
+            <a href="https://wa.me/923093174020?text=Hello%20Sohail,%20I%20am%20interested%20in%20your%20Sophi%20Quantitative%20Trading%20Bot%20architecture" target="_blank" rel="noopener" class="text-xs font-mono text-blue-700 hover:text-blue-800 font-semibold flex items-center gap-1">
+              Technical Overview &rarr;
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SECTION 03: ABOUT THE CONDUCTOR -->
+    <section id="about" class="py-20 max-w-6xl mx-auto px-6 border-t border-paper-border scroll-mt-20">
       
       <div class="grid lg:grid-cols-12 gap-12 items-start">
         
         <div class="lg:col-span-5">
-          <div class="font-mono text-xs text-track-green uppercase tracking-wider mb-1">// STATION 02</div>
+          <div class="font-mono text-xs text-track-green uppercase tracking-wider mb-1">// STATION 03</div>
           <h2 class="text-3xl sm:text-4xl font-serif font-bold text-ink tracking-tight mb-6">
             Meet the Conductor
           </h2>
@@ -584,24 +747,24 @@
             </div>
             <div>
               <h3 class="text-lg font-serif font-bold text-ink">Sohail Ahmed Buledi</h3>
-              <p class="text-xs font-mono text-ink-muted">Web Developer &bull; Python Automation &bull; IT Instructor</p>
+              <p class="text-xs font-mono text-ink-muted">Web Developer &bull; Algorithmic Engineer &bull; IT Instructor</p>
               <p class="text-xs font-mono text-emerald-600 mt-0.5">Hyderabad, Sindh, Pakistan (UTC+5)</p>
             </div>
             <div class="pt-4 border-t border-paper-border text-xs text-ink-muted leading-relaxed">
-              "Code is simply infrastructure. What actually matters is whether the train arrives on time, passengers stay safe, and the machinery runs quietly without manual panic."
+              "Code is infrastructure. What actually matters is whether the engine arrives on time, risk parameters stay impenetrable, and operations run smoothly without midnight panic."
             </div>
           </div>
         </div>
 
         <div class="lg:col-span-7 space-y-6 text-sm text-ink-muted leading-relaxed">
           <p>
-            I am a full-stack web developer and Python automation engineer based in Hyderabad, Pakistan. For over five years, I have lived at the intersection of production software delivery and technical education.
+            I am a full-stack web developer and algorithmic systems engineer based in Hyderabad, Pakistan. For over five years, I have lived at the intersection of production software delivery, high-concurrency algorithmic automation, and technical education.
           </p>
           <p>
-            As a <strong>Web Development Instructor</strong> at a premier IT institute in Hyderabad, I have trained more than <strong>1,000+ students</strong> in HTML5, CSS3, JavaScript, PHP, MySQL, OOP principles, and modern AI-assisted engineering practices. Teaching keeps my foundations razor-sharp: you cannot teach someone to write clean code unless you deeply understand why messy code breaks.
+            As a <strong>Web Development Instructor</strong> at a premier IT institute in Hyderabad, I have trained more than <strong>1,000+ students</strong> in HTML5, CSS3, JavaScript, PHP, MySQL, OOP principles, and modern AI-assisted engineering practices. Teaching keeps my fundamentals razor-sharp: you cannot teach someone to write clean code unless you deeply understand why messy code breaks.
           </p>
           <p>
-            Beyond the classroom, I build practical automation engines for international clients: web scraping pipelines, browser automation suites, custom business portals, and self-guarded AI agents with strict permission bounds and comprehensive test coverage.
+            Beyond the classroom, I build practical automation engines for international clients: algorithmic trading bots for MT5, browser automation suites, custom institutional portals, and self-guarded AI agents with strict permission bounds and comprehensive test coverage.
           </p>
 
           <div class="grid sm:grid-cols-3 gap-4 pt-4">
@@ -611,11 +774,11 @@
             </div>
             <div class="p-4 bg-white rounded-xl border border-paper-border">
               <div class="text-2xl font-serif font-bold text-ink">114</div>
-              <div class="text-xs font-mono text-ink-muted mt-1">Automated Tests in AI Agent</div>
+              <div class="text-xs font-mono text-ink-muted mt-1">Passing Unit Tests</div>
             </div>
             <div class="p-4 bg-white rounded-xl border border-paper-border">
               <div class="text-2xl font-serif font-bold text-ink">100%</div>
-              <div class="text-xs font-mono text-ink-muted mt-1">Verified Real Repos</div>
+              <div class="text-xs font-mono text-ink-muted mt-1">Zero-Hype Verified</div>
             </div>
           </div>
         </div>
@@ -624,11 +787,11 @@
 
     </section>
 
-    <!-- SECTION 03: THE RAIL YARD (SKILLS & TOOLING) -->
-    <section id="skills" class="py-24 max-w-6xl mx-auto px-6 border-t border-paper-border scroll-mt-20">
+    <!-- SECTION 04: THE RAIL YARD (SKILLS & TOOLING) -->
+    <section id="skills" class="py-20 max-w-6xl mx-auto px-6 border-t border-paper-border scroll-mt-20">
       
-      <div class="mb-12">
-        <div class="font-mono text-xs text-track-green uppercase tracking-wider mb-1">// STATION 03</div>
+      <div class="mb-10">
+        <div class="font-mono text-xs text-track-green uppercase tracking-wider mb-1">// STATION 04</div>
         <h2 class="text-3xl sm:text-4xl font-serif font-bold text-ink tracking-tight">
           The Rail Yard: Tools &amp; Tracks
         </h2>
@@ -660,20 +823,20 @@
 
         <!-- Track 02 -->
         <div class="station-card p-6 rounded-2xl">
-          <div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-mono font-bold text-xs mb-4 border border-blue-200">
+          <div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center font-mono font-bold text-xs mb-4 border border-amber-200">
             02
           </div>
-          <h3 class="font-serif font-bold text-lg text-ink mb-2">Python &amp; Automation</h3>
-          <p class="text-xs text-ink-muted mb-4">Autonomous bots, data pipelines, and zero-touch workflows eliminating repetitive work.</p>
+          <h3 class="font-serif font-bold text-lg text-ink mb-2">Algorithmic &amp; Automation</h3>
+          <p class="text-xs text-ink-muted mb-4">MetaTrader 5 bots, quantitative asset systems, and zero-touch Python pipelines.</p>
           <div class="flex flex-wrap gap-1.5 text-xs font-mono text-ink">
             <span class="px-2 py-1 bg-paper rounded border border-paper-border">Python 3</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">MetaTrader 5</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">AsyncIO</span>
             <span class="px-2 py-1 bg-paper rounded border border-paper-border">Playwright</span>
             <span class="px-2 py-1 bg-paper rounded border border-paper-border">BeautifulSoup</span>
-            <span class="px-2 py-1 bg-paper rounded border border-paper-border">Requests</span>
             <span class="px-2 py-1 bg-paper rounded border border-paper-border">FastAPI</span>
             <span class="px-2 py-1 bg-paper rounded border border-paper-border">MoviePy</span>
             <span class="px-2 py-1 bg-paper rounded border border-paper-border">edge-tts</span>
-            <span class="px-2 py-1 bg-paper rounded border border-paper-border">cron / Schedule</span>
           </div>
         </div>
 
@@ -686,7 +849,7 @@
           <p class="text-xs text-ink-muted mb-4">Sandboxed LLM applications with permission enforcement, tool registries, and local memory.</p>
           <div class="flex flex-wrap gap-1.5 text-xs font-mono text-ink">
             <span class="px-2 py-1 bg-paper rounded border border-paper-border">Ollama (Local)</span>
-            <span class="px-2 py-1 bg-paper rounded border border-paper-border">Gemini 2.5/Flash</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">Gemini 2.5</span>
             <span class="px-2 py-1 bg-paper rounded border border-paper-border">Tool Schemas</span>
             <span class="px-2 py-1 bg-paper rounded border border-paper-border">Safety Gates</span>
             <span class="px-2 py-1 bg-paper rounded border border-paper-border">SQLite Memory</span>
@@ -699,78 +862,27 @@
 
     </section>
 
-    <!-- SECTION 04: THE PROCESS / ROUTE MAP -->
-    <section id="process" class="py-24 max-w-6xl mx-auto px-6 border-t border-paper-border scroll-mt-20">
-      
-      <div class="mb-12">
-        <div class="font-mono text-xs text-track-green uppercase tracking-wider mb-1">// STATION 04</div>
-        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-ink tracking-tight">
-          Route Map: How We Build
-        </h2>
-        <p class="text-ink-muted text-xs sm:text-sm mt-1 max-w-xl">
-          A predictable four-stop journey from requirement to deployed reliability.
-        </p>
-      </div>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-        <div class="p-6 bg-white rounded-2xl border border-paper-border shadow-2xs">
-          <div class="text-xs font-mono text-ink-muted mb-2">STOP 01</div>
-          <h3 class="font-serif font-bold text-lg text-ink mb-2">Blueprint &amp; Scope</h3>
-          <p class="text-xs text-ink-muted leading-relaxed">
-            We map data schemas, edge cases, and API limits upfront before writing a single line of application code.
-          </p>
-        </div>
-
-        <div class="p-6 bg-white rounded-2xl border border-paper-border shadow-2xs">
-          <div class="text-xs font-mono text-ink-muted mb-2">STOP 02</div>
-          <h3 class="font-serif font-bold text-lg text-ink mb-2">Test-First Core</h3>
-          <p class="text-xs text-ink-muted leading-relaxed">
-            Build the core engine, database layer, and safety validation gates with automated test coverage from day one.
-          </p>
-        </div>
-
-        <div class="p-6 bg-white rounded-2xl border border-paper-border shadow-2xs">
-          <div class="text-xs font-mono text-ink-muted mb-2">STOP 03</div>
-          <h3 class="font-serif font-bold text-lg text-ink mb-2">Interface &amp; Polish</h3>
-          <p class="text-xs text-ink-muted leading-relaxed">
-            Wrap the engine in a clean, accessible, and responsive interface with clear error states and zero fluff.
-          </p>
-        </div>
-
-        <div class="p-6 bg-white rounded-2xl border border-paper-border shadow-2xs">
-          <div class="text-xs font-mono text-ink-muted mb-2">STOP 04</div>
-          <h3 class="font-serif font-bold text-lg text-ink mb-2">Launch &amp; Handover</h3>
-          <p class="text-xs text-ink-muted leading-relaxed">
-            Deploy with documentation, environment runbooks, and walk-through support so you run smoothly with zero dependency.
-          </p>
-        </div>
-
-      </div>
-
-    </section>
-
     <!-- SECTION 05: BOARDING PASS CONTACT TERMINAL -->
-    <section id="contact" class="py-24 max-w-4xl mx-auto px-6 border-t border-paper-border scroll-mt-20">
+    <section id="contact" class="py-20 max-w-4xl mx-auto px-6 border-t border-paper-border scroll-mt-20">
       
-      <div class="text-center mb-12">
+      <div class="text-center mb-10">
         <div class="font-mono text-xs text-track-green uppercase tracking-wider mb-1">// FINAL DESTINATION</div>
-        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-ink tracking-tight mb-3">
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-ink tracking-tight mb-2">
           Your Boarding Pass to Reliable Systems
         </h2>
         <p class="text-ink-muted text-xs sm:text-sm max-w-md mx-auto">
-          Need a web portal, a Python automation bot, or an intelligent agent? Let's get your project on track.
+          Need an institutional web application, an algorithmic trading bot, or an intelligent agent? Let's talk.
         </p>
       </div>
 
-      <!-- Ticket / Boarding Pass Card -->
+      <!-- Ticket Card -->
       <div class="bg-white rounded-3xl border border-paper-border overflow-hidden shadow-lg">
         
-        <!-- Ticket Top Header Strip -->
+        <!-- Ticket Header -->
         <div class="bg-ink text-white px-8 py-5 flex items-center justify-between">
           <div class="flex items-center gap-3">
             <span class="w-3 h-3 rounded-full bg-amber-400"></span>
-            <span class="font-mono text-xs tracking-widest uppercase">RAILWAY BOARDING PASS &bull; EXPEDITION 2026</span>
+            <span class="font-mono text-xs tracking-widest uppercase">FIRST CLASS EXPEDITION &bull; 2026</span>
           </div>
           <span class="font-mono text-xs text-amber-400 font-semibold">TICKET #SAB-92309</span>
         </div>
@@ -847,7 +959,6 @@
             <div class="font-mono text-[11px] text-ink-muted">
               HYDERABAD, SINDH, PAKISTAN &bull; OPEN TO INTERNATIONAL REMOTE WORK
             </div>
-            <!-- Decorative Barcode -->
             <div class="flex items-center gap-1 opacity-70 h-8">
               <span class="w-0.5 h-full bg-ink"></span>
               <span class="w-1.5 h-full bg-ink"></span>
@@ -861,8 +972,6 @@
               <span class="w-2 h-full bg-ink"></span>
               <span class="w-0.5 h-full bg-ink"></span>
               <span class="w-1 h-full bg-ink"></span>
-              <span class="w-0.5 h-full bg-ink"></span>
-              <span class="w-1.5 h-full bg-ink"></span>
             </div>
           </div>
 
@@ -874,45 +983,50 @@
 
   </main>
 
-  <!-- Clean Footer -->
-  <footer class="border-t border-paper-border py-10 bg-[#faf8f5]">
+  <!-- Footer -->
+  <footer class="border-t border-paper-border py-8 bg-[#faf8f5] transition-colors">
     <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-ink-muted">
       <div class="flex items-center gap-2">
         <span class="w-5 h-5 rounded bg-[#e11d48] text-white flex items-center justify-center font-bold text-[10px]">S</span>
         <span>&copy; 2026 Sohail Ahmed Buledi. All rights reserved.</span>
       </div>
       <div>
-        Built with precision &bull; The Train-Themed Portfolio
+        Engineered with Precision &bull; The Train-Themed Portfolio
       </div>
     </div>
   </footer>
 
-  <!-- JAVASCRIPT: THE INTERACTIVE TRAIN PHYSICS ENGINE -->
+  <!-- JAVASCRIPT: ADVANCED TRAIN PHYSICS + WEB AUDIO WHISTLE + STEAM PARTICLES + TWILIGHT MODE -->
   <script>
-    // Carriages configuration matching the viral reel exactly:
-    // P O R T F O L I O read from left to right as the train rides along the curve!
+    // Carriages configuration (Reading P O R T F O L I O left to right)
     const letters = ['P', 'O', 'R', 'T', 'F', 'O', 'L', 'I', 'O'];
     
-    // Palette matching the video: Red, Yellow/Gold, Blue, Green, Red, Blue, Gold, Green, Red
+    // Palette: Red, Yellow/Gold, Blue, Green, Red, Blue, Gold, Green, Red
     const colors = [
-      '#e11d48', // P - Rose/Red
-      '#f59e0b', // O - Amber/Orange
-      '#2563eb', // R - Royal Blue
-      '#16a34a', // T - Leaf Green
-      '#e11d48', // F - Rose/Red
-      '#2563eb', // O - Royal Blue
-      '#eab308', // L - Sun Gold
-      '#16a34a', // I - Leaf Green
-      '#e11d48', // O - Rose/Red
+      '#e11d48', // P
+      '#f59e0b', // O
+      '#2563eb', // R
+      '#16a34a', // T
+      '#e11d48', // F
+      '#2563eb', // O
+      '#eab308', // L
+      '#16a34a', // I
+      '#e11d48', // O
     ];
 
+    const railwaySvg = document.getElementById('railwaySvg');
     const track = document.getElementById('trainTrack');
     const trainGroup = document.getElementById('trainGroup');
+    const smokeGroup = document.getElementById('smokeGroup');
     const speedDisplay = document.getElementById('speedDisplay');
     const boostPrompt = document.getElementById('boostPrompt');
+    const whistleBtn = document.getElementById('whistleBtn');
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeText = document.getElementById('themeText');
 
     const totalPathLength = track.getTotalLength();
-    const carriageSpacing = 40; // Spacing along curve
+    const carriageSpacing = 38;
     const carriageCount = letters.length;
 
     // Create SVG carriage elements
@@ -922,7 +1036,7 @@
       const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
       g.setAttribute('class', 'carriage');
 
-      // Carriage Tub / Chassis (silver cart base with smooth rounded corners)
+      // Carriage Tub / Chassis (silver cart base)
       const chassis = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
       chassis.setAttribute('x', '-16');
       chassis.setAttribute('y', '-16');
@@ -942,7 +1056,7 @@
       wheel1.setAttribute('stroke', '#cbd5e1');
       wheel1.setAttribute('stroke-width', '1');
 
-      // Right wheel (sits on the rail at y=0)
+      // Right wheel
       const wheel2 = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
       wheel2.setAttribute('cx', '9');
       wheel2.setAttribute('cy', '-3');
@@ -988,25 +1102,127 @@
       g.appendChild(highlight);
       g.appendChild(text);
 
+      // Lead Engine Carriage Features (Carriage 8 = Front Engine!)
+      if (i === carriageCount - 1) {
+        // Locomotive Smoke Stack / Chimney
+        const chimney = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        chimney.setAttribute('x', '10');
+        chimney.setAttribute('y', '-52');
+        chimney.setAttribute('width', '5');
+        chimney.setAttribute('height', '9');
+        chimney.setAttribute('rx', '1.5');
+        chimney.setAttribute('fill', '#0f172a');
+        g.appendChild(chimney);
+
+        // Locomotive Lantern / Headlight
+        const lantern = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        lantern.setAttribute('cx', '16');
+        lantern.setAttribute('cy', '-10');
+        lantern.setAttribute('r', '3');
+        lantern.setAttribute('fill', '#facc15');
+        lantern.setAttribute('stroke', '#ca8a04');
+        lantern.setAttribute('stroke-width', '1');
+        g.appendChild(lantern);
+
+        // Headlight Projection Beam Cone
+        const beam = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+        beam.setAttribute('points', '18,-12 90,-25 90,5 18,-8');
+        beam.setAttribute('fill', 'url(#headlightGrad)');
+        beam.setAttribute('opacity', '0.7');
+        beam.setAttribute('class', 'headlight-beam');
+        g.appendChild(beam);
+      }
+
       trainGroup.appendChild(g);
       carriages.push(g);
     }
 
-    // Physics & Motion State
-    // Start with train partly down the valley
-    let distance = 600;
+    // Motion & Physics State
+    let distance = 500;
     let baseSpeed = 1.35;
     let isBoosted = false;
     let currentSpeed = baseSpeed;
+    let targetSpeed = 1.35;
 
-    // Interactive Boost Controls (Click or tap & hold anywhere on screen)
+    // WEB AUDIO API: REAL VINTAGE TRAIN WHISTLE SYNTHESIZER
+    let audioCtx = null;
+    function getAudioCtx() {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new AudioContext();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function playWhistleSound() {
+      try {
+        const ctx = getAudioCtx();
+        const now = ctx.currentTime;
+        // Two-tone steam train whistle chord (D5 & A5 harmonic)
+        const tones = [587.33, 880.00, 1174.66];
+        tones.forEach((freq, idx) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          const filter = ctx.createBiquadFilter();
+
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(freq, now);
+          osc.frequency.exponentialRampToValueAtTime(freq * 0.985, now + 0.6);
+
+          filter.type = 'lowpass';
+          filter.frequency.setValueAtTime(1400, now);
+
+          const volume = idx === 0 ? 0.08 : 0.04;
+          gain.gain.setValueAtTime(0, now);
+          gain.gain.linearRampToValueAtTime(volume, now + 0.08);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.65);
+
+          osc.connect(filter);
+          filter.connect(gain);
+          gain.connect(ctx.destination);
+
+          osc.start(now);
+          osc.stop(now + 0.7);
+        });
+
+        // Trigger visual burst of steam
+        spawnSteamBurst();
+      } catch (err) {
+        console.warn("Audio unavailable:", err);
+      }
+    }
+
+    if (whistleBtn) {
+      whistleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        playWhistleSound();
+      });
+    }
+
+    // SPEED GEAR BUTTONS
+    document.querySelectorAll('.speed-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const spd = parseFloat(btn.dataset.speed);
+        targetSpeed = spd;
+        document.querySelectorAll('.speed-btn').forEach(b => b.classList.remove('ring-2', 'ring-track-green'));
+        btn.classList.add('ring-2', 'ring-track-green');
+      });
+    });
+
+    // INTERACTIVE BOOST (HOLD TO ACCELERATE)
     function startBoost() {
       isBoosted = true;
+      targetSpeed = 4.8;
       if (boostPrompt) boostPrompt.textContent = "BOOST ENGAGED! 🚀";
     }
 
     function endBoost() {
       isBoosted = false;
+      targetSpeed = 1.35;
       if (boostPrompt) boostPrompt.textContent = "HOLD ANYWHERE TO GO FASTER";
     }
 
@@ -1015,28 +1231,117 @@
     window.addEventListener('touchstart', startBoost, { passive: true });
     window.addEventListener('touchend', endBoost, { passive: true });
 
-    // Continuous 60fps Physics Loop
-    function updateTrain() {
-      // Dynamic target speed: boosted vs coasting
-      const targetSpeed = isBoosted ? 4.8 : 1.35;
-      currentSpeed += (targetSpeed - currentSpeed) * 0.08;
+    // STEAM PUFF PARTICLE SYSTEM
+    const smokeParticles = [];
+    let frameCount = 0;
 
+    function spawnSteam(x, y, isTurbo) {
+      const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      circle.setAttribute('cx', x);
+      circle.setAttribute('cy', y - 48);
+      const r = isTurbo ? 4.5 : 3;
+      circle.setAttribute('r', r);
+      circle.setAttribute('fill', '#ffffff');
+      circle.setAttribute('opacity', isTurbo ? '0.75' : '0.5');
+      smokeGroup.appendChild(circle);
+
+      smokeParticles.push({
+        el: circle,
+        x: x,
+        y: y - 48,
+        r: r,
+        opacity: isTurbo ? 0.75 : 0.5,
+        vx: (Math.random() - 0.5) * 0.8 - (currentSpeed * 0.4),
+        vy: -0.8 - Math.random() * 0.6
+      });
+    }
+
+    function spawnSteamBurst() {
+      const leadCarriage = carriages[carriageCount - 1];
+      const transform = leadCarriage.getAttribute('transform');
+      if (!transform) return;
+      const match = /translate\(([^,]+),\s*([^)]+)\)/.exec(transform);
+      if (match) {
+        const x = parseFloat(match[1]);
+        const y = parseFloat(match[2]);
+        for (let i = 0; i < 6; i++) {
+          setTimeout(() => spawnSteam(x + (Math.random()*8-4), y, true), i * 40);
+        }
+      }
+    }
+
+    function updateSmoke() {
+      for (let i = smokeParticles.length - 1; i >= 0; i--) {
+        const p = smokeParticles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.r += 0.35;
+        p.opacity -= 0.016;
+
+        if (p.opacity <= 0) {
+          p.el.remove();
+          smokeParticles.splice(i, 1);
+        } else {
+          p.el.setAttribute('cx', p.x);
+          p.el.setAttribute('cy', p.y);
+          p.el.setAttribute('r', p.r);
+          p.el.setAttribute('opacity', p.opacity);
+        }
+      }
+    }
+
+    // DAYLIGHT / TWILIGHT EXPRESS THEME TOGGLE
+    let isTwilight = false;
+    function toggleTwilight() {
+      isTwilight = !isTwilight;
+      document.body.classList.toggle('twilight', isTwilight);
+      
+      const bridgePillars = document.getElementById('bridgePillars');
+      const bridgeBraces = document.getElementById('bridgeBraces');
+      const bridgeArch = document.getElementById('bridgeArch');
+      const bridgeLattice = document.getElementById('bridgeLattice');
+
+      if (isTwilight) {
+        themeIcon.textContent = '☀️';
+        themeText.textContent = 'Daylight';
+        track.setAttribute('stroke', '#10b981');
+        track.setAttribute('filter', 'url(#nightGlow)');
+        if (bridgePillars) bridgePillars.setAttribute('stroke', '#10b981');
+        if (bridgeBraces) bridgeBraces.setAttribute('stroke', '#059669');
+        if (bridgeArch) bridgeArch.setAttribute('stroke', '#10b981');
+        if (bridgeLattice) bridgeLattice.setAttribute('stroke', '#059669');
+      } else {
+        themeIcon.textContent = '🌙';
+        themeText.textContent = 'Twilight';
+        track.setAttribute('stroke', 'url(#railGrad)');
+        track.removeAttribute('filter');
+        if (bridgePillars) bridgePillars.setAttribute('stroke', '#1e784f');
+        if (bridgeBraces) bridgeBraces.setAttribute('stroke', '#1e784f');
+        if (bridgeArch) bridgeArch.setAttribute('stroke', '#1e784f');
+        if (bridgeLattice) bridgeLattice.setAttribute('stroke', '#1e784f');
+      }
+    }
+
+    if (themeToggleBtn) {
+      themeToggleBtn.addEventListener('click', toggleTwilight);
+    }
+
+    // MAIN 60FPS PHYSICS & TELEMETRY ENGINE
+    function updateTrain() {
+      frameCount++;
+      currentSpeed += (targetSpeed - currentSpeed) * 0.08;
       distance += currentSpeed;
-      // Loop smoothly once the entire train has cleared the right off-canvas region
+
       if (distance > totalPathLength + (carriageSpacing * carriageCount) + 200) {
         distance = 0;
       }
 
       let leadPoint = null;
 
-      // Position each carriage:
-      // i = 0 ('P') is at the rear (left)
-      // i = 8 ('O') is at the lead front (right)
-      // Carriage i distance = distance - (8 - i) * spacing
       for (let i = 0; i < carriageCount; i++) {
+        // Carriage 0 ('P') is at the rear (left); Carriage 8 ('O') is at the lead front (right)
         const carriageDist = distance - ((carriageCount - 1 - i) * carriageSpacing);
 
-        // Hide carriage cleanly if it is off either end of the path
         if (carriageDist < 0 || carriageDist > totalPathLength) {
           carriages[i].style.opacity = '0';
           continue;
@@ -1047,7 +1352,7 @@
         const pt = track.getPointAtLength(carriageDist);
         if (i === carriageCount - 1) leadPoint = pt;
 
-        // Calculate tangent angle for smooth banking along the rollercoaster curve
+        // Curve tangent vector
         const step = 2;
         const ptAhead = track.getPointAtLength(Math.min(totalPathLength, carriageDist + step));
         const ptBehind = track.getPointAtLength(Math.max(0, carriageDist - step));
@@ -1056,15 +1361,24 @@
         const dy = ptAhead.y - ptBehind.y;
         const angle = Math.atan2(dy, dx) * (180 / Math.PI);
 
-        // Apply 2D translate & rotation to carriage
         carriages[i].setAttribute('transform', `translate(${pt.x}, ${pt.y}) rotate(${angle})`);
+
+        // Emit steam puff from front locomotive chimney every 6 frames (or 3 frames in turbo)
+        if (i === carriageCount - 1) {
+          const emitInterval = isBoosted ? 3 : 7;
+          if (frameCount % emitInterval === 0 && pt.x > 30 && pt.x < 1170) {
+            spawnSteam(pt.x, pt.y, isBoosted);
+          }
+        }
       }
+
+      updateSmoke();
 
       // Live Telemetry Display update matching reel
       if (leadPoint && speedDisplay) {
-        const kmh = Math.round(currentSpeed * 23);
+        const kmh = Math.round(currentSpeed * 24);
         let status = 'COASTING';
-        if (isBoosted) {
+        if (isBoosted || currentSpeed > 3.5) {
           status = 'LAUNCH - GOING UP';
         } else if (leadPoint.x > 750) {
           status = 'CLIMBING';
@@ -1079,7 +1393,7 @@
       requestAnimationFrame(updateTrain);
     }
 
-    // Launch physics
+    // Launch train physics
     requestAnimationFrame(updateTrain);
   </script>
 </body>
