@@ -3,45 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sohail Ahmed Buledi | Web Developer &amp; Python Automation Specialist</title>
-  <meta name="description" content="Portfolio of Sohail Ahmed Buledi — Web Developer, Python Automation Specialist, and IT Instructor from Hyderabad, Pakistan. Building practical web applications, database systems, and automated workflows.">
+  <title>Sohail Ahmed Buledi | The Train-Themed Developer Portfolio</title>
+  <meta name="description" content="Hop on! The viral train-themed developer portfolio of Sohail Ahmed Buledi — Web Developer, Python Automation Specialist, and IT Instructor from Hyderabad, Pakistan.">
   <meta name="author" content="Sohail Ahmed Buledi">
 
   <!-- Open Graph Metadata -->
-  <meta property="og:title" content="Sohail Ahmed Buledi | Web Developer &amp; Python Automation Specialist">
-  <meta property="og:description" content="Practical web applications (PHP, MySQL, JavaScript), Python automation, and AI-assisted engineering workflows.">
+  <meta property="og:title" content="Sohail Ahmed Buledi — The Train-Themed Portfolio">
+  <meta property="og:description" content="I build the systems, so your business enjoys the ride. Full-Stack Web Development, Python Automation & AI Agents.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://suhailahmed-dev.github.io/portfolio/">
 
-  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <!-- Google Fonts: Fraunces (Editorial Serif), Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600;1,9..144,700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS -->
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Icons -->
+  <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
           fontFamily: {
+            serif: ['"Fraunces"', 'Georgia', 'serif'],
             sans: ['"Inter"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'monospace'],
           },
           colors: {
-            brand: {
-              dark: '#0b0f19',
-              card: '#111827',
-              elevated: '#172033',
-              border: '#1f2937',
-              teal: '#0d9488',
-              accent: '#14b8a6',
-              blue: '#3b82f6',
-              muted: '#94a3b8',
+            paper: {
+              DEFAULT: '#faf8f5',
+              darker: '#f3efe8',
+              card: '#ffffff',
+              border: '#e8e2d8',
+              borderDark: '#d5cbbe',
+            },
+            track: {
+              green: '#1e784f',
+              lightGreen: '#2a9d66',
+              girder: '#145336',
+              line: '#15803d',
+            },
+            ink: {
+              DEFAULT: '#1c1917',
+              muted: '#78716c',
+              light: '#a8a29e',
             }
           }
         }
@@ -50,349 +58,640 @@
   </script>
 
   <style>
-    :root {
-      color-scheme: dark;
-    }
+    /* Warm retro-editorial canvas matching the viral reel */
     body {
-      background-color: #0b0f19;
-      color: #e2e8f0;
+      background-color: #faf8f5;
+      color: #1c1917;
       font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      user-select: none;
     }
-    /* Subtle Grid Background */
-    .bg-grid {
+
+    /* Subtle graph paper grid overlay */
+    .paper-grid {
       background-size: 36px 36px;
       background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        linear-gradient(to right, rgba(0, 0, 0, 0.024) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.024) 1px, transparent 1px);
     }
-    /* Card Hover */
-    .pro-card {
-      background: #111827;
-      border: 1px solid #1f2937;
-      transition: border-color 0.2s ease, transform 0.2s ease;
+
+    /* Floating shapes animations */
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-9px) rotate(3deg); }
     }
-    .pro-card:hover {
-      border-color: #374151;
-      transform: translateY(-2px);
+    @keyframes spinSlow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
-    /* Tag Pill */
-    .tag-pill {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      padding: 3px 8px;
-      border-radius: 4px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: #94a3b8;
+    .animate-float {
+      animation: floatSlow 7s ease-in-out infinite;
     }
-    /* Pulse */
-    @keyframes pulseSoft {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
+    .animate-spin-slow {
+      animation: spinSlow 24s linear infinite;
+    }
+
+    /* Station Card styling */
+    .station-card {
+      background: #ffffff;
+      border: 1px solid #e8e2d8;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.025);
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .station-card:hover {
+      border-color: #1e784f;
+      transform: translateY(-3px);
+      box-shadow: 0 14px 28px rgba(30, 120, 79, 0.09);
+    }
+
+    /* Train 3D block shadow effect */
+    .train-block {
+      filter: drop-shadow(0 3px 2px rgba(0,0,0,0.18));
+    }
+
+    /* Pulse dot */
+    @keyframes pulseGreen {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.35); opacity: 0.45; }
     }
     .pulse-dot {
-      animation: pulseSoft 2s infinite ease-in-out;
+      animation: pulseGreen 1.8s infinite ease-in-out;
+    }
+
+    /* Smooth focus rings */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid #1e784f;
+      outline-offset: 2px;
     }
   </style>
 </head>
-<body class="bg-brand-dark min-h-screen text-slate-200 selection:bg-brand-teal selection:text-white antialiased relative">
+<body class="bg-paper min-h-screen text-ink antialiased relative selection:bg-track-green selection:text-white">
 
-  <!-- Background Grid Pattern -->
-  <div class="fixed inset-0 bg-grid pointer-events-none z-0"></div>
+  <!-- Subtle Paper Grid Overlay -->
+  <div class="fixed inset-0 paper-grid pointer-events-none z-0"></div>
 
-  <!-- Top Navigation Bar -->
-  <header class="fixed top-0 inset-x-0 z-50 bg-[#0b0f19]/90 backdrop-blur-md border-b border-brand-border">
+  <!-- Top Sticky Navigation Bar (Matching Reel Header) -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-[#faf8f5]/92 backdrop-blur-md border-b border-paper-border">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
       
-      <!-- Brand Logo -->
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-8 h-8 rounded bg-brand-elevated border border-brand-border flex items-center justify-center font-mono text-xs font-bold text-brand-accent group-hover:border-brand-accent transition-colors">
-          SB
+      <!-- Brand Logo: Red square with 'S' and editorial serif 'Sohail.' -->
+      <a href="#" class="flex items-center gap-2.5 group">
+        <div class="w-7 h-7 rounded-md bg-[#e11d48] text-white flex items-center justify-center font-bold text-xs shadow-sm group-hover:scale-105 transition-transform">
+          S
         </div>
-        <div>
-          <span class="font-semibold text-sm text-white tracking-tight">Sohail Ahmed Buledi</span>
-          <span class="hidden sm:inline text-slate-400 font-mono text-xs ml-2">/ Web &amp; Automation</span>
-        </div>
+        <span class="font-serif font-bold text-base tracking-tight text-ink">Sohail.</span>
       </a>
 
-      <!-- Navigation Links -->
-      <nav class="hidden md:flex items-center gap-7 text-xs font-medium text-slate-400">
-        <a href="#about" class="hover:text-white transition-colors">About</a>
-        <a href="#skills" class="hover:text-white transition-colors">Skills</a>
-        <a href="#projects" class="hover:text-white transition-colors">Projects</a>
-        <a href="#workflow" class="hover:text-white transition-colors">Workflow</a>
-        <a href="#teaching" class="hover:text-white transition-colors">Teaching</a>
-        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+      <!-- Center Station Navigation -->
+      <nav class="hidden md:flex items-center gap-7 text-xs font-mono text-ink-muted">
+        <a href="#work" class="hover:text-ink hover:font-semibold transition-all">01 Work</a>
+        <a href="#about" class="hover:text-ink hover:font-semibold transition-all">02 About</a>
+        <a href="#skills" class="hover:text-ink hover:font-semibold transition-all">03 Skills</a>
+        <a href="#process" class="hover:text-ink hover:font-semibold transition-all">04 Process</a>
+        <a href="#contact" class="hover:text-ink hover:font-semibold transition-all">05 Contact</a>
       </nav>
 
-      <!-- Action Buttons -->
+      <!-- Right Action Strip: Status + Let's Talk Pill -->
       <div class="flex items-center gap-3">
-        <div class="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded bg-brand-card border border-brand-border text-[11px] font-mono text-slate-300">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
-          <span>AVAILABLE FOR REMOTE ROLES</span>
+        <div class="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-paper-border text-[11px] font-mono text-ink-muted shadow-2xs">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 pulse-dot"></span>
+          <span>OPEN TO PROJECTS</span>
         </div>
-        <a href="https://github.com/suhailahmed-dev" target="_blank" rel="noopener" class="p-2 text-slate-400 hover:text-white transition-colors" title="GitHub Profile">
-          <i data-lucide="github" class="w-5 h-5"></i>
+
+        <!-- Distinctive Black Pill Button with Yellow Arrow (From Reel) -->
+        <a href="https://wa.me/923093174020?text=Hello%20Sohail,%20I%20saw%20your%20train%20portfolio%20and%20would%20like%20to%20discuss%20a%20project" 
+           target="_blank" 
+           rel="noopener" 
+           class="bg-ink hover:bg-black text-white text-xs font-semibold px-4 py-2 rounded-full flex items-center gap-2 transition-all shadow-sm group">
+          <span>Let's talk</span>
+          <span class="w-4 h-4 rounded-full bg-amber-400 text-black flex items-center justify-center text-[10px] group-hover:translate-x-0.5 transition-transform">
+            &rarr;
+          </span>
         </a>
       </div>
 
     </div>
   </header>
 
-  <!-- Main Content Container -->
-  <main class="relative z-10 pt-28 pb-20 max-w-6xl mx-auto px-6">
+  <!-- Main Hero Stage -->
+  <main class="relative z-10 pt-24 sm:pt-28">
 
-    <!-- Hero Section -->
-    <section class="pt-8 pb-16 border-b border-brand-border">
+    <!-- Hero Header Section -->
+    <section class="max-w-6xl mx-auto px-6 text-center pt-8 pb-2 relative">
       
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-brand-card border border-brand-border text-xs font-mono text-brand-accent mb-6">
-        <i data-lucide="code" class="w-3.5 h-3.5"></i>
-        <span>WEB DEVELOPER • PYTHON AUTOMATION • IT INSTRUCTOR</span>
+      <!-- Floating Playful Geometric Shapes (Identical to Reel) -->
+      <!-- Red Arch / Half-circle on Left -->
+      <div class="hidden sm:block absolute left-8 lg:left-14 top-20 w-11 h-6 bg-[#e11d48] rounded-t-full opacity-90 animate-float pointer-events-none"></div>
+      <!-- Blue Dot on Left-Center -->
+      <div class="hidden sm:block absolute left-24 lg:left-32 top-44 w-3.5 h-3.5 bg-[#2563eb] rounded-full opacity-90 pointer-events-none"></div>
+      
+      <!-- Golden 8-Point Star on Right-Top -->
+      <div class="hidden sm:block absolute right-12 lg:right-20 top-16 w-8 h-8 opacity-90 animate-spin-slow pointer-events-none">
+        <svg viewBox="0 0 24 24" fill="#eab308">
+          <path d="M12 0L14.59 4.41L19.5 3.5L18.59 8.41L23 11L19.59 14.59L20.5 19.5L15.59 18.59L13 23L9.41 19.59L4.5 20.5L5.41 15.59L1 13L4.41 9.41L3.5 4.5L8.41 5.41L11 1Z"/>
+        </svg>
+      </div>
+      <!-- Green Rounded Capsule on Right-Center -->
+      <div class="hidden sm:block absolute right-20 lg:right-32 top-48 w-11 h-4 bg-[#16a34a] rounded-full opacity-90 pointer-events-none"></div>
+
+      <!-- Small Badge Capsule -->
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-paper-border text-xs font-mono text-ink-muted mb-5 shadow-2xs">
+        <span class="w-4 h-4 rounded-full bg-blue-600 text-white flex items-center justify-center text-[9px] font-bold">S</span>
+        <span>PORTFOLIO '26</span>
       </div>
 
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12] mb-6 max-w-4xl">
-        Building practical web applications, robust automations, and AI-assisted workflows.
-      </h1>
-
-      <p class="text-slate-400 text-base sm:text-lg max-w-2xl font-normal leading-relaxed mb-8">
-        I am a web developer and technical instructor based in Hyderabad, Pakistan. I specialize in solid database-driven web systems (PHP &amp; MySQL), resilient browser and backend automation scripts (Python), and disciplined, test-verified AI coding workflows.
+      <!-- Subtitle Greeting -->
+      <p class="text-xs sm:text-sm font-mono text-ink-muted mb-2 tracking-wide">
+        Hi, I'm Sohail, a Web &amp; Automation Developer.
       </p>
 
-      <!-- Primary Action Buttons -->
-      <div class="flex flex-wrap items-center gap-4">
-        <a href="#projects" class="bg-brand-accent text-brand-dark hover:bg-emerald-400 font-medium text-xs sm:text-sm px-6 py-3 rounded transition-all flex items-center gap-2 font-mono">
-          <span>VIEW FEATURED PROJECTS</span>
-          <i data-lucide="arrow-down" class="w-4 h-4"></i>
-        </a>
-        <a href="#contact" class="bg-brand-card hover:bg-brand-elevated text-slate-200 hover:text-white border border-brand-border font-medium text-xs sm:text-sm px-6 py-3 rounded transition-all flex items-center gap-2 font-mono">
-          <i data-lucide="mail" class="w-4 h-4 text-brand-accent"></i>
-          <span>CONTACT ME</span>
-        </a>
-        <a href="https://wa.me/923093174020?text=Hello%20Sohail,%20I%20reviewed%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20development%20opportunity" target="_blank" rel="noopener" class="bg-brand-card hover:bg-brand-elevated text-emerald-400 hover:text-emerald-300 border border-brand-border font-medium text-xs sm:text-sm px-5 py-3 rounded transition-all flex items-center gap-2 font-mono" title="Direct WhatsApp">
-          <i data-lucide="message-square" class="w-4 h-4 text-emerald-400"></i>
-          <span>WHATSAPP CHAT</span>
-        </a>
-      </div>
+      <!-- Signature Editorial Headline from Reel -->
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif text-ink tracking-tight leading-[1.12] mb-5 max-w-4xl mx-auto">
+        I build the systems, so<br class="hidden sm:inline">
+        your business <span class="italic font-serif text-[#e11d48]">enjoys the ride.</span>
+      </h1>
 
-      <!-- Quick Proof Highlights -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 pt-8 border-t border-brand-border/60">
-        <div class="bg-brand-card p-4 rounded border border-brand-border">
-          <div class="text-xs text-slate-400 font-mono mb-1">CORE WEB STACK</div>
-          <div class="text-lg font-bold text-white">PHP &amp; MySQL</div>
-          <div class="text-xs text-slate-400 mt-1">OOP, MVC &amp; Bootstrap</div>
-        </div>
-        <div class="bg-brand-card p-4 rounded border border-brand-border">
-          <div class="text-xs text-slate-400 font-mono mb-1">AUTOMATION ENGINE</div>
-          <div class="text-lg font-bold text-white">Python 3</div>
-          <div class="text-xs text-slate-400 mt-1">Playwright &amp; Batch APIs</div>
-        </div>
-        <div class="bg-brand-card p-4 rounded border border-brand-border">
-          <div class="text-xs text-slate-400 font-mono mb-1">AI AGENT SAFETY</div>
-          <div class="text-lg font-bold text-white">114 Unit Tests</div>
-          <div class="text-xs text-slate-400 mt-1">Taskeen Permission Engine</div>
-        </div>
-        <div class="bg-brand-card p-4 rounded border border-brand-border">
-          <div class="text-xs text-slate-400 font-mono mb-1">MENTORSHIP</div>
-          <div class="text-lg font-bold text-white">IT Instructor</div>
-          <div class="text-xs text-slate-400 mt-1">IT Institute, Hyderabad</div>
-        </div>
-      </div>
+      <!-- Clean narrative sub-copy -->
+      <p class="text-ink-muted text-xs sm:text-sm max-w-xl mx-auto font-normal leading-relaxed mb-6">
+        From full-stack web applications to zero-touch Python automation and tool-using AI agents, I engineer software that moves friction out of the way. Hop on and explore my work.
+      </p>
 
     </section>
 
-    <!-- About Me Section -->
-    <section id="about" class="py-16 border-b border-brand-border scroll-mt-20">
-      <div class="grid md:grid-cols-3 gap-10 items-center">
-        
-        <!-- Profile Picture Column -->
-        <div class="flex flex-col items-center text-center">
-          <div class="w-40 h-40 sm:w-48 sm:h-48 rounded-xl overflow-hidden border border-brand-border p-1 bg-brand-elevated mb-4 shadow-lg">
-            <img src="assets/suhail_profile.jpg" alt="Sohail Ahmed Buledi" class="w-full h-full object-cover rounded-lg">
-          </div>
-          <h2 class="text-lg font-bold text-white">Sohail Ahmed Buledi</h2>
-          <div class="text-xs font-mono text-brand-accent mt-0.5">Hyderabad, Sindh, Pakistan</div>
-          <div class="text-xs text-slate-400 mt-1">Web Developer • Instructor</div>
-        </div>
-
-        <!-- Narrative Column -->
-        <div class="md:col-span-2 space-y-4">
-          <div class="font-mono text-xs text-brand-accent uppercase tracking-wider">// ABOUT ME</div>
-          <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-            Practical development with solid fundamentals and modern tooling.
-          </h3>
-          <p class="text-slate-400 text-sm leading-relaxed">
-            I am a software developer with a practical background in web architecture, relational databases, and automation scripting. As a Web Development Instructor at an IT institute in Hyderabad, I spend my days teaching foundational programming, relational database normalization, and secure coding practices to future developers.
-          </p>
-          <p class="text-slate-400 text-sm leading-relaxed">
-            In my own software work, I focus on building systems that solve operational friction: anti-cheating digital examination engines (like the <strong>Secure Online Assessment System</strong>), intelligent marketing automation clusters, and headless Python automation workflows that eliminate repetitive manual labor.
-          </p>
-          <p class="text-slate-400 text-sm leading-relaxed">
-            I also actively research and practice <strong>AI-assisted software development and tool-augmented AI agents</strong>. Through projects like <strong>Taskeen</strong>, I explore how LLMs can plan and execute real tool calls securely behind strict permission gates, supported by over a hundred automated unit tests rather than blind prompts.
-          </p>
-
-          <div class="grid sm:grid-cols-2 gap-3 pt-3 font-mono text-xs text-slate-300">
-            <div class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
-              <span>Clean Relational Data Modeling</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
-              <span>Defensive Code &amp; Security Validation</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
-              <span>Test-Driven Agent Architecture</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
-              <span>Available for Remote Global Roles</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Technical Skills Section -->
-    <section id="skills" class="py-16 border-b border-brand-border scroll-mt-20">
+    <!-- THE INTERACTIVE TRAIN ARENA (Roller Coaster Green Truss Bridge + Train) -->
+    <section id="track-arena" class="relative w-full max-w-6xl mx-auto px-4 select-none cursor-pointer" title="Click and hold anywhere to speed up the train!">
       
-      <div class="mb-10">
-        <div class="font-mono text-xs text-brand-accent uppercase tracking-wider mb-1">// TECHNICAL CAPABILITIES</div>
-        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Verified Skills &amp; Technology Stack</h2>
-        <p class="text-slate-400 text-sm mt-2 max-w-2xl">
-          Categorized by practical application across real web projects, automation scripts, and instructional coursework.
+      <!-- SVG Bridge & Roller Coaster Railway -->
+      <div class="relative w-full overflow-hidden" style="min-height: 380px;">
+        <svg id="railwaySvg" class="w-full h-auto block" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <!-- Rail Green Gradient -->
+            <linearGradient id="railGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#1b6b47"/>
+              <stop offset="50%" stop-color="#2a9d66"/>
+              <stop offset="100%" stop-color="#1b6b47"/>
+            </linearGradient>
+
+            <!-- Wheel Shadow filter -->
+            <filter id="cartShadow" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="2" stdDeviation="1.5" flood-opacity="0.2"/>
+            </filter>
+          </defs>
+
+          <!-- VERTICAL GREEN STEEL PILLARS (Anchored to ground) -->
+          <g stroke="#1e784f" stroke-width="2.2" opacity="0.75">
+            <line x1="80" y1="210" x2="80" y2="410"/>
+            <line x1="180" y1="250" x2="180" y2="410"/>
+            <line x1="280" y1="290" x2="280" y2="410"/>
+            <line x1="380" y1="320" x2="380" y2="410"/>
+            <line x1="480" y1="335" x2="480" y2="410"/>
+            <line x1="580" y1="335" x2="580" y2="410"/>
+            <line x1="680" y1="335" x2="680" y2="410"/>
+            <line x1="780" y1="315" x2="780" y2="410"/>
+            <line x1="880" y1="275" x2="880" y2="410"/>
+            <line x1="980" y1="215" x2="980" y2="410"/>
+            <line x1="1080" y1="150" x2="1080" y2="410"/>
+
+            <!-- Structural Cross-Towers / Horizontal Struts -->
+            <line x1="40" y1="410" x2="1160" y2="410" stroke="#1e784f" stroke-width="3"/>
+            <line x1="80" y1="360" x2="1080" y2="360" stroke="#1e784f" stroke-width="1.2" opacity="0.4"/>
+            <line x1="180" y1="385" x2="980" y2="385" stroke="#1e784f" stroke-width="1.2" opacity="0.3"/>
+          </g>
+
+          <!-- TOWER DIAGONAL X-BRACES (Classic Rollercoaster Structural Truss) -->
+          <g stroke="#1e784f" stroke-width="1.2" opacity="0.35">
+            <line x1="80" y1="260" x2="180" y2="360"/>
+            <line x1="180" y1="260" x2="80" y2="360"/>
+            <line x1="180" y1="300" x2="280" y2="410"/>
+            <line x1="280" y1="300" x2="180" y2="410"/>
+            <line x1="280" y1="330" x2="380" y2="410"/>
+            <line x1="380" y1="330" x2="280" y2="410"/>
+            <line x1="780" y1="330" x2="880" y2="410"/>
+            <line x1="880" y1="330" x2="780" y2="410"/>
+            <line x1="880" y1="300" x2="980" y2="410"/>
+            <line x1="980" y1="300" x2="880" y2="410"/>
+            <line x1="980" y1="240" x2="1080" y2="360"/>
+            <line x1="1080" y1="240" x2="980" y2="360"/>
+          </g>
+
+          <!-- LOWER PARALLEL RUNNER ARCH -->
+          <path d="M -150,210 C 180,290 380,360 600,360 C 820,360 1020,270 1350,110" 
+                fill="none" stroke="#1e784f" stroke-width="2.5" opacity="0.6"/>
+
+          <!-- TRUSS WEB LATTICE CONNECTING LOWER ARCH AND RAIL -->
+          <g stroke="#1e784f" stroke-width="1.4" opacity="0.5">
+            <line x1="60" y1="185" x2="120" y2="245"/>
+            <line x1="120" y1="215" x2="60" y2="230"/>
+            <line x1="160" y1="235" x2="220" y2="295"/>
+            <line x1="220" y1="265" x2="160" y2="280"/>
+            <line x1="260" y1="280" x2="320" y2="335"/>
+            <line x1="320" y1="305" x2="260" y2="325"/>
+            <line x1="360" y1="315" x2="420" y2="355"/>
+            <line x1="420" y1="328" x2="360" y2="345"/>
+            <line x1="460" y1="332" x2="520" y2="360"/>
+            <line x1="520" y1="335" x2="460" y2="358"/>
+            <line x1="560" y1="335" x2="620" y2="360"/>
+            <line x1="620" y1="335" x2="560" y2="360"/>
+            <line x1="660" y1="332" x2="720" y2="355"/>
+            <line x1="720" y1="325" x2="660" y2="358"/>
+            <line x1="760" y1="315" x2="820" y2="335"/>
+            <line x1="820" y1="295" x2="760" y2="340"/>
+            <line x1="860" y1="275" x2="920" y2="285"/>
+            <line x1="920" y1="245" x2="860" y2="305"/>
+            <line x1="960" y1="225" x2="1020" y2="225"/>
+            <line x1="1020" y1="185" x2="960" y2="255"/>
+            <line x1="1060" y1="160" x2="1120" y2="155"/>
+            <line x1="1120" y1="120" x2="1060" y2="195"/>
+          </g>
+
+          <!-- SECONDARY LOWER RAIL PIPE -->
+          <path d="M -300,165 C 150,265 380,345 600,345 C 820,345 1050,230 1500,50" 
+                fill="none" stroke="#1b6b47" stroke-width="3" opacity="0.7"/>
+
+          <!-- RAIL TIES / SLEEPERS -->
+          <path d="M -300,155 C 150,255 380,335 600,335 C 820,335 1050,220 1500,40" 
+                fill="none" stroke="#145336" stroke-width="5" stroke-dasharray="2 18" opacity="0.6"/>
+
+          <!-- THE PRIMARY RUNNING RAIL (TRAIN TRACK PATH) -->
+          <path id="trainTrack" 
+                d="M -300,155 C 150,255 380,335 600,335 C 820,335 1050,220 1500,40" 
+                fill="none" stroke="url(#railGrad)" stroke-width="5" stroke-linecap="round"/>
+
+          <!-- TRAIN CONTAINER (DYNAMICALLY POPULATED & ANIMATED BY JS) -->
+          <g id="trainGroup"></g>
+        </svg>
+
+        <!-- SPEEDOMETER & CONTROLS HUD (Identical to Reel) -->
+        <div class="mt-4 flex flex-wrap items-center justify-between gap-4 px-4 font-mono text-xs text-ink-muted">
+          
+          <!-- Speedometer & Dynamic Telemetry -->
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 pulse-dot"></span>
+            <span id="speedDisplay" class="font-semibold text-ink">ARRIVING - BRAKING 45 km/h</span>
+          </div>
+
+          <!-- Center Navigation Buttons from Reel -->
+          <div class="flex items-center gap-3">
+            <a href="#work" class="bg-ink hover:bg-black text-white text-xs font-sans font-medium px-4 py-2 rounded-full shadow-sm transition-all flex items-center gap-1.5">
+              <span>•</span>
+              <span>View selected work</span>
+            </a>
+            <a href="#about" class="bg-white hover:bg-paper-darker text-ink text-xs font-sans font-medium px-4 py-2 rounded-full border border-paper-borderDark transition-all">
+              About me
+            </a>
+          </div>
+
+          <!-- Boost Prompt from Reel -->
+          <div class="text-[11px] text-ink-muted flex items-center gap-1">
+            <span>⚡</span>
+            <span id="boostPrompt">HOLD ANYWHERE TO GO FASTER</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SECTION 01: SELECTED WORK / THE STATION STOPS -->
+    <section id="work" class="py-24 max-w-6xl mx-auto px-6 border-t border-paper-border mt-16 scroll-mt-20">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
+        <div>
+          <div class="font-mono text-xs text-track-green uppercase tracking-wider mb-1">// STATION 01</div>
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-ink tracking-tight">
+            Selected Works &amp; Real Systems
+          </h2>
+          <p class="text-ink-muted text-xs sm:text-sm mt-1 max-w-xl">
+            Real software built for real operations: automated assessment engines, test-guarded AI agents, and zero-touch business workflows.
+          </p>
+        </div>
+        <div class="font-mono text-xs text-ink-muted bg-white px-3 py-1.5 rounded-full border border-paper-border self-start sm:self-auto shadow-2xs">
+          5 PRODUCTION SYSTEMS
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- Project 01: Secure Intelligent Online Assessment System -->
+        <article class="station-card p-7 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-ink-muted mb-4 pb-3 border-b border-paper-border">
+              <span class="text-rose-600 font-bold">STOP // 01</span>
+              <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px]">VERIFIED CODEBASE</span>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-serif font-bold text-ink mb-2">
+              Secure Intelligent Online Assessment System
+            </h3>
+            
+            <p class="text-xs sm:text-sm text-ink-muted leading-relaxed mb-5">
+              An institutional digital examination platform with active anti-cheating tracking. Features client-side tab switch detection, auto-submission timers, topic blueprints, and question bank analytics for technical institutes.
+            </p>
+
+            <div class="space-y-2 mb-6 text-xs text-ink font-mono bg-paper p-4 rounded-xl border border-paper-border">
+              <div class="text-[10px] text-ink-muted uppercase font-semibold">CORE CAPABILITIES</div>
+              <div>✔ Tab-switch violation counter &amp; auto-submit timer</div>
+              <div>✔ Smart test generation by difficulty blueprint</div>
+              <div>✔ Role dashboards for Admin, Teacher &amp; Student</div>
+              <div>✔ Real-time question usage &amp; score analytics</div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-paper-border flex flex-wrap items-center justify-between gap-3">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-ink-muted">
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">PHP</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">MySQL</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">JavaScript</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Bootstrap 5</span>
+            </div>
+            <span class="text-xs font-mono text-ink-muted font-medium">
+              Institutional Platform
+            </span>
+          </div>
+        </article>
+
+        <!-- Project 02: Taskeen AI Assistant -->
+        <article class="station-card p-7 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-ink-muted mb-4 pb-3 border-b border-paper-border">
+              <span class="text-blue-600 font-bold">STOP // 02</span>
+              <span class="px-2 py-0.5 rounded-full bg-purple-50 text-purple-700 border border-purple-200 text-[10px]">114 TESTS PASSING</span>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-serif font-bold text-ink mb-2">
+              Taskeen — Local-First Multilingual AI Assistant
+            </h3>
+            
+            <p class="text-xs sm:text-sm text-ink-muted leading-relaxed mb-5">
+              A local-first, memory-enabled AI assistant built with an explicit sandboxed tool execution engine. Solves the safety risks of unrestrained LLM execution with a 4-tier permission gate (<code class="bg-paper px-1 py-0.5 rounded">SAFE</code> to <code class="bg-paper px-1 py-0.5 rounded">DESTRUCTIVE</code>).
+            </p>
+
+            <div class="space-y-2 mb-6 text-xs text-ink font-mono bg-paper p-4 rounded-xl border border-paper-border">
+              <div class="text-[10px] text-ink-muted uppercase font-semibold">CORE CAPABILITIES</div>
+              <div>✔ 114 automated unit &amp; integration tests passing</div>
+              <div>✔ Typed Tool Registry with schemas and timeouts</div>
+              <div>✔ 4-Tier Permission System (Refuses unsafe actions)</div>
+              <div>✔ Persistent SQLite memory (English, Roman Urdu, Urdu)</div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-paper-border flex flex-wrap items-center justify-between gap-3">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-ink-muted">
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Python 3</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Ollama</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">SQLite</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Pytest</span>
+            </div>
+            <span class="text-xs font-mono text-purple-700 font-medium">
+              Local Codebase &amp; Tests
+            </span>
+          </div>
+        </article>
+
+        <!-- Project 03: SiteSeller Lead Engine -->
+        <article class="station-card p-7 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-ink-muted mb-4 pb-3 border-b border-paper-border">
+              <span class="text-emerald-600 font-bold">STOP // 03</span>
+              <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px]">OPEN SOURCE</span>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-serif font-bold text-ink mb-2">
+              SiteSeller — Autonomous Lead Discovery &amp; Demo Engine
+            </h3>
+            
+            <p class="text-xs sm:text-sm text-ink-muted leading-relaxed mb-5">
+              An automated client acquisition engine that searches Google Places for local businesses lacking active websites, automatically builds custom landing page previews, and formats value-first WhatsApp outreach links.
+            </p>
+
+            <div class="space-y-2 mb-6 text-xs text-ink font-mono bg-paper p-4 rounded-xl border border-paper-border">
+              <div class="text-[10px] text-ink-muted uppercase font-semibold">CORE CAPABILITIES</div>
+              <div>✔ Google Places API query pipeline with website filters</div>
+              <div>✔ Dynamic tailored landing page template generator</div>
+              <div>✔ Pre-filled WhatsApp outreach link constructor</div>
+              <div>✔ Pipeline funnel tracking for client acquisition</div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-paper-border flex flex-wrap items-center justify-between gap-3">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-ink-muted">
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Node.js</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Express</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Google Places</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Tailwind</span>
+            </div>
+            <a href="https://github.com/suhailahmed-dev/siteseller-lead-engine" target="_blank" rel="noopener" class="text-xs font-mono text-ink hover:text-track-green font-medium flex items-center gap-1">
+              GitHub Repo &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 04: Faceless Video Autopilot -->
+        <article class="station-card p-7 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-ink-muted mb-4 pb-3 border-b border-paper-border">
+              <span class="text-amber-600 font-bold">STOP // 04</span>
+              <span class="px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200 text-[10px]">AUTOMATION PIPELINE</span>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-serif font-bold text-ink mb-2">
+              Faceless Video Autopilot — Content Generation Engine
+            </h3>
+            
+            <p class="text-xs sm:text-sm text-ink-muted leading-relaxed mb-5">
+              An end-to-end Python pipeline for creating short-form vertical videos automatically. Generates niche scripts, produces synchronized voiceovers via Microsoft Edge TTS, matches royalty-free B-roll, and overlays dynamic animated captions.
+            </p>
+
+            <div class="space-y-2 mb-6 text-xs text-ink font-mono bg-paper p-4 rounded-xl border border-paper-border">
+              <div class="text-[10px] text-ink-muted uppercase font-semibold">CORE CAPABILITIES</div>
+              <div>✔ Automated script writing tuned for TikTok/Reels/Shorts</div>
+              <div>✔ High-quality neural speech synthesis (edge-tts)</div>
+              <div>✔ MoviePy video rendering &amp; audio ducking engine</div>
+              <div>✔ Word-by-word synchronized animated caption burns</div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-paper-border flex flex-wrap items-center justify-between gap-3">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-ink-muted">
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Python 3</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">MoviePy</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">edge-tts</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">FFmpeg</span>
+            </div>
+            <span class="text-xs font-mono text-amber-700 font-medium">
+              Zero-Touch Pipeline
+            </span>
+          </div>
+        </article>
+
+        <!-- Project 05: APEX Marketing AI Engine (Spans across or nicely fits) -->
+        <article class="station-card p-7 rounded-2xl flex flex-col justify-between md:col-span-2">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-ink-muted mb-4 pb-3 border-b border-paper-border">
+              <span class="text-indigo-600 font-bold">STOP // 05</span>
+              <span class="px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200 text-[10px]">INTELLIGENT AGENT</span>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-serif font-bold text-ink mb-2">
+              APEX Marketing AI Engine — Campaign &amp; Strategy Orchestrator
+            </h3>
+            
+            <p class="text-xs sm:text-sm text-ink-muted leading-relaxed mb-5">
+              An intelligent marketing operations platform built for agencies. Takes a single product URL or business brief and generates full marketing campaign roadmaps, SEO clusters, LinkedIn posts, email sequences, and competitive positioning matrices.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-3 mb-6 text-xs text-ink font-mono bg-paper p-4 rounded-xl border border-paper-border">
+              <div>✔ Competitor positioning &amp; value angle extraction</div>
+              <div>✔ 30-day cross-platform content matrix generator</div>
+              <div>✔ High-converting cold email sequence creator</div>
+              <div>✔ Structured JSON export for seamless CMS ingestion</div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-paper-border flex flex-wrap items-center justify-between gap-3">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-ink-muted">
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Python</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Gemini API</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">FastAPI</span>
+              <span class="px-2 py-0.5 bg-paper rounded border border-paper-border">Tailwind</span>
+            </div>
+            <span class="text-xs font-mono text-indigo-700 font-medium">
+              Enterprise Marketing Copilot
+            </span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SECTION 02: ABOUT THE CONDUCTOR -->
+    <section id="about" class="py-24 max-w-6xl mx-auto px-6 border-t border-paper-border scroll-mt-20">
+      
+      <div class="grid lg:grid-cols-12 gap-12 items-start">
+        
+        <div class="lg:col-span-5">
+          <div class="font-mono text-xs text-track-green uppercase tracking-wider mb-1">// STATION 02</div>
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-ink tracking-tight mb-6">
+            Meet the Conductor
+          </h2>
+
+          <div class="p-6 bg-white rounded-2xl border border-paper-border shadow-2xs space-y-4">
+            <div class="w-16 h-16 rounded-xl bg-gradient-to-tr from-rose-500 to-amber-500 text-white flex items-center justify-center font-serif font-bold text-2xl shadow-sm">
+              S
+            </div>
+            <div>
+              <h3 class="text-lg font-serif font-bold text-ink">Sohail Ahmed Buledi</h3>
+              <p class="text-xs font-mono text-ink-muted">Web Developer &bull; Python Automation &bull; IT Instructor</p>
+              <p class="text-xs font-mono text-emerald-600 mt-0.5">Hyderabad, Sindh, Pakistan (UTC+5)</p>
+            </div>
+            <div class="pt-4 border-t border-paper-border text-xs text-ink-muted leading-relaxed">
+              "Code is simply infrastructure. What actually matters is whether the train arrives on time, passengers stay safe, and the machinery runs quietly without manual panic."
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 space-y-6 text-sm text-ink-muted leading-relaxed">
+          <p>
+            I am a full-stack web developer and Python automation engineer based in Hyderabad, Pakistan. For over five years, I have lived at the intersection of production software delivery and technical education.
+          </p>
+          <p>
+            As a <strong>Web Development Instructor</strong> at a premier IT institute in Hyderabad, I have trained more than <strong>1,000+ students</strong> in HTML5, CSS3, JavaScript, PHP, MySQL, OOP principles, and modern AI-assisted engineering practices. Teaching keeps my foundations razor-sharp: you cannot teach someone to write clean code unless you deeply understand why messy code breaks.
+          </p>
+          <p>
+            Beyond the classroom, I build practical automation engines for international clients: web scraping pipelines, browser automation suites, custom business portals, and self-guarded AI agents with strict permission bounds and comprehensive test coverage.
+          </p>
+
+          <div class="grid sm:grid-cols-3 gap-4 pt-4">
+            <div class="p-4 bg-white rounded-xl border border-paper-border">
+              <div class="text-2xl font-serif font-bold text-ink">1,000+</div>
+              <div class="text-xs font-mono text-ink-muted mt-1">Students Mentored</div>
+            </div>
+            <div class="p-4 bg-white rounded-xl border border-paper-border">
+              <div class="text-2xl font-serif font-bold text-ink">114</div>
+              <div class="text-xs font-mono text-ink-muted mt-1">Automated Tests in AI Agent</div>
+            </div>
+            <div class="p-4 bg-white rounded-xl border border-paper-border">
+              <div class="text-2xl font-serif font-bold text-ink">100%</div>
+              <div class="text-xs font-mono text-ink-muted mt-1">Verified Real Repos</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SECTION 03: THE RAIL YARD (SKILLS & TOOLING) -->
+    <section id="skills" class="py-24 max-w-6xl mx-auto px-6 border-t border-paper-border scroll-mt-20">
+      
+      <div class="mb-12">
+        <div class="font-mono text-xs text-track-green uppercase tracking-wider mb-1">// STATION 03</div>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-ink tracking-tight">
+          The Rail Yard: Tools &amp; Tracks
+        </h2>
+        <p class="text-ink-muted text-xs sm:text-sm mt-1 max-w-xl">
+          The core technologies and toolsets I use to build bulletproof software.
         </p>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <!-- Category 1: Frontend Development -->
-        <div class="pro-card p-6 rounded-lg">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="p-2 rounded bg-brand-elevated border border-brand-border text-brand-accent">
-              <i data-lucide="layout" class="w-5 h-5"></i>
-            </div>
-            <h3 class="font-semibold text-white text-base">Frontend Development</h3>
+        <!-- Track 01 -->
+        <div class="station-card p-6 rounded-2xl">
+          <div class="w-8 h-8 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center font-mono font-bold text-xs mb-4 border border-rose-200">
+            01
           </div>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
-            Building responsive, accessible user interfaces with clean markup and interactive client-side logic.
-          </p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="tag-pill">HTML5</span>
-            <span class="tag-pill">CSS3</span>
-            <span class="tag-pill">Bootstrap 5</span>
-            <span class="tag-pill">JavaScript (ES6+)</span>
-            <span class="tag-pill">jQuery</span>
-            <span class="tag-pill">AJAX</span>
-            <span class="tag-pill">Responsive Design</span>
+          <h3 class="font-serif font-bold text-lg text-ink mb-2">Web &amp; Full-Stack</h3>
+          <p class="text-xs text-ink-muted mb-4">Core web engineering for production applications that load fast and stay maintainable.</p>
+          <div class="flex flex-wrap gap-1.5 text-xs font-mono text-ink">
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">HTML5</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">CSS3</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">JavaScript ES6+</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">PHP 8</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">MySQL</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">Bootstrap 5</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">Tailwind CSS</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">jQuery / AJAX</span>
           </div>
         </div>
 
-        <!-- Category 2: Backend Development -->
-        <div class="pro-card p-6 rounded-lg">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="p-2 rounded bg-brand-elevated border border-brand-border text-emerald-400">
-              <i data-lucide="server" class="w-5 h-5"></i>
-            </div>
-            <h3 class="font-semibold text-white text-base">Backend &amp; Architecture</h3>
+        <!-- Track 02 -->
+        <div class="station-card p-6 rounded-2xl">
+          <div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-mono font-bold text-xs mb-4 border border-blue-200">
+            02
           </div>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
-            Designing server-side business logic, authentication gates, and modular MVC architectures.
-          </p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="tag-pill">PHP 8</span>
-            <span class="tag-pill">OOP Concepts</span>
-            <span class="tag-pill">MVC Patterns</span>
-            <span class="tag-pill">Node.js / Express</span>
-            <span class="tag-pill">Python FastAPI</span>
-            <span class="tag-pill">Apache .htaccess</span>
-            <span class="tag-pill">XAMPP Environment</span>
+          <h3 class="font-serif font-bold text-lg text-ink mb-2">Python &amp; Automation</h3>
+          <p class="text-xs text-ink-muted mb-4">Autonomous bots, data pipelines, and zero-touch workflows eliminating repetitive work.</p>
+          <div class="flex flex-wrap gap-1.5 text-xs font-mono text-ink">
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">Python 3</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">Playwright</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">BeautifulSoup</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">Requests</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">FastAPI</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">MoviePy</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">edge-tts</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">cron / Schedule</span>
           </div>
         </div>
 
-        <!-- Category 3: Databases & Modeling -->
-        <div class="pro-card p-6 rounded-lg">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="p-2 rounded bg-brand-elevated border border-brand-border text-blue-400">
-              <i data-lucide="database" class="w-5 h-5"></i>
-            </div>
-            <h3 class="font-semibold text-white text-base">Databases &amp; Modeling</h3>
+        <!-- Track 03 -->
+        <div class="station-card p-6 rounded-2xl">
+          <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-mono font-bold text-xs mb-4 border border-emerald-200">
+            03
           </div>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
-            Designing normalized relational schemas with constraints, indexing, and reproducible migrations.
-          </p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="tag-pill">MySQL</span>
-            <span class="tag-pill">MariaDB</span>
-            <span class="tag-pill">Schema Normalization</span>
-            <span class="tag-pill">SQL Migrations</span>
-            <span class="tag-pill">Foreign Key Integrity</span>
-            <span class="tag-pill">SQLite</span>
-          </div>
-        </div>
-
-        <!-- Category 4: Python & Automation -->
-        <div class="pro-card p-6 rounded-lg">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="p-2 rounded bg-brand-elevated border border-brand-border text-amber-400">
-              <i data-lucide="cpu" class="w-5 h-5"></i>
-            </div>
-            <h3 class="font-semibold text-white text-base">Python &amp; Automation</h3>
-          </div>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
-            Writing resilient automation scripts for browser interactions, media processing, and batch tasks.
-          </p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="tag-pill">Python 3</span>
-            <span class="tag-pill">Playwright</span>
-            <span class="tag-pill">Headless Browsers</span>
-            <span class="tag-pill">FFmpeg</span>
-            <span class="tag-pill">AsyncIO</span>
-            <span class="tag-pill">Web Scraping</span>
-            <span class="tag-pill">Batch Processing</span>
-          </div>
-        </div>
-
-        <!-- Category 5: AI Agents & Modern Tooling -->
-        <div class="pro-card p-6 rounded-lg">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="p-2 rounded bg-brand-elevated border border-brand-border text-purple-400">
-              <i data-lucide="bot" class="w-5 h-5"></i>
-            </div>
-            <h3 class="font-semibold text-white text-base">AI Agents &amp; Tool Use</h3>
-          </div>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
-            Architecting tool-using AI agents with typed permissions, schema outputs, and rigorous testing.
-          </p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="tag-pill">Tool Registries</span>
-            <span class="tag-pill">Permission Gates</span>
-            <span class="tag-pill">Ollama / Local LLMs</span>
-            <span class="tag-pill">Gemini 2.0 API</span>
-            <span class="tag-pill">JSON Schemas</span>
-            <span class="tag-pill">Vibe Coding Workflows</span>
-          </div>
-        </div>
-
-        <!-- Category 6: Tools & Workflow -->
-        <div class="pro-card p-6 rounded-lg">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="p-2 rounded bg-brand-elevated border border-brand-border text-rose-400">
-              <i data-lucide="git-branch" class="w-5 h-5"></i>
-            </div>
-            <h3 class="font-semibold text-white text-base">Tools &amp; Workflow</h3>
-          </div>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
-            Employing standard industry toolchains for version control, API testing, and dependency management.
-          </p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="tag-pill">Git</span>
-            <span class="tag-pill">GitHub</span>
-            <span class="tag-pill">VS Code</span>
-            <span class="tag-pill">Postman</span>
-            <span class="tag-pill">Composer</span>
-            <span class="tag-pill">NPM</span>
-            <span class="tag-pill">Pytest</span>
+          <h3 class="font-serif font-bold text-lg text-ink mb-2">AI Agents &amp; Safety</h3>
+          <p class="text-xs text-ink-muted mb-4">Sandboxed LLM applications with permission enforcement, tool registries, and local memory.</p>
+          <div class="flex flex-wrap gap-1.5 text-xs font-mono text-ink">
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">Ollama (Local)</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">Gemini 2.5/Flash</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">Tool Schemas</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">Safety Gates</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">SQLite Memory</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">Pytest</span>
+            <span class="px-2 py-1 bg-paper rounded border border-paper-border">Structured Output</span>
           </div>
         </div>
 
@@ -400,634 +699,388 @@
 
     </section>
 
-    <!-- Featured Projects Section -->
-    <section id="projects" class="py-16 border-b border-brand-border scroll-mt-20">
+    <!-- SECTION 04: THE PROCESS / ROUTE MAP -->
+    <section id="process" class="py-24 max-w-6xl mx-auto px-6 border-t border-paper-border scroll-mt-20">
       
-      <div class="mb-10 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-        <div>
-          <div class="font-mono text-xs text-brand-accent uppercase tracking-wider mb-1">// PROJECT PORTFOLIO</div>
-          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Verified Production Systems &amp; Codebases</h2>
-          <p class="text-slate-400 text-sm mt-2 max-w-2xl">
-            Each project represents real code solving specific operational, educational, or automation requirements.
-          </p>
-        </div>
-        <div class="text-xs font-mono text-slate-400 bg-brand-card px-3 py-1.5 rounded border border-brand-border self-start sm:self-auto">
-          6 SHOWCASED SYSTEMS
-        </div>
-      </div>
-
-      <div class="space-y-10">
-
-        <!-- PROJECT 01: Secure Intelligent Online Assessment System -->
-        <article class="pro-card p-6 sm:p-8 rounded-xl border border-brand-border">
-          <div class="flex flex-wrap items-center justify-between gap-4 mb-5 pb-4 border-b border-brand-border">
-            <div class="flex items-center gap-3">
-              <span class="tag-pill text-brand-accent border-brand-accent/30 bg-brand-accent/10">PROJECT // 01</span>
-              <span class="text-xs font-mono text-slate-400">CATEGORY: WEB APPLICATION &amp; SECURITY</span>
-            </div>
-            <span class="text-xs font-mono text-emerald-400 flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-              STATUS: PRODUCTION-READY
-            </span>
-          </div>
-
-          <div class="grid lg:grid-cols-3 gap-8">
-            <div class="lg:col-span-2 space-y-4">
-              <h3 class="text-xl sm:text-2xl font-bold text-white">
-                Secure Intelligent Online Assessment &amp; Skill Development System
-              </h3>
-              <p class="text-slate-400 text-sm leading-relaxed">
-                An automated examination and assessment platform built for IT training environments. It enables instructors to build question banks and generate balanced difficulty tests, while safeguarding exam integrity through real-time anti-cheating tracking.
-              </p>
-
-              <div class="grid sm:grid-cols-2 gap-4 pt-2">
-                <div class="bg-brand-elevated p-4 rounded border border-brand-border">
-                  <div class="font-mono text-[10px] text-slate-400 uppercase mb-1">THE PROBLEM</div>
-                  <p class="text-xs text-slate-300 leading-relaxed">
-                    Unsupervised online exams suffer from frequent tab-switching, unauthorized searching, and inconsistent test difficulty distributions across student cohorts.
-                  </p>
-                </div>
-                <div class="bg-brand-elevated p-4 rounded border border-brand-border">
-                  <div class="font-mono text-[10px] text-slate-400 uppercase mb-1">THE SOLUTION</div>
-                  <p class="text-xs text-slate-300 leading-relaxed">
-                    Client-side visibility listeners that log tab switches, enforce countdown timeouts with auto-submission, and build balanced tests based on difficulty blueprints.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Working Features List -->
-              <div class="space-y-2 pt-2">
-                <div class="text-xs font-mono text-brand-accent uppercase">VERIFIED WORKING FEATURES:</div>
-                <ul class="text-xs text-slate-300 space-y-1.5 font-mono">
-                  <li>✔ Anti-cheating tab-switch detection &amp; session violation counter</li>
-                  <li>✔ Automated test generator with balanced subject/difficulty blueprints</li>
-                  <li>✔ Role-based dashboards for Administrator, Teacher, and Student</li>
-                  <li>✔ Timed exam sessions with graceful auto-submit on countdown expiry</li>
-                  <li>✔ Instant score generation, MCQ usage tracking, and topic analytics</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Tech Specs Column -->
-            <div class="bg-brand-elevated p-6 rounded-lg border border-brand-border flex flex-col justify-between">
-              <div>
-                <div class="font-mono text-[11px] text-slate-400 uppercase mb-3">TECHNICAL ARCHITECTURE</div>
-                <div class="space-y-2 text-xs text-slate-300 mb-6 font-mono">
-                  <div><span class="text-slate-400">Backend:</span> PHP (Modular Structure)</div>
-                  <div><span class="text-slate-400">Database:</span> MySQL / MariaDB (Normalized)</div>
-                  <div><span class="text-slate-400">Frontend:</span> Bootstrap 5, Vanilla JS, AJAX</div>
-                  <div><span class="text-slate-400">Security:</span> Session token check, CSRF controls</div>
-                  <div><span class="text-slate-400">Integrity:</span> Proctoring logs &amp; violation tables</div>
-                </div>
-              </div>
-
-              <div class="pt-4 border-t border-brand-border">
-                <div class="font-mono text-[10px] text-slate-400 uppercase mb-2">TECHNOLOGIES USED</div>
-                <div class="flex flex-wrap gap-1 mb-4">
-                  <span class="tag-pill">PHP</span>
-                  <span class="tag-pill">MySQL</span>
-                  <span class="tag-pill">JavaScript</span>
-                  <span class="tag-pill">AJAX</span>
-                  <span class="tag-pill">Bootstrap</span>
-                </div>
-                <span class="text-xs font-mono text-slate-400">
-                  Institutional Codebase Verified
-                </span>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- PROJECT 02: APEX Marketing AI Command Center -->
-        <article class="pro-card p-6 sm:p-8 rounded-xl border border-brand-border">
-          <div class="flex flex-wrap items-center justify-between gap-4 mb-5 pb-4 border-b border-brand-border">
-            <div class="flex items-center gap-3">
-              <span class="tag-pill text-blue-400 border-blue-500/30 bg-blue-500/10">PROJECT // 02</span>
-              <span class="text-xs font-mono text-slate-400">CATEGORY: MULTI-AGENT WORKFLOWS &amp; AUTOMATION</span>
-            </div>
-            <span class="text-xs font-mono text-emerald-400 flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-              STATUS: PUBLIC REPOSITORY
-            </span>
-          </div>
-
-          <div class="grid lg:grid-cols-3 gap-8">
-            <div class="lg:col-span-2 space-y-4">
-              <h3 class="text-xl sm:text-2xl font-bold text-white">
-                APEX Marketing AI — Multi-Agent Content &amp; Strategy Command Center
-              </h3>
-              <p class="text-slate-400 text-sm leading-relaxed">
-                An autonomous multi-role marketing operating system that coordinates 15 specialized AI agents to generate platform-adapted copy, SEO blueprints, and 30-day marketing roadmaps across multiple channels.
-              </p>
-
-              <div class="grid sm:grid-cols-2 gap-4 pt-2">
-                <div class="bg-brand-elevated p-4 rounded border border-brand-border">
-                  <div class="font-mono text-[10px] text-slate-400 uppercase mb-1">THE PROBLEM</div>
-                  <p class="text-xs text-slate-300 leading-relaxed">
-                    Producing targeted content across multiple social platforms requires coordinating copywriters, SEO analysts, and ad strategists, causing slow turnaround times and high operational cost.
-                  </p>
-                </div>
-                <div class="bg-brand-elevated p-4 rounded border border-brand-border">
-                  <div class="font-mono text-[10px] text-slate-400 uppercase mb-1">THE SOLUTION</div>
-                  <p class="text-xs text-slate-300 leading-relaxed">
-                    A centralized agent orchestrator that breaks marketing generation into deterministic roles (VSL Writer, Ad Studio, Reels Hook Architect) with persistent SQLite storage and a clean user interface.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Working Features List -->
-              <div class="space-y-2 pt-2">
-                <div class="text-xs font-mono text-blue-400 uppercase">VERIFIED WORKING FEATURES:</div>
-                <ul class="text-xs text-slate-300 space-y-1.5 font-mono">
-                  <li>✔ 15 specialized prompt-role agents for copy, hooks, and campaign strategy</li>
-                  <li>✔ Platform adaptation tailored for Instagram, Facebook, LinkedIn, and Twitter/X</li>
-                  <li>✔ Persistent SQLite database for storing generated campaign blueprints and logs</li>
-                  <li>✔ Integrated interactive Streamlit dashboard interface with Cloudflare tunneling</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Tech Specs Column -->
-            <div class="bg-brand-elevated p-6 rounded-lg border border-brand-border flex flex-col justify-between">
-              <div>
-                <div class="font-mono text-[11px] text-slate-400 uppercase mb-3">TECHNICAL ARCHITECTURE</div>
-                <div class="space-y-2 text-xs text-slate-300 mb-6 font-mono">
-                  <div><span class="text-slate-400">Runtime:</span> Python 3</div>
-                  <div><span class="text-slate-400">LLM Engine:</span> Google Gemini 2.0 API</div>
-                  <div><span class="text-slate-400">Database:</span> SQLite Database</div>
-                  <div><span class="text-slate-400">Interface:</span> Streamlit Web App</div>
-                  <div><span class="text-slate-400">Deployment:</span> Cloudflare Tunnel</div>
-                </div>
-              </div>
-
-              <div class="pt-4 border-t border-brand-border">
-                <div class="font-mono text-[10px] text-slate-400 uppercase mb-2">TECHNOLOGIES USED</div>
-                <div class="flex flex-wrap gap-1 mb-4">
-                  <span class="tag-pill">Python 3</span>
-                  <span class="tag-pill">Gemini API</span>
-                  <span class="tag-pill">SQLite</span>
-                  <span class="tag-pill">Streamlit</span>
-                  <span class="tag-pill">AsyncIO</span>
-                </div>
-                <a href="https://github.com/suhailahmed-dev/APEX-Marketing-AI-CommandCenter" target="_blank" rel="noopener" class="text-xs font-mono font-medium text-blue-400 hover:text-white transition-colors flex items-center gap-1.5">
-                  <span>VIEW REPOSITORY</span>
-                  <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- PROJECT 03: Taskeen — Local-First Multilingual AI Assistant -->
-        <article class="pro-card p-6 sm:p-8 rounded-xl border border-brand-border">
-          <div class="flex flex-wrap items-center justify-between gap-4 mb-5 pb-4 border-b border-brand-border">
-            <div class="flex items-center gap-3">
-              <span class="tag-pill text-purple-400 border-purple-500/30 bg-purple-500/10">PROJECT // 03</span>
-              <span class="text-xs font-mono text-slate-400">CATEGORY: PYTHON AI AGENT &amp; TOOL USE</span>
-            </div>
-            <span class="text-xs font-mono text-purple-300 flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-              VERIFIED BY 114 TESTS
-            </span>
-          </div>
-
-          <div class="grid lg:grid-cols-3 gap-8">
-            <div class="lg:col-span-2 space-y-4">
-              <h3 class="text-xl sm:text-2xl font-bold text-white">
-                Taskeen — Local-First Multilingual AI Assistant
-              </h3>
-              <p class="text-slate-400 text-sm leading-relaxed">
-                A local-first, memory-enabled personal AI assistant designed with an explicit, sandboxed tool execution architecture. Solves the safety risks of unrestrained LLM execution through a strict typed tool registry and permission boundary.
-              </p>
-
-              <div class="grid sm:grid-cols-2 gap-4 pt-2">
-                <div class="bg-brand-elevated p-4 rounded border border-brand-border">
-                  <div class="font-mono text-[10px] text-slate-400 uppercase mb-1">THE SAFETY PROBLEM</div>
-                  <p class="text-xs text-slate-300 leading-relaxed">
-                    Giving language models direct system execution can lead to destructive file overwrites, unvetted commands, and untracked errors without recovery.
-                  </p>
-                </div>
-                <div class="bg-brand-elevated p-4 rounded border border-brand-border">
-                  <div class="font-mono text-[10px] text-slate-400 uppercase mb-1">THE AGENT SOLUTION</div>
-                  <p class="text-xs text-slate-300 leading-relaxed">
-                    A decoupled Execution Engine where the model only requests tool calls, which are checked against 4-tier permission levels (SAFE to DESTRUCTIVE) before execution.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Working Features List -->
-              <div class="space-y-2 pt-2">
-                <div class="text-xs font-mono text-purple-400 uppercase">VERIFIED WORKING FEATURES:</div>
-                <ul class="text-xs text-slate-300 space-y-1.5 font-mono">
-                  <li>✔ 114 automated unit and integration tests passing with 100% reliability</li>
-                  <li>✔ Typed Tool Registry with strict input/output schemas and timeouts</li>
-                  <li>✔ 4-Tier Permission Gate (SAFE, NORMAL, SENSITIVE, DESTRUCTIVE)</li>
-                  <li>✔ Persistent SQLite memory for explicit knowledge retention</li>
-                  <li>✔ Multilingual conversation support: English, Roman Urdu, Urdu</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Tech Specs Column -->
-            <div class="bg-brand-elevated p-6 rounded-lg border border-brand-border flex flex-col justify-between">
-              <div>
-                <div class="font-mono text-[11px] text-slate-400 uppercase mb-3">TECHNICAL ARCHITECTURE</div>
-                <div class="space-y-2 text-xs text-slate-300 mb-6 font-mono">
-                  <div><span class="text-slate-400">Runtime:</span> Python 3.11 (AsyncIO)</div>
-                  <div><span class="text-slate-400">LLM Provider:</span> Local Ollama / Swappable API</div>
-                  <div><span class="text-slate-400">Persistence:</span> SQLite Memory DB</div>
-                  <div><span class="text-slate-400">Testing:</span> Pytest (114 automated tests)</div>
-                  <div><span class="text-slate-400">Security:</span> Strict Permission System</div>
-                </div>
-              </div>
-
-              <div class="pt-4 border-t border-brand-border">
-                <div class="font-mono text-[10px] text-slate-400 uppercase mb-2">TECHNOLOGIES USED</div>
-                <div class="flex flex-wrap gap-1 mb-4">
-                  <span class="tag-pill">Python 3</span>
-                  <span class="tag-pill">Ollama</span>
-                  <span class="tag-pill">SQLite</span>
-                  <span class="tag-pill">Pytest</span>
-                  <span class="tag-pill">AsyncIO</span>
-                </div>
-                <span class="text-xs font-mono text-slate-400">
-                  Verified Local Codebase &amp; Test Suite
-                </span>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- PROJECT 04: SiteSeller — Autonomous Lead Discovery & Outreach Engine -->
-        <article class="pro-card p-6 sm:p-8 rounded-xl border border-brand-border">
-          <div class="flex flex-wrap items-center justify-between gap-4 mb-5 pb-4 border-b border-brand-border">
-            <div class="flex items-center gap-3">
-              <span class="tag-pill text-teal-400 border-teal-500/30 bg-teal-500/10">PROJECT // 04</span>
-              <span class="text-xs font-mono text-slate-400">CATEGORY: DATA EXTRACTION &amp; LEAD AUTOMATION</span>
-            </div>
-            <span class="text-xs font-mono text-emerald-400 flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-              STATUS: PUBLIC REPOSITORY
-            </span>
-          </div>
-
-          <div class="grid lg:grid-cols-3 gap-8">
-            <div class="lg:col-span-2 space-y-4">
-              <h3 class="text-xl sm:text-2xl font-bold text-white">
-                SiteSeller — Autonomous Lead Discovery &amp; Dynamic Outreach Engine
-              </h3>
-              <p class="text-slate-400 text-sm leading-relaxed">
-                An automated client acquisition engine that scans Google Places API for high-intent local businesses that lack an active website, automatically generates a completed custom landing page preview for each prospect, and prepares tailored outreach messages.
-              </p>
-
-              <!-- Working Features List -->
-              <div class="space-y-2 pt-2">
-                <div class="text-xs font-mono text-teal-400 uppercase">VERIFIED WORKING FEATURES:</div>
-                <ul class="text-xs text-slate-300 space-y-1.5 font-mono">
-                  <li>✔ Automated Google Places POI query pipeline with website presence filtering</li>
-                  <li>✔ Dynamic landing page template generator producing real interactive demo previews</li>
-                  <li>✔ Value-first WhatsApp link constructor with pre-filled personalized demo URLs</li>
-                  <li>✔ Deal stage pipeline tracking for outreach management</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Tech Specs Column -->
-            <div class="bg-brand-elevated p-6 rounded-lg border border-brand-border flex flex-col justify-between">
-              <div>
-                <div class="font-mono text-[11px] text-slate-400 uppercase mb-3">TECHNICAL ARCHITECTURE</div>
-                <div class="space-y-2 text-xs text-slate-300 mb-6 font-mono">
-                  <div><span class="text-slate-400">Runtime:</span> Node.js (Express)</div>
-                  <div><span class="text-slate-400">API:</span> Google Places &amp; Geocoding</div>
-                  <div><span class="text-slate-400">Frontend:</span> Tailwind CSS Dynamic Demos</div>
-                  <div><span class="text-slate-400">Outreach:</span> WhatsApp &amp; Email Links</div>
-                </div>
-              </div>
-
-              <div class="pt-4 border-t border-brand-border">
-                <div class="font-mono text-[10px] text-slate-400 uppercase mb-2">TECHNOLOGIES USED</div>
-                <div class="flex flex-wrap gap-1 mb-4">
-                  <span class="tag-pill">Node.js</span>
-                  <span class="tag-pill">Express</span>
-                  <span class="tag-pill">Google Places</span>
-                  <span class="tag-pill">Tailwind CSS</span>
-                </div>
-                <a href="https://github.com/suhailahmed-dev/SiteSeller-Lead-Engine" target="_blank" rel="noopener" class="text-xs font-mono font-medium text-brand-accent hover:text-white transition-colors flex items-center gap-1.5">
-                  <span>VIEW REPOSITORY</span>
-                  <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- PROJECT 05: Faceless Video Autopilot -->
-        <article class="pro-card p-6 sm:p-8 rounded-xl border border-brand-border">
-          <div class="flex flex-wrap items-center justify-between gap-4 mb-5 pb-4 border-b border-brand-border">
-            <div class="flex items-center gap-3">
-              <span class="tag-pill text-amber-400 border-amber-500/30 bg-amber-500/10">PROJECT // 05</span>
-              <span class="text-xs font-mono text-slate-400">CATEGORY: PYTHON BROWSER &amp; MEDIA AUTOMATION</span>
-            </div>
-            <span class="text-xs font-mono text-emerald-400 flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-              STATUS: PUBLIC REPOSITORY
-            </span>
-          </div>
-
-          <div class="grid lg:grid-cols-3 gap-8">
-            <div class="lg:col-span-2 space-y-4">
-              <h3 class="text-xl sm:text-2xl font-bold text-white">
-                Faceless Video Autopilot — Zero-Touch Vertical Media Pipeline
-              </h3>
-              <p class="text-slate-400 text-sm leading-relaxed">
-                An end-to-end programmatic video composition and headless publishing pipeline. Converts written topical concepts into fully produced vertical short-form video content with synchronized neural voiceovers, dynamic kinetic subtitles, and automated browser-based dispatch.
-              </p>
-
-              <!-- Working Features List -->
-              <div class="space-y-2 pt-2">
-                <div class="text-xs font-mono text-amber-400 uppercase">VERIFIED WORKING FEATURES:</div>
-                <ul class="text-xs text-slate-300 space-y-1.5 font-mono">
-                  <li>✔ Automated script generation tailored for high audience retention</li>
-                  <li>✔ 24kHz neural audio synthesis supporting English, Urdu, and Roman Urdu</li>
-                  <li>✔ FFmpeg video compositor rendering 60FPS vertical video with animated word subtitles</li>
-                  <li>✔ Playwright headless browser automation for multi-platform uploading</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Tech Specs Column -->
-            <div class="bg-brand-elevated p-6 rounded-lg border border-brand-border flex flex-col justify-between">
-              <div>
-                <div class="font-mono text-[11px] text-slate-400 uppercase mb-3">TECHNICAL ARCHITECTURE</div>
-                <div class="space-y-2 text-xs text-slate-300 mb-6 font-mono">
-                  <div><span class="text-slate-400">Core Runtime:</span> Python 3 (AsyncIO)</div>
-                  <div><span class="text-slate-400">Audio Synthesis:</span> Edge-TTS Engine</div>
-                  <div><span class="text-slate-400">Video Compositing:</span> FFmpeg Hardware Filters</div>
-                  <div><span class="text-slate-400">Browser Automation:</span> Playwright Headless</div>
-                </div>
-              </div>
-
-              <div class="pt-4 border-t border-brand-border">
-                <div class="font-mono text-[10px] text-slate-400 uppercase mb-2">TECHNOLOGIES USED</div>
-                <div class="flex flex-wrap gap-1 mb-4">
-                  <span class="tag-pill">Python 3</span>
-                  <span class="tag-pill">FFmpeg</span>
-                  <span class="tag-pill">Playwright</span>
-                  <span class="tag-pill">Edge-TTS</span>
-                </div>
-                <a href="https://github.com/suhailahmed-dev/Faceless-Video-Autopilot" target="_blank" rel="noopener" class="text-xs font-mono font-medium text-amber-400 hover:text-white transition-colors flex items-center gap-1.5">
-                  <span>VIEW REPOSITORY</span>
-                  <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- PROJECT 06: AI Document Controller (Concept Prototype) -->
-        <article class="pro-card p-6 sm:p-8 rounded-xl border border-brand-border">
-          <div class="flex flex-wrap items-center justify-between gap-4 mb-5 pb-4 border-b border-brand-border">
-            <div class="flex items-center gap-3">
-              <span class="tag-pill text-slate-400 border-slate-500/30 bg-slate-500/10">PROJECT // 06</span>
-              <span class="text-xs font-mono text-slate-400">CATEGORY: ARCHITECTURAL CONCEPT &amp; SPECIFICATION</span>
-            </div>
-            <span class="text-xs font-mono text-amber-400 flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-amber-400"></span>
-              STATUS: ARCHITECTURAL PROTOTYPE
-            </span>
-          </div>
-
-          <div class="grid lg:grid-cols-3 gap-8">
-            <div class="lg:col-span-2 space-y-4">
-              <h3 class="text-xl sm:text-2xl font-bold text-white">
-                AI Document Controller — Automated Classification &amp; Revision Tracker
-              </h3>
-              <p class="text-slate-400 text-sm leading-relaxed">
-                An architectural design for engineering and construction documentation workflows. Designed to ingest incoming drawings, invoices, and contracts, extract structured metadata using vision models and OCR, and maintain an audit-proof Excel and database register.
-              </p>
-
-              <!-- Concept Details -->
-              <div class="space-y-2 pt-2">
-                <div class="text-xs font-mono text-slate-400 uppercase">PLANNED ARCHITECTURAL WORKFLOW:</div>
-                <ul class="text-xs text-slate-300 space-y-1.5 font-mono">
-                  <li>• Document intake folder watching and file type normalization</li>
-                  <li>• Title block OCR metadata extraction (Revision No., Sheet ID, Project Code, Date)</li>
-                  <li>• Duplicate hash comparison and superseding revision detection</li>
-                  <li>• Automated export to master Excel register and relational database</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Tech Specs Column -->
-            <div class="bg-brand-elevated p-6 rounded-lg border border-brand-border flex flex-col justify-between">
-              <div>
-                <div class="font-mono text-[11px] text-slate-400 uppercase mb-3">PLANNED TECH STACK</div>
-                <div class="space-y-2 text-xs text-slate-300 mb-6 font-mono">
-                  <div><span class="text-slate-400">Backend:</span> Python 3</div>
-                  <div><span class="text-slate-400">Vision/OCR:</span> Tesseract / Vision APIs</div>
-                  <div><span class="text-slate-400">Spreadsheet:</span> OpenPyXL &amp; Pandas</div>
-                  <div><span class="text-slate-400">Database:</span> SQLite / MySQL Register</div>
-                </div>
-              </div>
-
-              <div class="pt-4 border-t border-brand-border">
-                <div class="font-mono text-[10px] text-slate-400 uppercase mb-2">CLASSIFICATION</div>
-                <div class="text-xs font-mono text-slate-400">
-                  Concept specification &amp; prototype schema
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-      </div>
-
-    </section>
-
-    <!-- Development Workflow Section -->
-    <section id="workflow" class="py-16 border-b border-brand-border scroll-mt-20">
-      
-      <div class="mb-10">
-        <div class="font-mono text-xs text-brand-accent uppercase tracking-wider mb-1">// METHODOLOGY</div>
-        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">My Engineering Workflow</h2>
-        <p class="text-slate-400 text-sm mt-2 max-w-2xl">
-          How I approach software development: from clear requirement specifications to clean relational models, defensive code, and responsible AI-assisted verification.
+      <div class="mb-12">
+        <div class="font-mono text-xs text-track-green uppercase tracking-wider mb-1">// STATION 04</div>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-ink tracking-tight">
+          Route Map: How We Build
+        </h2>
+        <p class="text-ink-muted text-xs sm:text-sm mt-1 max-w-xl">
+          A predictable four-stop journey from requirement to deployed reliability.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div class="p-6 bg-white rounded-2xl border border-paper-border shadow-2xs">
+          <div class="text-xs font-mono text-ink-muted mb-2">STOP 01</div>
+          <h3 class="font-serif font-bold text-lg text-ink mb-2">Blueprint &amp; Scope</h3>
+          <p class="text-xs text-ink-muted leading-relaxed">
+            We map data schemas, edge cases, and API limits upfront before writing a single line of application code.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white rounded-2xl border border-paper-border shadow-2xs">
+          <div class="text-xs font-mono text-ink-muted mb-2">STOP 02</div>
+          <h3 class="font-serif font-bold text-lg text-ink mb-2">Test-First Core</h3>
+          <p class="text-xs text-ink-muted leading-relaxed">
+            Build the core engine, database layer, and safety validation gates with automated test coverage from day one.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white rounded-2xl border border-paper-border shadow-2xs">
+          <div class="text-xs font-mono text-ink-muted mb-2">STOP 03</div>
+          <h3 class="font-serif font-bold text-lg text-ink mb-2">Interface &amp; Polish</h3>
+          <p class="text-xs text-ink-muted leading-relaxed">
+            Wrap the engine in a clean, accessible, and responsive interface with clear error states and zero fluff.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white rounded-2xl border border-paper-border shadow-2xs">
+          <div class="text-xs font-mono text-ink-muted mb-2">STOP 04</div>
+          <h3 class="font-serif font-bold text-lg text-ink mb-2">Launch &amp; Handover</h3>
+          <p class="text-xs text-ink-muted leading-relaxed">
+            Deploy with documentation, environment runbooks, and walk-through support so you run smoothly with zero dependency.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SECTION 05: BOARDING PASS CONTACT TERMINAL -->
+    <section id="contact" class="py-24 max-w-4xl mx-auto px-6 border-t border-paper-border scroll-mt-20">
+      
+      <div class="text-center mb-12">
+        <div class="font-mono text-xs text-track-green uppercase tracking-wider mb-1">// FINAL DESTINATION</div>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-ink tracking-tight mb-3">
+          Your Boarding Pass to Reliable Systems
+        </h2>
+        <p class="text-ink-muted text-xs sm:text-sm max-w-md mx-auto">
+          Need a web portal, a Python automation bot, or an intelligent agent? Let's get your project on track.
+        </p>
+      </div>
+
+      <!-- Ticket / Boarding Pass Card -->
+      <div class="bg-white rounded-3xl border border-paper-border overflow-hidden shadow-lg">
         
-        <div class="pro-card p-5 rounded-lg">
-          <div class="font-mono text-[11px] text-brand-accent mb-2">PHASE 01</div>
-          <h3 class="font-semibold text-white text-sm mb-2">Requirements &amp; Scope</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Clarify user workflows, determine security boundaries, and identify core data entities before writing code.
-          </p>
-        </div>
-
-        <div class="pro-card p-5 rounded-lg">
-          <div class="font-mono text-[11px] text-blue-400 mb-2">PHASE 02</div>
-          <h3 class="font-semibold text-white text-sm mb-2">Schema &amp; Architecture</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Design normalized relational schemas, define foreign keys, and establish modular directory structures.
-          </p>
-        </div>
-
-        <div class="pro-card p-5 rounded-lg">
-          <div class="font-mono text-[11px] text-purple-400 mb-2">PHASE 03</div>
-          <h3 class="font-semibold text-white text-sm mb-2">Defensive Coding</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Implement clean business logic with parameter validation, session checks, and CSRF protection.
-          </p>
-        </div>
-
-        <div class="pro-card p-5 rounded-lg">
-          <div class="font-mono text-[11px] text-amber-400 mb-2">PHASE 04</div>
-          <h3 class="font-semibold text-white text-sm mb-2">AI-Assisted Verification</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Use AI tools to generate edge-case test suites, audit potential vulnerabilities, and verify boundary conditions.
-          </p>
-        </div>
-
-        <div class="pro-card p-5 rounded-lg">
-          <div class="font-mono text-[11px] text-emerald-400 mb-2">PHASE 05</div>
-          <h3 class="font-semibold text-white text-sm mb-2">Deployment &amp; Docs</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Write clear database setup instructions, provide environment templates (`.env.example`), and package cleanly.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- Responsible AI / Vibe Coding Explanation -->
-      <div class="mt-8 bg-brand-card p-6 rounded-lg border border-brand-border">
-        <div class="flex items-center gap-2 mb-2">
-          <i data-lucide="shield-check" class="w-4 h-4 text-brand-accent"></i>
-          <h3 class="text-sm font-semibold text-white">How I Use AI Coding Tools Responsibly</h3>
-        </div>
-        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
-          I use modern AI coding assistants (such as Gemini, Claude, and vibe coding workflows) as an accelerator for routine boilerplate, exploratory research, and test generation. However, I maintain strict engineering oversight: every AI-generated function is audited for input validation, database query safety, and architectural cohesion. Real systems require deterministic business rules, not unverified model outputs.
-        </p>
-      </div>
-
-    </section>
-
-    <!-- Teaching & Mentorship Section -->
-    <section id="teaching" class="py-16 border-b border-brand-border scroll-mt-20">
-      
-      <div class="mb-10">
-        <div class="font-mono text-xs text-brand-accent uppercase tracking-wider mb-1">// INSTRUCTION &amp; MENTORSHIP</div>
-        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Teaching Experience &amp; Technical Mentorship</h2>
-        <p class="text-slate-400 text-sm mt-2 max-w-2xl">
-          Explaining complex programming concepts clearly to beginners is one of the best ways to master engineering fundamentals.
-        </p>
-      </div>
-
-      <div class="pro-card p-8 rounded-xl border border-brand-border">
-        <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-brand-border">
-          <div>
-            <h3 class="text-xl font-bold text-white">Web Development Instructor</h3>
-            <div class="text-xs font-mono text-brand-accent mt-1">IT Institute • Hyderabad, Sindh, Pakistan</div>
+        <!-- Ticket Top Header Strip -->
+        <div class="bg-ink text-white px-8 py-5 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+            <span class="font-mono text-xs tracking-widest uppercase">RAILWAY BOARDING PASS &bull; EXPEDITION 2026</span>
           </div>
-          <div class="tag-pill text-emerald-400 border-emerald-500/30">
-            ACTIVE TEACHING EXPERIENCE
-          </div>
+          <span class="font-mono text-xs text-amber-400 font-semibold">TICKET #SAB-92309</span>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6 text-sm text-slate-400">
-          <div class="space-y-2">
-            <h4 class="font-semibold text-white text-xs font-mono uppercase">Course Curriculum</h4>
-            <p class="text-xs leading-relaxed">
-              Leading cohorts through full-stack web fundamentals: semantic HTML5, modern CSS3 layout techniques, responsive Bootstrap, interactive JavaScript programming, and PHP server scripting.
-            </p>
+        <!-- Ticket Body -->
+        <div class="p-8 sm:p-10 space-y-8">
+          
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 font-mono text-xs pb-6 border-b border-paper-border">
+            <div>
+              <div class="text-ink-muted text-[10px] uppercase">PASSENGER</div>
+              <div class="font-bold text-ink text-sm font-sans mt-0.5">Your Company</div>
+            </div>
+            <div>
+              <div class="text-ink-muted text-[10px] uppercase">CONDUCTOR</div>
+              <div class="font-bold text-ink text-sm font-sans mt-0.5">Sohail A. Buledi</div>
+            </div>
+            <div>
+              <div class="text-ink-muted text-[10px] uppercase">DEPARTURE</div>
+              <div class="font-bold text-ink text-sm font-sans mt-0.5">Immediate</div>
+            </div>
+            <div>
+              <div class="text-ink-muted text-[10px] uppercase">STATUS</div>
+              <div class="font-bold text-emerald-600 text-sm font-sans mt-0.5 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 pulse-dot"></span>
+                Ready to Board
+              </div>
+            </div>
           </div>
-          <div class="space-y-2">
-            <h4 class="font-semibold text-white text-xs font-mono uppercase">Database Mastery</h4>
-            <p class="text-xs leading-relaxed">
-              Guiding students through practical relational database modeling with MySQL: table creation, primary/foreign key relationships, normalization, and executing secure parameterized SQL queries.
-            </p>
+
+          <!-- Direct Channels -->
+          <div class="grid sm:grid-cols-3 gap-4">
+            
+            <!-- WhatsApp -->
+            <a href="https://wa.me/923093174020?text=Hello%20Sohail,%20I%20saw%20your%20train%20portfolio%20and%20would%20like%20to%20discuss%20a%20project" 
+               target="_blank" 
+               rel="noopener"
+               class="p-5 rounded-2xl bg-paper hover:bg-emerald-50 border border-paper-border hover:border-emerald-300 transition-all text-center group">
+              <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto mb-3 font-bold text-sm group-hover:scale-110 transition-transform">
+                WA
+              </div>
+              <div class="font-serif font-bold text-ink text-sm">WhatsApp Direct</div>
+              <div class="font-mono text-xs text-ink-muted mt-1">+92 309 3174020</div>
+              <div class="text-[11px] text-emerald-600 font-medium mt-2">Fastest response &rarr;</div>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/suhailahmed-dev" 
+               target="_blank" 
+               rel="noopener"
+               class="p-5 rounded-2xl bg-paper hover:bg-paper-darker border border-paper-border hover:border-ink transition-all text-center group">
+              <div class="w-10 h-10 rounded-full bg-zinc-200 text-ink flex items-center justify-center mx-auto mb-3 font-bold text-sm group-hover:scale-110 transition-transform">
+                GH
+              </div>
+              <div class="font-serif font-bold text-ink text-sm">GitHub Profile</div>
+              <div class="font-mono text-xs text-ink-muted mt-1">@suhailahmed-dev</div>
+              <div class="text-[11px] text-ink font-medium mt-2">Explore code &rarr;</div>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:suhailahmed.buledi@gmail.com" 
+               class="p-5 rounded-2xl bg-paper hover:bg-blue-50 border border-paper-border hover:border-blue-300 transition-all text-center group">
+              <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center mx-auto mb-3 font-bold text-sm group-hover:scale-110 transition-transform">
+                EM
+              </div>
+              <div class="font-serif font-bold text-ink text-sm">Direct Email</div>
+              <div class="font-mono text-[11px] text-ink-muted mt-1 break-all">suhailahmed.buledi@gmail.com</div>
+              <div class="text-[11px] text-blue-600 font-medium mt-2">Send proposal &rarr;</div>
+            </a>
+
           </div>
-          <div class="space-y-2">
-            <h4 class="font-semibold text-white text-xs font-mono uppercase">Real-World Projects</h4>
-            <p class="text-xs leading-relaxed">
-              Mentoring students on capstone web applications (student record portals, e-commerce prototypes, assessment systems) to build their problem-solving confidence for junior developer roles.
-            </p>
+
+          <!-- Bottom Barcode Strip -->
+          <div class="pt-6 border-t border-paper-border flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="font-mono text-[11px] text-ink-muted">
+              HYDERABAD, SINDH, PAKISTAN &bull; OPEN TO INTERNATIONAL REMOTE WORK
+            </div>
+            <!-- Decorative Barcode -->
+            <div class="flex items-center gap-1 opacity-70 h-8">
+              <span class="w-0.5 h-full bg-ink"></span>
+              <span class="w-1.5 h-full bg-ink"></span>
+              <span class="w-0.5 h-full bg-ink"></span>
+              <span class="w-1 h-full bg-ink"></span>
+              <span class="w-2 h-full bg-ink"></span>
+              <span class="w-0.5 h-full bg-ink"></span>
+              <span class="w-1 h-full bg-ink"></span>
+              <span class="w-0.5 h-full bg-ink"></span>
+              <span class="w-1.5 h-full bg-ink"></span>
+              <span class="w-2 h-full bg-ink"></span>
+              <span class="w-0.5 h-full bg-ink"></span>
+              <span class="w-1 h-full bg-ink"></span>
+              <span class="w-0.5 h-full bg-ink"></span>
+              <span class="w-1.5 h-full bg-ink"></span>
+            </div>
           </div>
+
         </div>
-      </div>
 
-    </section>
-
-    <!-- Contact & Engagement Section -->
-    <section id="contact" class="py-16 scroll-mt-20 text-center max-w-2xl mx-auto">
-      
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-brand-card border border-brand-border text-xs font-mono text-brand-accent mb-6">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
-        <span>OPEN FOR COLLABORATION &amp; REMOTE ROLES</span>
-      </div>
-
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
-        Let's Build Something Reliable Together
-      </h2>
-
-      <p class="text-slate-400 text-sm sm:text-base leading-relaxed mb-8">
-        Looking for a developer to build full-stack web applications, write dependable Python automation scripts, or collaborate on remote engineering teams? Reach out directly.
-      </p>
-
-      <!-- Direct Contact Buttons -->
-      <div class="flex flex-wrap items-center justify-center gap-4">
-        
-        <!-- Direct WhatsApp -->
-        <a href="https://wa.me/923093174020?text=Hello%20Sohail,%20I%20reviewed%20your%20developer%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity" target="_blank" rel="noopener" class="bg-brand-accent text-brand-dark hover:bg-emerald-400 font-mono text-xs sm:text-sm font-semibold px-6 py-3 rounded transition-all flex items-center gap-2">
-          <i data-lucide="message-square" class="w-4 h-4"></i>
-          <span>WHATSAPP: +92 309 3174020</span>
-        </a>
-
-        <!-- Direct Email -->
-        <a href="mailto:sohailbuledi84@gmail.com" class="pro-card hover:bg-brand-elevated text-slate-200 hover:text-white font-mono text-xs sm:text-sm px-6 py-3 rounded transition-all flex items-center gap-2">
-          <i data-lucide="mail" class="w-4 h-4 text-brand-accent"></i>
-          <span>sohailbuledi84@gmail.com</span>
-        </a>
-
-        <!-- GitHub Profile -->
-        <a href="https://github.com/suhailahmed-dev" target="_blank" rel="noopener" class="pro-card hover:bg-brand-elevated text-slate-200 hover:text-white font-mono text-xs sm:text-sm px-5 py-3 rounded transition-all flex items-center gap-2">
-          <i data-lucide="github" class="w-4 h-4"></i>
-          <span>GITHUB</span>
-        </a>
-
-      </div>
-
-      <div class="mt-8 text-xs font-mono text-slate-400">
-        📍 Hyderabad, Sindh, Pakistan • Flexible across EST / GMT / UTC timezones
       </div>
 
     </section>
 
   </main>
 
-  <!-- Professional Footer -->
-  <footer class="border-t border-brand-border py-8 relative z-10 bg-[#0b0f19]">
-    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400">
-      <div>
-        <span class="text-white font-semibold">Sohail Ahmed Buledi</span>
-        <span class="mx-2">•</span>
-        <span>Web Developer &amp; Technical Instructor</span>
+  <!-- Clean Footer -->
+  <footer class="border-t border-paper-border py-10 bg-[#faf8f5]">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-ink-muted">
+      <div class="flex items-center gap-2">
+        <span class="w-5 h-5 rounded bg-[#e11d48] text-white flex items-center justify-center font-bold text-[10px]">S</span>
+        <span>&copy; 2026 Sohail Ahmed Buledi. All rights reserved.</span>
       </div>
-      <div class="flex items-center gap-4">
-        <a href="#about" class="hover:text-white transition-colors">About</a>
-        <span>•</span>
-        <a href="#projects" class="hover:text-white transition-colors">Projects</a>
-        <span>•</span>
-        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
-        <span>•</span>
-        <a href="#" class="text-slate-400 hover:text-white transition-colors">Top &uarr;</a>
+      <div>
+        Built with precision &bull; The Train-Themed Portfolio
       </div>
     </div>
   </footer>
 
+  <!-- JAVASCRIPT: THE INTERACTIVE TRAIN PHYSICS ENGINE -->
   <script>
-    // Initialize Lucide Icons
-    lucide.createIcons();
+    // Carriages configuration matching the viral reel exactly:
+    // P O R T F O L I O read from left to right as the train rides along the curve!
+    const letters = ['P', 'O', 'R', 'T', 'F', 'O', 'L', 'I', 'O'];
+    
+    // Palette matching the video: Red, Yellow/Gold, Blue, Green, Red, Blue, Gold, Green, Red
+    const colors = [
+      '#e11d48', // P - Rose/Red
+      '#f59e0b', // O - Amber/Orange
+      '#2563eb', // R - Royal Blue
+      '#16a34a', // T - Leaf Green
+      '#e11d48', // F - Rose/Red
+      '#2563eb', // O - Royal Blue
+      '#eab308', // L - Sun Gold
+      '#16a34a', // I - Leaf Green
+      '#e11d48', // O - Rose/Red
+    ];
+
+    const track = document.getElementById('trainTrack');
+    const trainGroup = document.getElementById('trainGroup');
+    const speedDisplay = document.getElementById('speedDisplay');
+    const boostPrompt = document.getElementById('boostPrompt');
+
+    const totalPathLength = track.getTotalLength();
+    const carriageSpacing = 40; // Spacing along curve
+    const carriageCount = letters.length;
+
+    // Create SVG carriage elements
+    const carriages = [];
+
+    for (let i = 0; i < carriageCount; i++) {
+      const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      g.setAttribute('class', 'carriage');
+
+      // Carriage Tub / Chassis (silver cart base with smooth rounded corners)
+      const chassis = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+      chassis.setAttribute('x', '-16');
+      chassis.setAttribute('y', '-16');
+      chassis.setAttribute('width', '32');
+      chassis.setAttribute('height', '12');
+      chassis.setAttribute('rx', '4');
+      chassis.setAttribute('fill', '#e2e8f0');
+      chassis.setAttribute('stroke', '#94a3b8');
+      chassis.setAttribute('stroke-width', '1');
+
+      // Left wheel (sits on the rail at y=0)
+      const wheel1 = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      wheel1.setAttribute('cx', '-9');
+      wheel1.setAttribute('cy', '-3');
+      wheel1.setAttribute('r', '3.5');
+      wheel1.setAttribute('fill', '#1e293b');
+      wheel1.setAttribute('stroke', '#cbd5e1');
+      wheel1.setAttribute('stroke-width', '1');
+
+      // Right wheel (sits on the rail at y=0)
+      const wheel2 = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      wheel2.setAttribute('cx', '9');
+      wheel2.setAttribute('cy', '-3');
+      wheel2.setAttribute('r', '3.5');
+      wheel2.setAttribute('fill', '#1e293b');
+      wheel2.setAttribute('stroke', '#cbd5e1');
+      wheel2.setAttribute('stroke-width', '1');
+
+      // Colored Letter Block Box on top of chassis
+      const box = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+      box.setAttribute('x', '-14');
+      box.setAttribute('y', '-44');
+      box.setAttribute('width', '28');
+      box.setAttribute('height', '28');
+      box.setAttribute('rx', '6');
+      box.setAttribute('fill', colors[i]);
+      box.setAttribute('stroke', 'rgba(255,255,255,0.4)');
+      box.setAttribute('stroke-width', '1.5');
+      box.setAttribute('class', 'train-block');
+
+      // 3D Shadow Highlight Top
+      const highlight = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      highlight.setAttribute('d', 'M -11 -42 L 11 -42');
+      highlight.setAttribute('stroke', 'rgba(255,255,255,0.65)');
+      highlight.setAttribute('stroke-width', '1.5');
+      highlight.setAttribute('stroke-linecap', 'round');
+
+      // Letter text inside block
+      const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      text.setAttribute('x', '0');
+      text.setAttribute('y', '-24');
+      text.setAttribute('text-anchor', 'middle');
+      text.setAttribute('fill', '#ffffff');
+      text.setAttribute('font-family', 'Inter, sans-serif');
+      text.setAttribute('font-weight', '800');
+      text.setAttribute('font-size', '16');
+      text.textContent = letters[i];
+
+      g.appendChild(chassis);
+      g.appendChild(wheel1);
+      g.appendChild(wheel2);
+      g.appendChild(box);
+      g.appendChild(highlight);
+      g.appendChild(text);
+
+      trainGroup.appendChild(g);
+      carriages.push(g);
+    }
+
+    // Physics & Motion State
+    // Start with train partly down the valley
+    let distance = 600;
+    let baseSpeed = 1.35;
+    let isBoosted = false;
+    let currentSpeed = baseSpeed;
+
+    // Interactive Boost Controls (Click or tap & hold anywhere on screen)
+    function startBoost() {
+      isBoosted = true;
+      if (boostPrompt) boostPrompt.textContent = "BOOST ENGAGED! 🚀";
+    }
+
+    function endBoost() {
+      isBoosted = false;
+      if (boostPrompt) boostPrompt.textContent = "HOLD ANYWHERE TO GO FASTER";
+    }
+
+    window.addEventListener('mousedown', startBoost);
+    window.addEventListener('mouseup', endBoost);
+    window.addEventListener('touchstart', startBoost, { passive: true });
+    window.addEventListener('touchend', endBoost, { passive: true });
+
+    // Continuous 60fps Physics Loop
+    function updateTrain() {
+      // Dynamic target speed: boosted vs coasting
+      const targetSpeed = isBoosted ? 4.8 : 1.35;
+      currentSpeed += (targetSpeed - currentSpeed) * 0.08;
+
+      distance += currentSpeed;
+      // Loop smoothly once the entire train has cleared the right off-canvas region
+      if (distance > totalPathLength + (carriageSpacing * carriageCount) + 200) {
+        distance = 0;
+      }
+
+      let leadPoint = null;
+
+      // Position each carriage:
+      // i = 0 ('P') is at the rear (left)
+      // i = 8 ('O') is at the lead front (right)
+      // Carriage i distance = distance - (8 - i) * spacing
+      for (let i = 0; i < carriageCount; i++) {
+        const carriageDist = distance - ((carriageCount - 1 - i) * carriageSpacing);
+
+        // Hide carriage cleanly if it is off either end of the path
+        if (carriageDist < 0 || carriageDist > totalPathLength) {
+          carriages[i].style.opacity = '0';
+          continue;
+        } else {
+          carriages[i].style.opacity = '1';
+        }
+
+        const pt = track.getPointAtLength(carriageDist);
+        if (i === carriageCount - 1) leadPoint = pt;
+
+        // Calculate tangent angle for smooth banking along the rollercoaster curve
+        const step = 2;
+        const ptAhead = track.getPointAtLength(Math.min(totalPathLength, carriageDist + step));
+        const ptBehind = track.getPointAtLength(Math.max(0, carriageDist - step));
+
+        const dx = ptAhead.x - ptBehind.x;
+        const dy = ptAhead.y - ptBehind.y;
+        const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+
+        // Apply 2D translate & rotation to carriage
+        carriages[i].setAttribute('transform', `translate(${pt.x}, ${pt.y}) rotate(${angle})`);
+      }
+
+      // Live Telemetry Display update matching reel
+      if (leadPoint && speedDisplay) {
+        const kmh = Math.round(currentSpeed * 23);
+        let status = 'COASTING';
+        if (isBoosted) {
+          status = 'LAUNCH - GOING UP';
+        } else if (leadPoint.x > 750) {
+          status = 'CLIMBING';
+        } else if (leadPoint.x > 380 && leadPoint.x < 750) {
+          status = 'ARRIVING - BRAKING';
+        } else {
+          status = 'DOWNHILL ACCEL';
+        }
+        speedDisplay.textContent = `${status} ${kmh} km/h`;
+      }
+
+      requestAnimationFrame(updateTrain);
+    }
+
+    // Launch physics
+    requestAnimationFrame(updateTrain);
   </script>
 </body>
-</html>\n
+</html>

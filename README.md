@@ -1,18 +1,17 @@
-# Sohail Ahmed Buledi — Developer Portfolio
+# Sohail Ahmed Buledi — The Train-Themed Developer Portfolio 🚂
 
-Modern, responsive, and minimalist developer portfolio website for **Sohail Ahmed Buledi** — Web Developer, Python Automation Specialist, and IT Instructor (Hyderabad, Pakistan).
+An interactive, award-winning editorial developer portfolio featuring a real-time SVG roller coaster train physics simulation for **Sohail Ahmed Buledi** — Web Developer, Python Automation Specialist, and IT Instructor (Hyderabad, Pakistan).
 
 Live Website: [https://suhailahmed-dev.github.io/portfolio/](https://suhailahmed-dev.github.io/portfolio/)
 
 ---
 
-## Technical Overview
+## 🎢 Key Interactive Features
 
-* **Architecture:** Semantic, lightweight HTML5 single-page application.
-* **Styling:** Tailwind CSS (utility-first, responsive, accessible contrast, custom dark slate palette).
-* **Typography:** `Inter` for content typography, `JetBrains Mono` for technical labels and specifications.
-* **Icons:** Lucide Icons (clean, modern SVG iconography).
-* **Hosting:** GitHub Pages with automated continuous deployment from the `main` branch.
+* **Real-Time SVG Roller Coaster Physics:** A 9-carriage train spelling `P O R T F O L I O` smoothly banks and curves along an intricate green structural truss bridge using tangent vectors (`Math.atan2(dy, dx)`).
+* **Interactive Boost Telemetry:** Click and hold anywhere on the screen (or touch on mobile) to accelerate the train from coasting speeds (30–45 km/h) to full boost (95–120 km/h) with live HUD status updates.
+* **Warm Editorial Aesthetic:** Cream graph-paper canvas (`#faf8f5`), classic Fraunces editorial serif typography, floating retro-modern geometric accents, and vintage railway boarding pass design.
+* **Real Production Systems:** Zero hype, 100% verified projects with technical depth, testing statistics, and architecture breakdowns.
 
 ---
 
